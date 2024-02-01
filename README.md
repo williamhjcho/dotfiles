@@ -1,3 +1,5 @@
+![logo](./files/logo.png "Logo")
+
 # whjc's Dotfiles
 
 ## 1. Make sure you have a system python configured
