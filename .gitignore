@@ -1,0 +1,7 @@
+# this is a file that should be generated locally
+.secrets
+
+# vim
+vim/.vim/.netrwhist
+vim/.vim/plugged
+

@@ -1,0 +1,107 @@
+---
+- name: Configure host
+  hosts: localhost
+
+  vars:
+    # flags to disable any of the configurations
+    configure_homebrew: true
+    configure_dock: true
+    configure_terminal: true
+    configure_dotfiles: true
+    configure_macos: true
+    dotfiles_home: "$HOME/dotfiles"
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: [homebrew]
+      when: configure_homebrew
+      vars:
+        homebrew_installed_packages:
+          - git
+          - zsh
+          - zsh-syntax-highlighting
+          - zsh-autosuggestions
+          - jq
+          - yq
+          - fd
+          - ripgrep
+          - fzf
+          - nvim
+          - gh
+          - lazygit
+          - openssl
+          - direnv
+          - pyenv
+          - rbenv
+          - dockutil
+          - koekeishiya/formulae/yabai
+        homebrew_taps:
+          - homebrew/cask-fonts
+        homebrew_cask_apps:
+          # in case it needs to be forced
+          # - { name: appname, install_options: "force" }
+          - font-fira-mono-nerd-font
+          - font-jetbrains-mono-nerd-font
+          - monitorcontrol
+          - iterm2
+          - arc
+          - docker
+          - slack
+          - spotify
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+      tags: [dock]
+      vars:
+        dockitems_remove:
+          - "Pages"
+          - "Keynote"
+          - "Podcasts"
+          - "Numbers"
+          - "Music"
+          - "TV"
+          - "Contacts"
+          - "Calendar"
+        dockitems_persist:
+          - name: iTerm
+            path: "/Applications/iTerm.app/"
+            pos: 1
+          - name: Spotify
+            path: "/Applications/Spotify.app/"
+            pos: 2
+          - name: Arc
+            path: "/Applications/Arc.app/"
+            pos: 3
+          - name: Slack
+            path: "/Applications/Slack.app/"
+            pos: 4
+
+  tasks:
+    - name: Configuring Terminal
+      import_tasks: tasks/terminal.yaml
+      when: configure_terminal
+      vars:
+        zsh_dir: "$HOME/.oh-my-zsh"
+      tags: [terminal]
+    - name: Configuring Dotfiles
+      import_tasks: tasks/dotfiles.yaml
+      when: configure_dotfiles
+      vars:
+        dotfiles_dir: "{{ dotfiles_home }}"
+        dotfiles_targets:
+          - git
+          - zsh
+          - nvim
+          - skhd
+          - yabai
+          - intellij
+      tags: [dotfiles]
+    - name: Setup macos defaults
+      when: configure_macos
+      become: true
+      shell:
+        # when becoming sudo, $HOME changes to /var/root
+        chdir: "../"
+        cmd: ./macos/osx.sh --no-restart
+      changed_when: false
+      tags: [macos]

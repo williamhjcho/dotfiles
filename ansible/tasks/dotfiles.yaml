@@ -1,0 +1,18 @@
+---
+- name: Setup vars
+  set_fact:
+    dotfiles_dir: "{{ dotfiles_dir | default('$HOME/.dotfiles') }}"
+    dotfiles_dest_dir: "{{ dotfiles_dest_dir | default('$HOME') }}"
+    dotfiles_targets: "{{ dotfiles_targets | default([]) }}"
+- name: Print vars
+  debug:
+    msg: |
+      dotfiles_dir={{ dotfiles_dir }}
+      dotfiles_dest_dir={{ dotfiles_dest_dir }}
+      dotfiles_targets={{ dotfiles_targets }}
+- name: Setup dotfiles
+  when: dotfiles_targets | length > 0
+  changed_when: false
+  command:
+    chdir: "{{ dotfiles_dir }}"
+    cmd: stow --verbose --restow --adopt --target="{{ dotfiles_dest_dir }}" {{ dotfiles_targets | join(' ') }}
