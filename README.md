@@ -2,21 +2,19 @@
 
 ## 1. Make sure you have a system python configured
 
-Must be python 3.x
+Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
 
-## 2. Install [ansible][ansible-install]
+- Run the following command to add Python 3 to your PATH: `export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"`
+- Upgrade Pip: `sudo pip3 install --upgrade pip`
+- Install [Ansible][ansible-install]: `pip3 install ansible`
 
-```shell
-pip3 install ansible
-```
-
-## 3. Clone [dotfiles repo][dotfiles-repo]
+## 2. Clone [dotfiles repo][dotfiles-repo]
 
 ```shell
 git clone https://github.com/williamhjcho/dotfiles ~/dotfiles
 ```
 
-## 4. Run the ansible playbook
+## 3. Run the ansible playbook
 
 From inside `ansible/` dir
 
@@ -28,7 +26,7 @@ ansible-galaxy install -r requirements.yaml
 ansible-playbook main.yaml --ask-become-pass (--verbose) (--tags=)
 ```
 
-## 5. Manual settings
+## 4. Manual settings
 
 System Preferences
 
