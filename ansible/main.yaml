@@ -56,14 +56,21 @@
       tags: [dock]
       vars:
         dockitems_remove:
-          - "Pages"
-          - "Keynote"
-          - "Podcasts"
-          - "Numbers"
-          - "Music"
-          - "TV"
-          - "Contacts"
           - "Calendar"
+          - "Contacts"
+          - "FaceTime"
+          - "Freeform"
+          - "Keynote"
+          - "Mail"
+          - "Maps"
+          - "Messages"
+          - "Music"
+          - "Numbers"
+          - "Podcasts"
+          - "Photos"
+          - "Pages"
+          - "Safari"
+          - "TV"
         dockitems_persist:
           - name: iTerm
             path: "/Applications/iTerm.app/"
@@ -104,6 +111,6 @@
       shell:
         # when becoming sudo, $HOME changes to /var/root
         chdir: "../"
-        cmd: ./macos/osx.sh --no-restart
+        cmd: ./macos/osx.sh
       changed_when: false
       tags: [macos]

@@ -32,11 +32,8 @@ fi
 ###############################################################################
 echo "Setting General UI/UX"
 
-defaults write AppleInterfaceStyle -string "Dark"
-defaults delete AppleInterfaceStyleSwitchesAutomatically || echo "No need to delete AppleInterfaceStyleSwitchesAutomatically"
-
-# shows battery in status bar
-defaults write "NSStatusItem Visible Battery" -bool true
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
 
 # status bar visibility: true = always
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
@@ -57,10 +54,10 @@ defaults write com.apple.assistant.support "Assistant Enabled" -int 0
 # fi
 
 # Disable smart quotes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -69,7 +66,7 @@ echo "Setting Trackpad & acessories"
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
 # (The KeyRepeat option requires logging out and back in to take effect.)
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Disable auto-correct
