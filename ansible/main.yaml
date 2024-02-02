@@ -29,6 +29,7 @@
           - fzf
           - nvim
           - gh
+          - stow
           - lazygit
           - openssl
           - direnv
