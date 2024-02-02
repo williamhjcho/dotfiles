@@ -44,5 +44,6 @@
   addIgnoredFile = false
 [pull]
   ff = only
+  rebase = true
 [url "git@github.com:"]
   insteadOf = https://github.com/
