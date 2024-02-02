@@ -1,45 +1,48 @@
 [core]
-excludesfile = $HOME/.gitignore_global
-editor = nvim
+  excludesfile = $HOME/.gitignore_global
+  editor = nvim
 [user]
-name = William Cho
-email = dev@whjc.me
+  name = William Cho
+  email = dev@whjc.me
+  signingKey = ~/.ssh/id_ed25519.pub
 [color]
-ui = auto
+  ui = auto
 [alias]
-logtree = log --graph --oneline --decorate --all
-logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-addp = add --patch
-resetp = reset --patch
-restorep = restore --patch
-amend = commit --amend --no-edit
-rebcont = rebase --continue
-rebskip = rebase --skip
-rebort = rebase --abort
-branch-list = ! git branch --list | cat
-current = ! git branch | grep \\* | cut -d ' ' -f2
-last = log -1 HEAD --stat
-pushf = push --force-with-lease
-wip = commit -m "[WIP]"
+  logtree = log --graph --oneline --decorate --all
+  logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  addp = add --patch
+  resetp = reset --patch
+  restorep = restore --patch
+  amend = commit --amend --no-edit
+  rebcont = rebase --continue
+  rebskip = rebase --skip
+  rebort = rebase --abort
+  branch-list = ! git branch --list | cat
+  current = ! git branch | grep \\* | cut -d ' ' -f2
+  last = log -1 HEAD --stat
+  pushf = push --force-with-lease
+  wip = commit -m "[WIP]"
 [filter "lfs"]
-process = git-lfs filter-process --skip
-required = true
-clean = git-lfs clean -- %f
-smudge = git-lfs smudge --skip %f
+  process = git-lfs filter-process --skip
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip %f
 [fetch]
-prune = true
+  prune = true
 [rebase]
-autosquash = true
-autostash = true
+  autosquash = true
+  autostash = true
 [commit]
-verbose = true
-gpgsign = true
+  verbose = true
+  gpgsign = true
+[gpg]
+  format = ssh
 [status]
-short = true
-branch = true
+  short = true
+  branch = true
 [advice]
-addIgnoredFile = false
+  addIgnoredFile = false
 [pull]
-ff = only
+  ff = only
 [url "git@github.com:"]
-insteadOf = https://github.com/
+  insteadOf = https://github.com/

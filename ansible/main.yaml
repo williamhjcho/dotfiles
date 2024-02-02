@@ -25,6 +25,7 @@
           - jq
           - yq
           - fd
+          - gpg
           - ripgrep
           - fzf
           - nvim
