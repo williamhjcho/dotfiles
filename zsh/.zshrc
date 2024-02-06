@@ -60,6 +60,9 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/tools/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
+# Flutter
+export PATH="$PATH":"$HOME/fvm/default/bin"
+
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
