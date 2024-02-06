@@ -170,6 +170,7 @@ return {
         "markdown_inline",
         "dockerfile",
         "query",
+        "make",
 
         -- code
         "jsdoc",
