@@ -37,10 +37,12 @@
           - pyenv
           - pyenv-virtualenv
           - rbenv
+          - fvm
           - dockutil
           - koekeishiya/formulae/yabai
         homebrew_taps:
           - homebrew/cask-fonts
+          - leoafarias/fvm
         homebrew_cask_apps:
           # in case it needs to be forced
           # - { name: appname, install_options: "force" }
