@@ -36,7 +36,9 @@ System Preferences
 
 Iterm2
 
-- Set `~/.dotfiles/iterm2/` as the default profile path
+- Set `~/dotfiles/iterm2/` as the default profile path
+- Import `iterm2/Profiles`
+- Import `iterm2/KeyBindings`
 
 ---
 
@@ -63,7 +65,7 @@ Host github.com
 ssh-add --apple-use-keychain "~/.ssh/id_ed25519"
 ```
 
-Add the new SSH public key to GitHub
+Add the new SSH public key to GitHub (it can be used for both authentication and signing)
 
 Test if the SSH is working
 
@@ -71,24 +73,6 @@ Test if the SSH is working
 ssh -T git@github.com
 ```
 
----
-
-[GPG setup][gpg-setup]
-
-```shell
-# generate the key
-gpg --full-generate-key
-
-# print the gpg key info
-gpg --list-secret-keys --keyid-format=long
-
-# print the gpg key in armor format
-gpg --armor --export <key-id>
-```
-
-Then add to GitHub
-
 [ansible-install]: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 [dotfiles-repo]: https://github.com/williamhjcho/dotfiles
 [ssh-setup]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-[gpg-setup]: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
