@@ -188,6 +188,9 @@ defaults write com.apple.dock magnification -int 1
 defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock orientation -string "bottom"
 
+# disable most recent space rearranging automatically
+defaults write com.apple.dock "mru-spaces" -bool false
+
 # disable launchpad gesture
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
