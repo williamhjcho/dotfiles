@@ -114,6 +114,6 @@
       shell:
         # when becoming sudo, $HOME changes to /var/root
         chdir: "../"
-        cmd: ./macos/osx.sh
+        cmd: ./macos/osx.sh --no-restart
       changed_when: false
       tags: [macos]
