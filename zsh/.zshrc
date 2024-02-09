@@ -98,7 +98,7 @@ eval "$(rbenv init - zsh)"
 eval "$(direnv hook zsh)"
 
 # bun completions
-[ -s "/Users/williamhjcho/.bun/_bun" ] && source "/Users/williamhjcho/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
