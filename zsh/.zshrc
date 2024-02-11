@@ -62,6 +62,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # Flutter
 export PATH="$PATH":"$HOME/fvm/default/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
