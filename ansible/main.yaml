@@ -108,6 +108,7 @@
           - skhd
           - yabai
           - intellij
+          - tmux
       tags: [dotfiles]
     - name: Setup macos defaults
       when: configure_macos
