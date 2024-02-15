@@ -1,0 +1,45 @@
+# references
+#
+# https://alacritty.org/config-alacritty.html
+# https://sunnnychan.github.io/cheatsheet/linux/config/alacritty.yml.html
+import = [
+  # uncomment the color scheme: 
+  "~/.config/alacritty/catppuccin-mocha.toml",
+  # "~/.config/alacritty/tokyo_night.toml",
+]
+
+live_config_reload = true
+
+working_directory = "None"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+title = "Alacritty"
+dimensions = { columns = 140, lines = 80 }
+padding = { x = 6, y = 6 }
+opacity = 0.75
+blur = true
+startup_mode = "Windowed"
+decorations = "Full"
+
+[scrolling]
+history = 10000
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+
+size = 14.0
+offset = { x = 1, y = 1 }
+glyph_offset = { x = 0, y = 0 }
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+unfocused_hollow = true
+
+[mouse]
+hide_when_typing = false

@@ -51,6 +51,7 @@
           - font-jetbrains-mono-nerd-font
           - monitorcontrol
           - iterm2
+          - alacritty
           - arc
           - docker
           - slack
@@ -79,15 +80,18 @@
           - name: iTerm
             path: "/Applications/iTerm.app/"
             pos: 1
+          - name: Alacritty
+            path: "/Applications/Alacritty.app/"
+            pos: 2
           - name: Spotify
             path: "/Applications/Spotify.app/"
-            pos: 2
+            pos: 3
           - name: Arc
             path: "/Applications/Arc.app/"
-            pos: 3
+            pos: 4
           - name: Slack
             path: "/Applications/Slack.app/"
-            pos: 4
+            pos: 5
 
   tasks:
     - name: Configuring Terminal
@@ -109,6 +113,7 @@
           - yabai
           - intellij
           - tmux
+          - alacritty
       tags: [dotfiles]
     - name: Setup macos defaults
       when: configure_macos
