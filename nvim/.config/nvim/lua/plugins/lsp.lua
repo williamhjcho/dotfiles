@@ -41,6 +41,7 @@ return {
             },
           },
         },
+        taplo = {},
         jsonls = {
           on_new_config = function(new_config)
             new_config.settings.json.schemas = new_config.settings.json.schemas or {}
@@ -115,6 +116,7 @@ return {
         -- yaml = { "yamlfix" },
         typescript = { "biome" },
         go = { "gofmt" },
+        toml = { "taplo" },
       },
 
       -- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#customizing-formatters
@@ -213,6 +215,7 @@ return {
         "markdownlint",
         "marksman",
         "hadolint", -- dockerfile
+        "taplo", -- toml
 
         -- shell
         "bash-language-server",
