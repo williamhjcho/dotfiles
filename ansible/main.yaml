@@ -37,6 +37,7 @@
           - pyenv
           - pyenv-virtualenv
           - rbenv
+          - tree
           - fvm
           - dockutil
           - koekeishiya/formulae/yabai
