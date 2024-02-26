@@ -64,6 +64,9 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH":"$HOME/fvm/default/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+# Go
+export PATH="$PATH":"$HOME/go/bin"
+
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
