@@ -98,6 +98,10 @@ return {
         end,
       },
     },
+
+    keys = {
+      { "<leader>cR", "<cmd>LspRestart<cr>", desc = "LSP Restart" },
+    },
   },
   {
     "stevearc/conform.nvim",
