@@ -26,6 +26,7 @@
           - yq
           - fd
           - gpg
+          - tmux
           - ripgrep
           - fzf
           - nvim
