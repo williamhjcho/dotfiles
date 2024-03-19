@@ -19,7 +19,6 @@ return {
   {
     'numToStr/Comment.nvim',
     opts = {},
-    keys = {},
   },
 
   -- Here is a more advanced example where we pass configuration
