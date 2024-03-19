@@ -114,7 +114,7 @@ return {
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>cr', vim.lsp.buf.rename, '[R]ename')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -122,6 +122,9 @@ return {
 
           -- Restarts the LSP server
           map('<leader>cR', '<cmd>LspRestart<cr>', '[C]ode LSP [R]estart')
+
+          -- shows the LSP info
+          map('<leader>cl', '<cmd>LspInfo<cr>', '[L]sp Info')
 
           -- Formatting
           map('<leader>cf', function()
