@@ -237,7 +237,13 @@ return {
         biome = {},
 
         -- go
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+            },
+          },
+        },
         golangci_lint_ls = {},
 
         -- web
@@ -289,7 +295,7 @@ return {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'gofumpt', 'gofmt' },
+        -- go = { 'gofmt' }, -- managed by lsp gopls
         javascript = { 'biome' },
         typescript = { 'biome' },
         dart = { 'dart_format' },
