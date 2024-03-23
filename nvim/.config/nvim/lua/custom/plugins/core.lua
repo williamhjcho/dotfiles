@@ -311,6 +311,31 @@ return {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
+        filtered_items = {
+          -- If you set this to `true`, all "hide" just mean "dimmed out"
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+          hide_by_name = {
+            'node_modules',
+          },
+          hide_by_pattern = { -- uses glob style patterns
+            --"*.meta",
+            --"*/src/*/tsconfig.json",
+          },
+          -- remains visible even if other settings would normally hide it
+          always_show = {
+            '.envrc',
+          },
+          -- remains hidden even if visible is toggled to true, this overrides always_show
+          never_show = {
+            --".DS_Store",
+            --"thumbs.db"
+          },
+          never_show_by_pattern = { -- uses glob style patterns
+            --".null-ls_*",
+          },
+        },
       },
       window = {
         mappings = {
