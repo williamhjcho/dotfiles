@@ -11,6 +11,7 @@ return {
         'markdown',
         'vim',
         'vimdoc',
+        'templ',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -245,13 +246,26 @@ return {
           },
         },
         golangci_lint_ls = {},
+        templ = {},
 
         -- web
+        html = {
+          -- filetypes = { 'html', 'templ' },
+        },
+        htmx = {
+          -- filetypes = { 'html', 'templ' },
+        },
         tailwindcss = {},
 
         -- flutter/dart
         -- currently managed by flutter-tools
         -- dartls = {},
+      }
+
+      vim.filetype.add {
+        extension = {
+          templ = 'templ',
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -268,6 +282,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
         'hadolint',
+        'yamllint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
