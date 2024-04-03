@@ -282,7 +282,8 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
         'hadolint',
-        'yamllint',
+        -- 'yamllint',
+        -- 'yamlfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -317,6 +318,7 @@ return {
         dart = { 'dart_format' },
         python = { 'ruff_format' },
         toml = { 'taplo' },
+        -- yaml = { 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -335,7 +337,7 @@ return {
         sh = { 'shellcheck' },
         zsh = { 'zsh' },
         python = { 'ruff' },
-        yaml = { 'yamllint' },
+        -- yaml = { 'yamllint' },
         dockerfile = { 'hadolint' },
         typescript = { 'biomejs' },
         go = { 'golangcilint' },
