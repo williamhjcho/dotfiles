@@ -234,6 +234,10 @@ vim.keymap.set('v', '>', '>gv')
 -- lazy
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = '[L]azy' })
 
+-- file
+vim.keymap.set('n', '<leader>fs', '<cmd>w<cr><esc>', { desc = 'File [S]ave' })
+vim.keymap.set('n', '<leader>fS', '<cmd>wa<cr><esc>', { desc = 'File [S]ave All' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
