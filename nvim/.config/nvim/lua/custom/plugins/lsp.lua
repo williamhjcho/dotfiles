@@ -472,10 +472,10 @@ return {
   {
     'vim-test/vim-test',
     keys = {
-      { '<leader>ctt', '<cmd>TestNearest<cr>', desc = '[T]est Nearest' },
-      { '<leader>ctf', '<cmd>TestFile<cr>', desc = '[T]est [F]ile' },
-      { '<leader>cta', '<cmd>TestSuite<cr>', desc = '[T]est Suite' },
-      { '<leader>ctl', '<cmd>TestLast<cr>', desc = '[T]est [L]ast' },
+      { '<leader>tt', '<cmd>TestNearest<cr>', desc = '[T]est [T]his' },
+      { '<leader>tf', '<cmd>TestFile<cr>', desc = '[T]est [F]ile' },
+      { '<leader>ta', '<cmd>TestSuite<cr>', desc = '[T]est Suite' },
+      { '<leader>tl', '<cmd>TestLast<cr>', desc = '[T]est [L]ast' },
     },
   },
   {
