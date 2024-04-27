@@ -12,6 +12,7 @@ return {
         'vim',
         'vimdoc',
         'templ',
+        'go',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -221,6 +222,7 @@ return {
         bashls = {},
         dockerls = {},
         docker_compose_language_service = {},
+        terraformls = {},
 
         -- Python
         pyright = {},
@@ -319,6 +321,7 @@ return {
         dart = { 'dart_format' },
         python = { 'ruff_format' },
         toml = { 'taplo' },
+        terraform_fmt = { 'terraform' },
         -- yaml = { 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
