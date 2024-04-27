@@ -43,6 +43,7 @@
           - dockutil
           - koekeishiya/formulae/yabai
           - neofetch
+          - delve # go debugger
         homebrew_taps:
           - homebrew/cask-fonts
           - leoafarias/fvm
