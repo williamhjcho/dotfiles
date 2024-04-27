@@ -159,7 +159,7 @@ vim.opt.expandtab = true -- use spaces instead of tabs
 -- Adds visual columns
 vim.opt.colorcolumn = '80,120'
 
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 2
 
 -- allows loading on configuration files in repositories
 vim.o.exrc = true
