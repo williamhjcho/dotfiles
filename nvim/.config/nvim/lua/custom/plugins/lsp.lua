@@ -130,7 +130,11 @@ return {
 
           -- Formatting
           map('<leader>cf', function()
-            vim.lsp.buf.format { async = true }
+            -- default
+            -- vim.lsp.buf.format { async = true }
+            --
+            -- specific with conform
+            require('conform').format()
           end, '[C]ode [F]ormat')
 
           -- Opens a popup that displays documentation about the word under your cursor
