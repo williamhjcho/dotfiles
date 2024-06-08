@@ -1,2 +1,5 @@
-[all]
-127.0.0.1 ansible_connection=local
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local

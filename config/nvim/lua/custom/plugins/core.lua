@@ -180,6 +180,9 @@ return {
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
+
       -- Slightly advanced example of overriding default behavior and theme
       -- vim.keymap.set('n', '<leader>/', function()
       --   -- You can pass additional configuration to telescope to change theme, layout, etc.

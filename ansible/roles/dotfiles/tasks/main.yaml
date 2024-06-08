@@ -1,0 +1,41 @@
+- name: Setup dotfiles vars
+  set_fact:
+    dotfiles_home: "{{ dotfiles_home | mandatory }}"
+    dotfiles_dir: "{{ dotfiles_dir | default('$HOME') }}"
+    config_dir: "{{ config_dir | default('$HOME/.config') }}"
+
+- name: Create {{ config_dir }} directory
+  file:
+    path: "{{ config_dir }}"
+    state: directory
+
+- name: Find config files
+  find:
+    paths: "{{ dotfiles_home }}/config"
+    recurse: no
+    file_type: any
+    hidden: yes
+  register: find_configs
+
+- name: Setup {{ config_dir }}
+  when: find_configs.files | length > 0
+  loop: "{{ find_configs.files }}"
+  loop_control:
+    label: "{{ item.path }}/{{ item.path | basename }}"
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ config_dir }}/{{ item.path | basename }}"
+    state: link
+
+- name: zsh
+  file:
+    src: "{{ dotfiles_home }}/zsh/.zshrc"
+    dest: "{{ dotfiles_dir }}/.zshrc"
+    state: link
+
+- name: git
+  file:
+    src: "{{ dotfiles_home }}/git/.gitconfig"
+    dest: "{{ dotfiles_dir }}/.gitconfig"
+    state: link
+

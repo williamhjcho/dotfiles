@@ -1,21 +1,17 @@
----
-- name: Configure host
-  hosts: localhost
+- name: Setup MacOS Workstation
+  hosts: local
 
   vars:
-    # flags to disable any of the configurations
-    configure_homebrew: true
-    configure_dock: true
-    configure_terminal: true
-    configure_dotfiles: true
-    configure_macos: true
-    dotfiles_home: "$HOME/dotfiles"
+    dotfiles_home: "~/dotfiles"
 
   roles:
+    - role: dotfiles
+      tags: [dotfiles]
+    - role: zsh
+      tags: [zsh]
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
       tags: [homebrew]
-      when: configure_homebrew
       vars:
         homebrew_installed_packages:
           - git
@@ -39,11 +35,11 @@
           - pyenv-virtualenv
           - rbenv
           - tree
-          - fvm
           - dockutil
           - koekeishiya/formulae/yabai
           - neofetch
           - delve # go debugger
+          - fvm # flutter version manager
         homebrew_taps:
           - homebrew/cask-fonts
           - leoafarias/fvm
@@ -59,7 +55,6 @@
           - slack
           - spotify
     - role: geerlingguy.mac.dock
-      when: configure_dock
       tags: [dock]
       vars:
         dockitems_remove:
@@ -93,33 +88,11 @@
             pos: 4
 
   tasks:
-    - name: Configuring Terminal
-      import_tasks: tasks/terminal.yaml
-      when: configure_terminal
-      vars:
-        zsh_dir: "$HOME/.oh-my-zsh"
-      tags: [terminal]
-    - name: Configuring Dotfiles
-      import_tasks: tasks/dotfiles.yaml
-      when: configure_dotfiles
-      vars:
-        dotfiles_dir: "{{ dotfiles_home }}"
-        dotfiles_targets:
-          - git
-          - zsh
-          - nvim
-          - skhd
-          - yabai
-          - intellij
-          - tmux
-          - alacritty
-      tags: [dotfiles]
     - name: Setup macos defaults
-      when: configure_macos
       become: true
       shell:
         # when becoming sudo, $HOME changes to /var/root
         chdir: "../"
-        cmd: ./macos/osx.sh --no-restart
+        cmd: "./macos/osx.sh --no-restart"
       changed_when: false
       tags: [macos]

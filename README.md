@@ -25,7 +25,7 @@ From inside `ansible/` dir
 ansible-galaxy install -r requirements.yaml
 
 # run the playbook
-ansible-playbook main.yaml --ask-become-pass (--verbose) (--tags=)
+./install.sh
 ```
 
 ## 4. Manual settings

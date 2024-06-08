@@ -1,14 +1,8 @@
 # task assumes zsh is installed elsewhere, such as with brew
----
 - name: Setup vars
   set_fact:
     zsh_repo: "{{ zsh_repo | default('https://github.com/ohmyzsh/ohmyzsh.git') }}"
-    zsh_dir: "{{ zsh_dir | default('~/.oh-my-zsh') }}"
-- name: Print vars
-  debug:
-    msg: |
-      zsh_repo={{ zsh_repo }}
-      zsh_dir={{ zsh_dir }}
+    zsh_dir: "{{ zsh_dir | default('$HOME/.oh-my-zsh') }}"
 
 # Install dependencies
 - name: Install Oh My Zsh
@@ -27,12 +21,14 @@
   command: which zsh
   register: zsh_path
   changed_when: false
+
 - name: Check if zsh is in /etc/shells
   command: grep -Fxq "{{ zsh_path.stdout }}" /etc/shells
   register: zsh_in_shells
   changed_when: false
   failed_when: false
   ignore_errors: true
+
 - name: Add zsh to /etc/shells
   become: true
   lineinfile:
@@ -40,10 +36,12 @@
     line: "{{ zsh_path.stdout }}"
     create: true
   when: zsh_in_shells.rc != 0
+
 - name: Check current shell
   command: echo $SHELL
   register: current_shell
   changed_when: false
+
 - name: Change default shell to zsh
   become: true
   command: chsh -s "{{ zsh_path.stdout }}"
