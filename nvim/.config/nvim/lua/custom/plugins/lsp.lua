@@ -223,6 +223,7 @@ return {
           },
         },
         shellcheck = {},
+        shfmt = {},
         bashls = {},
         dockerls = {},
         docker_compose_language_service = {},
@@ -319,6 +320,7 @@ return {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
+        sh = { 'shfmt' },
         -- go = { 'gofmt' }, -- managed by lsp gopls
         javascript = { 'biome' },
         typescript = { 'biome' },
