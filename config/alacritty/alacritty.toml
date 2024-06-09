@@ -4,8 +4,7 @@
 # https://sunnnychan.github.io/cheatsheet/linux/config/alacritty.yml.html
 import = [
   # uncomment the color scheme: 
-  "~/.config/alacritty/catppuccin-mocha.toml",
-  # "~/.config/alacritty/tokyo_night.toml",
+  "~/.config/alacritty/tokyonight_moon.toml",
 ]
 
 live_config_reload = true
@@ -16,22 +15,22 @@ working_directory = "None"
 TERM = "xterm-256color"
 
 [window]
-title = "Alacritty"
+title = "Alacritty whjc"
 dimensions = { columns = 140, lines = 80 }
 padding = { x = 6, y = 6 }
-opacity = 0.75
-blur = true
-startup_mode = "Windowed"
-decorations = "Full"
+opacity = 0.9
+blur = false
+startup_mode = "Fullscreen"
+decorations = "full"
 
 [scrolling]
 history = 10000
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
-bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+normal = { family = "FiraMono Nerd Font Mono", style = "Regular" }
+bold = { family = "FiraMono Nerd Font Mono", style = "Bold" }
+italic = { family = "FiraMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "FiraMono Nerd Font Mono", style = "Bold Italic" }
 
 size = 12.0
 offset = { x = 1, y = 1 }
@@ -43,3 +42,12 @@ unfocused_hollow = true
 
 [mouse]
 hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+  # { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  # { key = "L", mods = "Control|Shift", chars = "l" },
+]
