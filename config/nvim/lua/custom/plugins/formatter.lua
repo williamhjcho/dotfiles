@@ -1,6 +1,16 @@
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
+    lazy = false,
+    keys = {
+      {
+        '<leader>cf',
+        function()
+          require('conform').format { async = true, lsp_fallback = true }
+        end,
+        '[C]ode [F]ormat',
+      },
+    },
     opts = {
       notify_on_error = false,
       format_on_save = {
@@ -10,7 +20,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         sh = { 'shfmt' },
-        -- go = { 'gofmt' }, -- managed by lsp gopls
+        go = { 'gofumpt' },
         javascript = { 'biome' },
         typescript = { 'biome' },
         dart = { 'dart_format' },

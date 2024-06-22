@@ -107,15 +107,6 @@ return {
           -- shows the LSP info
           map('<leader>cl', '<cmd>LspInfo<cr>', '[L]sp Info')
 
-          -- Formatting
-          map('<leader>cf', function()
-            -- default
-            -- vim.lsp.buf.format { async = true }
-            --
-            -- specific with conform
-            require('conform').format()
-          end, '[C]ode [F]ormat')
-
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -232,6 +223,7 @@ return {
             },
           },
         },
+        gofumpt = {},
         golangci_lint_ls = {},
         templ = {},
 
