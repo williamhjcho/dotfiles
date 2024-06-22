@@ -275,6 +275,39 @@ return {
         end,
         desc = '[B]uffer [D]elete (Force)',
       },
+      {
+        '<leader>bo',
+        function()
+          -- deletes all other buffers, except the current one
+          -- if they have been modified, they will persist
+          local buffers = vim.api.nvim_list_bufs()
+          local current = vim.api.nvim_get_current_buf()
+          for _, buffer in ipairs(buffers) do
+            if buffer ~= current and vim.api.nvim_buf_is_loaded(buffer) then
+              local is_modified = vim.api.nvim_get_option_value('modified', { buf = buffer })
+              if not is_modified then
+                require('mini.bufremove').delete(buffer)
+              end
+            end
+          end
+        end,
+        desc = '[B]uffer Delete [O]thers',
+      },
+      {
+        '<leader>bO',
+        function()
+          -- deletes all other buffers, except the current one
+          -- if they have been modified, they will persist
+          local buffers = vim.api.nvim_list_bufs()
+          local current = vim.api.nvim_get_current_buf()
+          for _, buffer in ipairs(buffers) do
+            if buffer ~= current and vim.api.nvim_buf_is_loaded(buffer) then
+              require('mini.bufremove').delete(buffer, true)
+            end
+          end
+        end,
+        desc = '[B]uffer Delete [O]thers (Force)',
+      },
     },
   },
   {
