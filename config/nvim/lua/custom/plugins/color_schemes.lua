@@ -8,6 +8,7 @@ return {
     opts = {
       -- storm, moon, night, day
       style = 'moon',
+      light_style = 'day',
       transparent = true,
       styles = {
         comments = { italic = true },
@@ -21,6 +22,7 @@ return {
       on_colors = function(colors)
         colors.comment = '#7c86bf'
       end,
+      -- on_highlights = function(highlights, colors) end,
     },
     init = function()
       vim.cmd.colorscheme 'tokyonight'
