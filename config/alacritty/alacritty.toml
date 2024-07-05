@@ -18,7 +18,7 @@ TERM = "xterm-256color"
 title = "Alacritty whjc"
 dimensions = { columns = 140, lines = 80 }
 padding = { x = 6, y = 6 }
-opacity = 0.9
+opacity = 0.92
 blur = false
 startup_mode = "Fullscreen"
 decorations = "full"
