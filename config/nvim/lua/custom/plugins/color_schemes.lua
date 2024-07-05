@@ -3,7 +3,8 @@
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     opts = {
       -- storm, moon, night, day
       style = 'moon',
@@ -17,10 +18,13 @@ return {
         sidebars = 'dark',
         floats = 'transparent',
       },
+      on_colors = function(colors)
+        colors.comment = '#7c86bf'
+      end,
     },
-    -- init = function()
-    --   vim.cmd.colorscheme 'tokyonight'
-    -- end,
+    init = function()
+      vim.cmd.colorscheme 'tokyonight'
+    end,
   },
   {
     'rebelot/kanagawa.nvim',
@@ -33,7 +37,7 @@ return {
       commentStyle = { italic = true },
     },
     init = function()
-      vim.cmd.colorscheme 'kanagawa'
+      -- vim.cmd.colorscheme 'kanagawa'
     end,
   },
 }
