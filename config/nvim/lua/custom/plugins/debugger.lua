@@ -30,8 +30,8 @@ return {
       vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, { desc = '[D]ebugger [T]oggle Breakpoint' })
       -- vim.keymap.set('n', '<leader>dT', dap.set_breakpoint, { desc = '[D]ebugger Se[T] Breakpoint' })
 
-      require('which-key').register {
-        ['<leader>ds'] = { name = '[D]ebugger [S]tep', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>ds', group = '[D]ebugger [S]tep' },
       }
       vim.keymap.set('n', '<leader>dso', dap.step_over, { desc = '[D]ebugger [S]tep [O]ver' })
       vim.keymap.set('n', '<F4>', dap.step_over, { desc = '[D]ebugger [S]tep [O]ver' })
