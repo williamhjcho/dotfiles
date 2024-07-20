@@ -15,6 +15,7 @@
     recurse: no
     file_type: any
     hidden: yes
+    patterns: "*[!.old]"
   register: find_configs
 
 - name: Setup {{ config_dir }}
@@ -38,4 +39,3 @@
     src: "{{ dotfiles_home }}/git/.gitconfig"
     dest: "{{ dotfiles_dir }}/.gitconfig"
     state: link
-

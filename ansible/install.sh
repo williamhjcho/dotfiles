@@ -3,12 +3,12 @@
 set -e
 
 function have {
-	command -v "$1" &>/dev/null
+  command -v "$1" &>/dev/null
 }
 
 have ansible || {
-	echo "Ansible not installed"
-	exit 1
+  echo "Ansible not installed"
+  exit 1
 }
 
 ansible-playbook ./macos.yaml \
