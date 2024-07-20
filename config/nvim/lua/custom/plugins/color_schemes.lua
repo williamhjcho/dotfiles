@@ -24,12 +24,13 @@ return {
       end,
       -- on_highlights = function(highlights, colors) end,
     },
-    init = function()
+    config = function()
       vim.cmd.colorscheme 'tokyonight'
     end,
   },
   {
     'rebelot/kanagawa.nvim',
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
@@ -38,8 +39,8 @@ return {
       transparent = true,
       commentStyle = { italic = true },
     },
-    init = function()
-      -- vim.cmd.colorscheme 'kanagawa'
+    config = function()
+      vim.cmd.colorscheme 'kanagawa'
     end,
   },
 }
