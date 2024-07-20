@@ -14,6 +14,7 @@
       tags: [homebrew]
       vars:
         homebrew_installed_packages:
+          # general
           - git
           - zsh
           - zsh-syntax-highlighting
@@ -25,16 +26,19 @@
           - tmux
           - ripgrep
           - fzf
-          - nvim
           - gh
           - stow
-          - lazygit
           - openssl
+          - tree
+          # nvim
+          - nvim
+          - luarocks
+          # programming
+          - lazygit
           - direnv
           - pyenv
           - pyenv-virtualenv
           - rbenv
-          - tree
           - dockutil
           - koekeishiya/formulae/yabai
           - neofetch
