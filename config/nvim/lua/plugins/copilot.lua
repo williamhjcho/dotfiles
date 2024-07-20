@@ -1,0 +1,34 @@
+return {
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   lazy = false,
+  -- },
+  -- {
+  --   "github/copilot.vim",
+  --   enabled = false,
+  --   lazy = false,
+  --   dependencies = {
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = function()
+  --     vim.g.copilot_no_tab_map = true
+  --     vim.g.copilot_no_maps = true
+  --   end,
+  --   ---@type LazyKeysSpec[]
+  --   keys = {
+  --     {
+  --       "<C-L>",
+  --       function()
+  --         vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+  --       end,
+  --       mode = { "i" },
+  --       desc = "Copilot Accept L",
+  --       replace_keycodes = true,
+  --       nowait = true,
+  --       silent = true,
+  --       expr = true,
+  --       noremap = true,
+  --     },
+  --   },
+  -- },
+}

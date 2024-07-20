@@ -43,9 +43,51 @@ return {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  {
+    'williamboman/mason.nvim',
+    config = true,
+    cmd ="Mason",
+    build = ":MasonUpdate",
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+    },
+    config = function()
+      -- require('mason').setup()
+
+      --   local ensure_installed = vim.tbl_keys(servers or {})
+      --   vim.list_extend(ensure_installed, {
+      --     'stylua', -- Used to format lua code
+      --     'hadolint',
+      --     -- 'yamllint',
+      --     -- 'yamlfmt',
+      --   })
+      --   require('mason-tool-installer').setup {
+      --     ensure_installed = ensure_installed,
+      --   }
+      --
+        require('mason-lspconfig').setup {
+          handlers = {
+            -- 'gopls'
+      --       function(server_name)
+      --         local server = servers[server_name] or {}
+      --         -- This handles overriding only values explicitly passed
+      --         -- by the server configuration above. Useful when disabling
+      --         -- certain features of an LSP (for example, turning off formatting for tsserver)
+      --         server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+      --         require('lspconfig')[server_name].setup(server)
+      --       end,
+          },
+        }
+    end,
+  },
 
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    enabled = false,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
