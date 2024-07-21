@@ -1,58 +1,59 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, {
+        -- general
         "bash",
-        "c",
         "git_config",
         "git_rebase",
         "gitattributes",
         "gitcommit",
         "gitignore",
-        "go",
-        "gomod",
-        "gosum",
-        "gowork",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
         "lua",
         "luadoc",
         "luap",
         "markdown",
         "markdown_inline",
-        "python",
-        "python",
         "query",
         "regex",
-        "templ",
         "toml",
-        "tsx",
-        "typescript",
         "vim",
         "vimdoc",
         "xml",
         "yaml",
-      },
-      auto_install = true,
-    },
+        -- go
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "templ",
+        -- web / js
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "tsx",
+        "typescript",
+        -- python
+        "python",
+      })
+      opts.auto_install = true
+    end,
   },
   {
     "mason.nvim",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
         "shellcheck",
-        "shfmt",
-      },
-    },
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
+    opts = function(_, opts)
+      vim.list_extend(opts.servers, {
         -- general
         jsonls = {
           on_new_config = function(new_config)
@@ -134,6 +135,7 @@ return {
         biome = {},
 
         -- go
+        -- managed by plugin lazyvim.plugins.extras.lang.go
         -- gopls = {
         --   settings = {
         --     gopls = {
@@ -157,8 +159,8 @@ return {
         -- flutter/dart
         -- currently managed by flutter-tools
         -- dartls = {},
-      },
-      setup = {
+      })
+      vim.list_extend(opts.setup, {
         yamlls = function()
           -- Neovim < 0.10 does not have dynamic registration for formatting
           if vim.fn.has("nvim-0.10") == 0 then
@@ -167,32 +169,13 @@ return {
             end, "yamlls")
           end
         end,
-        -- gopls = function(_, opts)
-        --   -- workaround for gopls not supporting semanticTokensProvider
-        --   -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
-        --   LazyVim.lsp.on_attach(function(client, _)
-        --     if not client.server_capabilities.semanticTokensProvider then
-        --       local semantic = client.config.capabilities.textDocument.semanticTokens
-        --       client.server_capabilities.semanticTokensProvider = {
-        --         full = true,
-        --         legend = {
-        --           tokenTypes = semantic.tokenTypes,
-        --           tokenModifiers = semantic.tokenModifiers,
-        --         },
-        --         range = true,
-        --       }
-        --     end
-        --   end, "gopls")
-        --   -- end workaround
-        -- end,
-        -- TODO: setup python
-      },
-    },
+      })
 
-    -- vim.filetype.add({
-    --   extension = {
-    --     templ = "templ",
-    --   },
-    -- })
+      vim.filetype.add({
+        extension = {
+          templ = "templ",
+        },
+      })
+    end,
   },
 }

@@ -20,7 +20,6 @@ return {
       on_colors = function(colors)
         colors.comment = "#7c86bf"
       end,
-      -- on_highlights = function(highlights, colors) end,
     },
   },
 }
