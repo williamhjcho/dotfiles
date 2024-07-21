@@ -1,8 +1,8 @@
 return {
   {
     "folke/tokyonight.nvim",
-    -- lazy = false,
-    -- priority = 1000,
+    lazy = false,
+    priority = 1000,
     opts = {
       -- storm, moon, night, day
       style = "moon",
@@ -22,23 +22,5 @@ return {
       end,
       -- on_highlights = function(highlights, colors) end,
     },
-    -- config = function()
-    --   vim.cmd.colorscheme("tokyonight")
-    -- end,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      -- variants: wave, dragon, lotus
-      theme = "wave",
-      transparent = true,
-      commentStyle = { italic = true },
-    },
-    config = function()
-      vim.cmd.colorscheme("kanagawa")
-    end,
   },
 }
