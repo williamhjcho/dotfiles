@@ -25,14 +25,12 @@ return {
         toml = { "taplo" },
         javascript = { "biome" },
         typescript = { "biome" },
+        python = { "ruff_format" },
 
         -- managed by the lazyvim.plugins.extras.lang.go
         -- go = { "gofumpt", "goimports" },
         -- BUG: https://github.com/stevearc/conform.nvim/issues/387
         go = {},
-        --
-        -- managed by the lazyvim.plugins.extras.lang.python
-        -- python = { "ruff_format" },
       },
       formatters = {},
     },

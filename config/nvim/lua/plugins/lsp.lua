@@ -121,8 +121,8 @@ return {
         taplo = {},
 
         -- Python
-        pyright = {},
-        ruff_lsp = {},
+        -- pyright = {},
+        -- ruff_lsp = {},
         -- ruff_lsp = function()
         --   require("lazyvim.util").lsp.on_attach(function(client, _)
         --     if client.name == "ruff_lsp" then
