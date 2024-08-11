@@ -151,10 +151,10 @@ return {
 
         -- web
         html = {
-          -- filetypes = { 'html', 'templ' },
+          filetypes = { "html", "templ" },
         },
         htmx = {
-          -- filetypes = { 'html', 'templ' },
+          filetypes = { "html", "templ" },
         },
         tailwindcss = {},
 

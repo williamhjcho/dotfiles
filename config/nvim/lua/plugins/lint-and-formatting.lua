@@ -31,6 +31,7 @@ return {
         -- go = { "gofumpt", "goimports" },
         -- BUG: https://github.com/stevearc/conform.nvim/issues/387
         go = {},
+        templ = {},
       },
       formatters = {},
     },
