@@ -138,13 +138,21 @@ return {
 
         -- go
         -- managed by plugin lazyvim.plugins.extras.lang.go
-        -- gopls = {
-        --   settings = {
-        --     gopls = {
-        --       gofumpt = true,
-        --     },
-        --   },
-        -- },
+        gopls = {
+          -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+          settings = {
+            gopls = {
+              gofumpt = true,
+              analyses = {
+                fieldalignment = true,
+                nilness = true,
+                unusedparams = true,
+                unusedwrite = true,
+                useany = true,
+              },
+            },
+          },
+        },
         -- gofumpt = {},
         -- golangci_lint_ls = {},
         templ = {},
