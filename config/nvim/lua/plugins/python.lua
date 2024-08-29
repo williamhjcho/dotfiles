@@ -1,4 +1,8 @@
 return {
+  {
+    "mason.nvim",
+    opts = { ensure_installed = { "debugpy" } },
+  },
   -- {
   --   "linux-cultist/venv-selector.nvim",
   --   dependencies = {
