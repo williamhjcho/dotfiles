@@ -78,6 +78,10 @@ Post setup
 - Install latest node `nvm install node`
 - Install latest python `pyenv install 3.12` (also re-setup ansible dependencies, i.e. pip)
 
+## 5. Everyday usage
+
+Initialize tmux with pre-configured session: ./dotfiles/bin/tmux.sh
+
 [ansible-install]: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 [dotfiles-repo]: https://github.com/williamhjcho/dotfiles
 [ssh-setup]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
