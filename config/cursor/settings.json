@@ -1,16 +1,23 @@
 {
     "window.commandCenter": 1,
     "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
     "vim.leader": "<space>",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.useCtrlKeys": true,
     "vim.handleKeys": {
+        "<space>": true,
         "<C-d>": true,
+        "<C-u>": true,
         "<C-s>": false,
         "<C-z>": false
     },
-    // "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-    "vim.useSystemClipboard": true,
-    "vim.enableNeovim": true,
-    "vim.neovimUseConfigFile": false,
+    "vim.enableNeovim": false,
+    "vim.normalModeKeyBindingsNonRecursive": [],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -46,5 +53,27 @@
                 "editor.action.outdentLines"
             ]
         }
-    ]
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                "<space>"
+            ]
+        }
+    ],
+    "vim.commandLineModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                "<space>"
+            ]
+        }
+    ],
+    "terminal.integrated.sendKeybindingsToShell": false,
+    "explorer.confirmDragAndDrop": false
 }
