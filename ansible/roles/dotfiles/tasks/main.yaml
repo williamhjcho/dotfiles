@@ -39,3 +39,15 @@
     src: "{{ dotfiles_home }}/git/.gitconfig"
     dest: "{{ dotfiles_dir }}/.gitconfig"
     state: link
+
+- name: cursor (macos)
+  when: ansible_facts['os_family'] == "Darwin"
+  loop:
+    - { src: "{{ config_dir }}/cursor/settings.json", dest: "~/Library/Application Support/Cursor/User/settings.json" }
+    - { src: "{{ config_dir }}/cursor/keybindings.json", dest: "~/Library/Application Support/Cursor/User/keybindings.json" }
+  loop_control:
+    label: "{{ item.dest }}"
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link

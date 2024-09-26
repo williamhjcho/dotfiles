@@ -12,8 +12,8 @@ have ansible || {
 }
 
 ansible-playbook ./macos.yaml \
-	--inventory ./inventory \
-	--ask-become-pass
+  --inventory ./inventory \
+  --ask-become-pass
 
 # add optional --tags to run specific sections, e.g.
 # --tags "dotfiles,zsh"
