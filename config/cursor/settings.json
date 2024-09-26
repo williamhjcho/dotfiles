@@ -1,0 +1,50 @@
+{
+    "window.commandCenter": 1,
+    "editor.formatOnSave": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    // "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+    "vim.useSystemClipboard": true,
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": false,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ]
+}
