@@ -38,6 +38,8 @@ return {
         "typescript",
         -- python
         "python",
+        -- dart/flutter
+        "dart",
       })
       opts.auto_install = true
     end,

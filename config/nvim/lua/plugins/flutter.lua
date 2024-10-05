@@ -8,18 +8,17 @@ return {
       "stevearc/dressing.nvim",
       "neovim/nvim-lspconfig",
     },
-    opts = function()
-      local opts = {
-        closing_tags = { enabled = false },
-        decorations = {
-          statusline = {
-            project_config = true,
-            device = true,
-          },
+    opts = {
+      closing_tags = { enabled = false },
+      decorations = {
+        statusline = {
+          project_config = true,
+          device = true,
         },
-      }
+      },
+    },
+    config = function()
       require("telescope").load_extension("flutter")
-      return opts
     end,
     keys = {
       {
