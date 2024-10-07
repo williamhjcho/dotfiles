@@ -24,10 +24,15 @@ if [ $? != 0 ]; then
   tmux send-keys -t $SESH:iac "nvim ." C-m
   tmux split-window -t $SESH:iac -h -d
 
-  tmux new-window -t $SESH -n "porfin-ai"
-  tmux send-keys -t $SESH:porfin-ai "cd ~/dev/porfin/crew" C-m
-  tmux send-keys -t $SESH:porfin-ai "nvim ." C-m
-  tmux split-window -t $SESH:porfin-ai -h -d
+  # tmux new-window -t $SESH -n "porfin-ai"
+  # tmux send-keys -t $SESH:porfin-ai "cd ~/dev/porfin/crew" C-m
+  # tmux send-keys -t $SESH:porfin-ai "nvim ." C-m
+  # tmux split-window -t $SESH:porfin-ai -h -d
+
+  tmux new-window -t $SESH -n "vs"
+  tmux send-keys -t $SESH:vs "cd ~/dev/williamhjcho/vs/" C-m
+  tmux send-keys -t $SESH:vs "nvim ." C-m
+  tmux split-window -t $SESH:vs -h -d
 
   tmux select-window -t $SESH:dotfiles
 fi
