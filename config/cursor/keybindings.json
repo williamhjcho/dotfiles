@@ -64,27 +64,37 @@
     {
         "key": "space c a",
         "command": "problems.action.showQuickFixes",
-        "when": "problemFocus && vim.mode != 'Insert'"
+        "when": "problemFocus && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "space c a",
         "command": "workbench.action.quickFixProblem",
-        "when": "problemFocus && vim.mode != 'Insert'"
+        "when": "problemFocus && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "space c a",
         "command": "editor.action.sourceAction",
-        "when": "editorTextFocus && !editorReadonly && vim.mode != 'Insert'"
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "space c a",
         "command": "editor.action.organizeImports",
-        "when": "editorTextFocus && !editorReadonly && vim.mode != 'Insert'"
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/ && vim.active && vim.mode != 'Insert'"
     },
     {
         "key": "space c a",
         "command": "editor.action.refactor",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vim.mode != 'Insert'"
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
+    },
+    {
+        "key": "space c o",
+        "command": "editor.action.organizeImports",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
+    },
+    {
+        "key": "space c r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
     },
     // leader key 
     {
@@ -124,8 +134,13 @@
     },
     {
         "key": "space f e",
-        "command": "workbench.action.toggleSidebarVisibility",
+        "command": "revealInExplorer",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'",
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "sideBarFocus || filesExplorerFocus",
     },
     // lazygit
     {
