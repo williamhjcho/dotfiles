@@ -116,3 +116,6 @@ if type brew &>/dev/null; then
     source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
+
+# secrets
+[ -f ~/.env.personal ] && source ~/.env.personal

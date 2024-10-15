@@ -30,6 +30,10 @@ ansible-galaxy install -r requirements.yaml
 
 ## 4. Manual settings
 
+Secrets
+
+- Create/copy the `.env.personal` secrets file into `~/.env.personal`
+
 System Preferences
 
 - Keyboard > Modifier Keys > Caps to Left Ctrl
