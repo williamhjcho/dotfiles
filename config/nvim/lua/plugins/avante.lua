@@ -40,6 +40,12 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
+      mappings = {
+        submit = {
+          normal = "<CR>",
+          insert = "<C-CR>",
+        },
+      },
     },
     config = function(_, opts)
       require("avante").setup(opts)
