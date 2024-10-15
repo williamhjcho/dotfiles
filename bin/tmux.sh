@@ -29,6 +29,11 @@ if [ $? != 0 ]; then
   # tmux send-keys -t $SESH:porfin-ai "nvim ." C-m
   # tmux split-window -t $SESH:porfin-ai -h -d
 
+  tmux new-window -t $SESH -n "porfin-cloud"
+  tmux send-keys -t $SESH:porfin-cloud "cd ~/dev/porfin/porfin-cloud" C-m
+  tmux send-keys -t $SESH:porfin-cloud "nvim ." C-m
+  tmux split-window -t $SESH:porfin-cloud -h -d
+
   tmux new-window -t $SESH -n "vs"
   tmux send-keys -t $SESH:vs "cd ~/dev/williamhjcho/vs/" C-m
   tmux send-keys -t $SESH:vs "nvim ." C-m
