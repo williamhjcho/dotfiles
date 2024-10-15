@@ -21,6 +21,7 @@ return {
         dart = { "dart_format" },
         lua = { "stylua" },
         sh = { "shfmt" },
+        zsh = { "beautysh" },
         terraform_fmt = { "terraform" },
         toml = { "taplo" },
         javascript = { "biome" },

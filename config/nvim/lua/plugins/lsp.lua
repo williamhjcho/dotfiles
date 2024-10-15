@@ -51,6 +51,7 @@ return {
         "shellcheck",
         "json-lsp",
         "biome",
+        "beautysh",
       })
     end,
   },
