@@ -52,8 +52,16 @@ return {
         "json-lsp",
         "biome",
         "beautysh",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "yaml-language-server",
       })
     end,
+  },
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
   {
     "neovim/nvim-lspconfig",
@@ -61,7 +69,9 @@ return {
       opts.inlay_hints = { enabled = false }
 
       vim.list_extend(opts.servers, {
-        -- general
+        bashls = {},
+
+        -- json
         jsonls = {
           on_new_config = function(new_config)
             new_config.settings.json.schemas = new_config.settings.json.schemas or {}
@@ -74,7 +84,6 @@ return {
             },
           },
         },
-        bashls = {},
 
         -- docker
         dockerls = {},
@@ -113,11 +122,10 @@ return {
                 enable = true,
               },
               validate = true,
+              -- Must disable built-in schemaStore support to use
+              -- schemas from SchemaStore.nvim plugin
               schemaStore = {
-                -- Must disable built-in schemaStore support to use
-                -- schemas from SchemaStore.nvim plugin
                 enable = false,
-                -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
                 url = "",
               },
             },
