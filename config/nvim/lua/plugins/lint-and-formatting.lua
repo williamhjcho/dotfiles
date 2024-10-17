@@ -6,7 +6,7 @@ return {
         sh = { "shellcheck" },
         zsh = { "zsh" },
         python = { "ruff" },
-        yaml = { "yamllint" },
+        -- yaml = { "yamllint" },
         dockerfile = { "hadolint" },
         typescript = { "biomejs" },
         go = { "golangcilint" },
