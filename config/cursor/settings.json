@@ -112,6 +112,7 @@
         // strings. This setting will prevent that.
         "editor.wordBasedSuggestions": "off",
     },
+    "extensions.ignoreRecommendations": true,
     // "vim.insertModeKeyBindingsNonRecursive": [],
     // "vim.commandLineModeKeyBindingsNonRecursive": [],
     // "terminal.integrated.sendKeybindingsToShell": true,
