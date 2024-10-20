@@ -34,6 +34,7 @@ return {
         "jsdoc",
         "json",
         "jsonc",
+        "json5",
         "tsx",
         "typescript",
         -- python
@@ -55,6 +56,7 @@ return {
         "typescript-language-server",
         "tailwindcss-language-server",
         "yaml-language-server",
+        "hadolint",
       })
     end,
   },
