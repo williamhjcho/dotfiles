@@ -148,7 +148,8 @@ return {
         -- end,
 
         -- js/ts
-        tsserver = {},
+        ---- tsserver managed by extra plugin
+        -- tsserver = {},
         biome = {},
 
         -- go
