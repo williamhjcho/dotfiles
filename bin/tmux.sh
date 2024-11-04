@@ -23,8 +23,7 @@ if [ $? != 0 ]; then
   tmux new-window -t $SESH -n "porfin-cloud" -c "$PORFIN/porfin-cloud"
   tmux split-window -t $SESH:porfin-cloud -h -d -c "$PORFIN/porfin-cloud"
 
-  tmux new-window -t $SESH -n "vs" -c "$WHJC/vs/"
-  tmux split-window -t $SESH:vs -h -d -c "$WHJC/vs/"
+  tmux new-window -t $SESH -n "vs" -c "$WHJC/vs"
 
   tmux select-window -t $SESH:dotfiles
 fi
