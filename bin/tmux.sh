@@ -1,43 +1,30 @@
 #!/bin/bash
 
 SESH="whjc"
+PORFIN="$HOME/dev/porfin"
+WHJC="$HOME/dev/williamhjcho"
 
 tmux has-session -t $SESH 2>/dev/null
 
 if [ $? != 0 ]; then
-  tmux new-session -d -s $SESH -n "dotfiles"
-  tmux send-keys -t $SESH:dotfiles "cd ~/dotfiles" C-m
+  tmux new-session -d -s $SESH -n "dotfiles" -c "$HOME/dotfiles"
   tmux send-keys -t $SESH:dotfiles "nvim ." C-m
+  tmux split-window -t $SESH:dotfiles -h -d -c "$HOME/dotfiles"
 
-  tmux new-window -t $SESH -n "backend"
-  tmux send-keys -t $SESH:backend "cd ~/dev/porfin/backend" C-m
-  tmux send-keys -t $SESH:backend "nvim ." C-m
-  tmux split-window -t $SESH:backend -h -d
+  tmux new-window -t $SESH -n "backend" -c "$PORFIN/backend"
+  tmux split-window -t $SESH:backend -h -d -c "$PORFIN/backend"
 
-  tmux new-window -t $SESH -n "functions"
-  tmux send-keys -t $SESH:functions "cd ~/dev/porfin/cloud-functions" C-m
-  tmux send-keys -t $SESH:functions "nvim ." C-m
-  tmux split-window -t $SESH:functions -h -d
+  tmux new-window -t $SESH -n "functions" -c "$PORFIN/cloud-functions"
+  tmux split-window -t $SESH:functions -h -d -c "$PORFIN/cloud-functions"
 
-  tmux new-window -t $SESH -n "iac"
-  tmux send-keys -t $SESH:iac "cd ~/dev/porfin/iac" C-m
-  tmux send-keys -t $SESH:iac "nvim ." C-m
-  tmux split-window -t $SESH:iac -h -d
+  tmux new-window -t $SESH -n "iac" -c "$PORFIN/iac"
+  tmux split-window -t $SESH:iac -h -d -c "$PORFIN/iac"
 
-  # tmux new-window -t $SESH -n "porfin-ai"
-  # tmux send-keys -t $SESH:porfin-ai "cd ~/dev/porfin/crew" C-m
-  # tmux send-keys -t $SESH:porfin-ai "nvim ." C-m
-  # tmux split-window -t $SESH:porfin-ai -h -d
+  tmux new-window -t $SESH -n "porfin-cloud" -c "$PORFIN/porfin-cloud"
+  tmux split-window -t $SESH:porfin-cloud -h -d -c "$PORFIN/porfin-cloud"
 
-  tmux new-window -t $SESH -n "porfin-cloud"
-  tmux send-keys -t $SESH:porfin-cloud "cd ~/dev/porfin/porfin-cloud" C-m
-  tmux send-keys -t $SESH:porfin-cloud "nvim ." C-m
-  tmux split-window -t $SESH:porfin-cloud -h -d
-
-  tmux new-window -t $SESH -n "vs"
-  tmux send-keys -t $SESH:vs "cd ~/dev/williamhjcho/vs/" C-m
-  tmux send-keys -t $SESH:vs "nvim ." C-m
-  tmux split-window -t $SESH:vs -h -d
+  tmux new-window -t $SESH -n "vs" -c "$WHJC/vs/"
+  tmux split-window -t $SESH:vs -h -d -c "$WHJC/vs/"
 
   tmux select-window -t $SESH:dotfiles
 fi
