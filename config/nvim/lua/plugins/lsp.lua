@@ -22,8 +22,6 @@ return {
         "vimdoc",
         "xml",
         "yaml",
-        -- python
-        "python",
         -- dart/flutter
         "dart",
       })
@@ -117,17 +115,6 @@ return {
         },
         taplo = {},
 
-        -- Python
-        -- pyright = {},
-        -- ruff_lsp = {},
-        -- ruff_lsp = function()
-        --   require("lazyvim.util").lsp.on_attach(function(client, _)
-        --     if client.name == "ruff_lsp" then
-        --       -- Disable hover in favor of Pyright
-        --       client.server_capabilities.hoverProvider = false
-        --     end
-        --   end)
-        -- end,
         -- flutter/dart
         -- currently managed by flutter-tools
         -- dartls = {},

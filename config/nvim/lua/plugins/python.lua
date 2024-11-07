@@ -1,27 +1,42 @@
 return {
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, {
+        "python",
+      })
+      opts.auto_install = true
+    end,
+  },
   {
     "mason.nvim",
-    opts = { ensure_installed = { "debugpy" } },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "pyright",
+        "debugpy",
+        "ruff",
+        "ruff-lsp",
+      })
+    end,
   },
-  -- {
-  --   "linux-cultist/venv-selector.nvim",
-  --   dependencies = {
-  --     "neovim/nvim-lspconfig",
-  --     "nvim-telescope/telescope.nvim",
-  --     "mfussenegger/nvim-dap-python",
-  --   },
-  --   branch = "regexp",
-  --   opts = {
-  --     -- Your options go here
-  --     -- name = "venv",
-  --     auto_refresh = true,
-  --   },
-  --   event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-  --   keys = {
-  --     -- Keymap to open VenvSelector to pick a venv.
-  --     { "<leader>pvs", "<cmd>VenvSelect<cr>" },
-  --     -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-  --     -- { '<leader>pvc', '<cmd>VenvSelectCached<cr>' },
-  --   },
-  -- },
+  {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      vim.list_extend(opts.servers, {})
+      vim.list_extend(opts.setup, {})
+    end,
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "nvim-neotest/neotest-python",
+    },
+    opts = {
+      adapters = {
+        ["neotest-python"] = {},
+      },
+    },
+  },
 }
