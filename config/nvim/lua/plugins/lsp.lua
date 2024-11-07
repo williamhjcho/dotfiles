@@ -22,15 +22,6 @@ return {
         "vimdoc",
         "xml",
         "yaml",
-        -- web / js
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "json5",
-        "tsx",
-        "typescript",
         -- python
         "python",
         -- dart/flutter
@@ -45,10 +36,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "shellcheck",
         "json-lsp",
-        "biome",
         "beautysh",
-        "typescript-language-server",
-        "tailwindcss-language-server",
         "yaml-language-server",
         "hadolint",
       })
@@ -140,21 +128,6 @@ return {
         --     end
         --   end)
         -- end,
-
-        -- js/ts
-        ---- tsserver managed by extra plugin
-        -- tsserver = {},
-        biome = {},
-
-        -- web
-        html = {
-          filetypes = { "html", "templ" },
-        },
-        htmx = {
-          filetypes = { "html", "templ" },
-        },
-        tailwindcss = {},
-
         -- flutter/dart
         -- currently managed by flutter-tools
         -- dartls = {},
