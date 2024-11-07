@@ -22,12 +22,6 @@ return {
         "vimdoc",
         "xml",
         "yaml",
-        -- go
-        "go",
-        "gomod",
-        "gosum",
-        "gowork",
-        "templ",
         -- web / js
         "html",
         "javascript",
@@ -151,27 +145,6 @@ return {
         ---- tsserver managed by extra plugin
         -- tsserver = {},
         biome = {},
-
-        -- go
-        -- managed by plugin lazyvim.plugins.extras.lang.go
-        gopls = {
-          -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
-          settings = {
-            gopls = {
-              gofumpt = true,
-              analyses = {
-                fieldalignment = true,
-                nilness = true,
-                unusedparams = true,
-                unusedwrite = true,
-                useany = true,
-              },
-            },
-          },
-        },
-        -- gofumpt = {},
-        -- golangci_lint_ls = {},
-        templ = {},
 
         -- web
         html = {
