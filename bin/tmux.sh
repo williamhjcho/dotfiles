@@ -25,6 +25,8 @@ if [ $? != 0 ]; then
 
   tmux new-window -t $SESH -n "vs" -c "$WHJC/vs"
 
+  tmux new-window -t $SESH -n "whjc.ai" -c "$WHJC/whjc.ai"
+
   tmux select-window -t $SESH:dotfiles
 fi
 
