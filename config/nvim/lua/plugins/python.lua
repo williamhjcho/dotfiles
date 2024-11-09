@@ -21,7 +21,7 @@ return {
       vim.list_extend(opts.servers, {
         python = {
           settings = {
-            basedpyright = {
+            pyright = {
               analysis = {
                 autoSearchPaths = true,
                 useLibraryCodeForTypes = true,
