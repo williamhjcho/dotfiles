@@ -1,19 +1,14 @@
 return {
-
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed or {}, {
-        "python",
-      })
-      opts.auto_install = true
-    end,
+    opts = { ensure_installed = { "python", "ninja", "rst" } },
   },
   {
     "mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "pyright",
+        "basedpyright",
         "debugpy",
         "ruff",
         "ruff-lsp",
@@ -23,8 +18,20 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      vim.list_extend(opts.servers, {})
-      vim.list_extend(opts.setup, {})
+      vim.list_extend(opts.servers, {
+        python = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "openFilesOnly",
+                autoImportCompletions = true,
+              },
+            },
+          },
+        },
+      })
     end,
   },
   {

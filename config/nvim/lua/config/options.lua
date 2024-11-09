@@ -4,3 +4,6 @@
 
 vim.opt.colorcolumn = "80,120"
 vim.opt.laststatus = 3
+
+-- python
+vim.g.lazyvim_python_lsp = "basedpyright"
