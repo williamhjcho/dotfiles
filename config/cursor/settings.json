@@ -112,6 +112,15 @@
         // strings. This setting will prevent that.
         "editor.wordBasedSuggestions": "off",
     },
+    "python.analysis.autoImportCompletions": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit",
+        }
+    },
     "extensions.ignoreRecommendations": true,
     // "vim.insertModeKeyBindingsNonRecursive": [],
     // "vim.commandLineModeKeyBindingsNonRecursive": [],
