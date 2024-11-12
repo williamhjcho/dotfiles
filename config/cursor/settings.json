@@ -1,128 +1,131 @@
 {
-    "editor.lineNumbers": "relative",
-    "editor.cursorStyle": "line",
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  // "workbench.colorTheme": "Default Dark+",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // vim settings
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // {
+    //     "before": [
+    //         "<space>",
+    //         "g",
+    //         "g"
+    //     ],
+    //     "commands": [
+    //         "workbench.action.terminal.focus",
+    //         // {
+    //         //     "command": "workbench.action.terminal.sendSequence",
+    //         //     "args": {
+    //         //         "text": "lazygit\u000D"
+    //         //     }
+    //         // }
+    //     ]
+    // }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    // "g": false
+  },
+  // "vim.normalModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "makefile.configureOnOpen": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // By default, VS Code will only switch to the Debug Console when you start
+  // debugging the first time in a session. This setting tells VS Code to always
+  // switch to the Debug Console when starting a session, so you can see the
+  // programs output.
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    // Automatically format code on save and during typing of certain characters
+    // (like `;` and `}`).
     "editor.formatOnSave": true,
-    // "workbench.colorTheme": "Default Dark+",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    // vim settings
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        // {
-        //     "before": [
-        //         "<space>",
-        //         "g",
-        //         "g"
-        //     ],
-        //     "commands": [
-        //         "workbench.action.terminal.focus",
-        //         // {
-        //         //     "command": "workbench.action.terminal.sendSequence",
-        //         //     "args": {
-        //         //         "text": "lazygit\u000D"
-        //         //     }
-        //         // }
-        //     ]
-        // }
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.organizeImports": "always"
+    },
+    // Draw a guide line at 80 characters, where Dart's formatting will wrap code.
+    "editor.rulers": [
+      80
     ],
-    "vim.leader": "<space>",
-    "vim.handleKeys": {
-        "<C-d>": true,
-        "<C-s>": false,
-        "<C-z>": false,
-        // "g": false
-    },
-    // "vim.normalModeKeyBindingsNonRecursive": [],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        }
-    ],
-    "makefile.configureOnOpen": false,
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    // By default, VS Code will only switch to the Debug Console when you start
-    // debugging the first time in a session. This setting tells VS Code to always
-    // switch to the Debug Console when starting a session, so you can see the
-    // programs output.
-    "debug.internalConsoleOptions": "openOnSessionStart",
-    "[dart]": {
-        "editor.defaultFormatter": "Dart-Code.dart-code",
-        // Automatically format code on save and during typing of certain characters
-        // (like `;` and `}`).
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "always",
-            "source.organizeImports": "always"
-        },
-        // Draw a guide line at 80 characters, where Dart's formatting will wrap code.
-        "editor.rulers": [
-            80
-        ],
-        // Disables built-in highlighting of words that match your selection. Without
-        // this, all instances of the selected text will be highlighted, interfering
-        // with Dart's ability to highlight only exact references to the selected variable.
-        "editor.selectionHighlight": false,
-        // Allows pressing <TAB> to complete snippets such as `for` even when the
-        // completion list is not visible.
-        "editor.tabCompletion": "onlySnippets",
-        // By default, VS Code will populate code completion with words found in the
-        // matching documents when a language service does not provide its own completions.
-        // This results in code completion suggesting words when editing comments and
-        // strings. This setting will prevent that.
-        "editor.wordBasedSuggestions": "off",
-    },
-    "python.analysis.autoImportCompletions": true,
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit",
-        }
-    },
-    "extensions.ignoreRecommendations": true,
-    // "vim.insertModeKeyBindingsNonRecursive": [],
-    // "vim.commandLineModeKeyBindingsNonRecursive": [],
-    // "terminal.integrated.sendKeybindingsToShell": true,
+    // Disables built-in highlighting of words that match your selection. Without
+    // this, all instances of the selected text will be highlighted, interfering
+    // with Dart's ability to highlight only exact references to the selected variable.
+    "editor.selectionHighlight": false,
+    // Allows pressing <TAB> to complete snippets such as `for` even when the
+    // completion list is not visible.
+    "editor.tabCompletion": "onlySnippets",
+    // By default, VS Code will populate code completion with words found in the
+    // matching documents when a language service does not provide its own completions.
+    // This results in code completion suggesting words when editing comments and
+    // strings. This setting will prevent that.
+    "editor.wordBasedSuggestions": "off",
+  },
+  "python.analysis.autoImportCompletions": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit",
+    }
+  },
+  "extensions.ignoreRecommendations": true,
+  // "vim.insertModeKeyBindingsNonRecursive": [],
+  // "vim.commandLineModeKeyBindingsNonRecursive": [],
+  // "terminal.integrated.sendKeybindingsToShell": true,
 }
