@@ -31,6 +31,14 @@
     //         // }
     //     ]
     // }
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
   ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
@@ -56,7 +64,15 @@
       "commands": [
         "editor.action.outdentLines"
       ]
-    }
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
@@ -74,7 +90,7 @@
       "commands": [
         "editor.action.outdentLines"
       ]
-    }
+    },
   ],
   "makefile.configureOnOpen": false,
   "[json]": {
