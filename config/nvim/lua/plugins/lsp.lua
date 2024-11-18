@@ -71,9 +71,6 @@ return {
         dockerls = {},
         docker_compose_language_service = {},
 
-        -- terraform
-        terraformls = {},
-
         -- ansible
         ansiblels = {},
 
