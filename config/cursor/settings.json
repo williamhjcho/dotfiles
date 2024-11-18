@@ -13,24 +13,15 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    // "g": false
+  },
   "vim.insertModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
-    // {
-    //     "before": [
-    //         "<space>",
-    //         "g",
-    //         "g"
-    //     ],
-    //     "commands": [
-    //         "workbench.action.terminal.focus",
-    //         // {
-    //         //     "command": "workbench.action.terminal.sendSequence",
-    //         //     "args": {
-    //         //         "text": "lazygit\u000D"
-    //         //     }
-    //         // }
-    //     ]
-    // }
     {
       "before": [
         "<C-n>"
@@ -39,14 +30,26 @@
         "editor.action.addSelectionToNextFindMatch"
       ]
     },
+    // {
+    //   "before": [
+    //     "<space>",
+    //     "g",
+    //     "g"
+    //   ],
+    //   "commands": [
+    //     {
+    //       "command": "workbench.action.terminal.newWithProfile",
+    //       "args": {
+    //         "profileName": "lazygit",
+    //         "splitActiveTerminal": false,
+    //         "location": {
+    //           "viewColumn": -2
+    //         }
+    //       },
+    //     }
+    //   ],
+    // },
   ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-s>": false,
-    "<C-z>": false,
-    // "g": false
-  },
   // "vim.normalModeKeyBindingsNonRecursive": [],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -93,9 +96,6 @@
     },
   ],
   "makefile.configureOnOpen": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.json-language-features"
-  },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -131,17 +131,18 @@
     // strings. This setting will prevent that.
     "editor.wordBasedSuggestions": "off",
   },
-  "python.analysis.autoImportCompletions": true,
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit",
-    }
+    },
   },
   "extensions.ignoreRecommendations": true,
-  // "vim.insertModeKeyBindingsNonRecursive": [],
-  // "vim.commandLineModeKeyBindingsNonRecursive": [],
-  // "terminal.integrated.sendKeybindingsToShell": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.indexing": true,
+  "python.languageServer": "Pylance",
 }

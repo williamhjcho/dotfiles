@@ -137,26 +137,37 @@
         "command": "revealInExplorer",
         "when": "editorTextFocus && vim.active && vim.mode != 'Insert'",
     },
+    // tests
+    {
+        "key": "space t t",
+        "command": "testing.runCurrentFile",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+    },
+    {
+        "key": "space t r",
+        "command": "testing.runAtCursor",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+    },
     {
         "key": "escape",
         "command": "workbench.action.closeSidebar",
         "when": "sideBarFocus || filesExplorerFocus",
     },
     // lazygit
-    {
-        "key": "space g g",
-        "command": "runCommands",
-        "when": "editorTextFocus && vim.active && vim.mode != 'Insert'",
-        "args": {
-            "commands": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "lazygit\u000D"
-                    },
-                }
-            ]
-        },
-    },
+    // {
+    //     "key": "space g g",
+    //     "command": "runCommands",
+    //     "when": "editorTextFocus && vim.active && vim.mode != 'Insert'",
+    //     "args": {
+    //         "commands": [
+    //             "workbench.action.terminal.focus",
+    //             {
+    //                 "command": "workbench.action.terminal.sendSequence",
+    //                 "args": {
+    //                     "text": "lazygit\u000D"
+    //                 },
+    //             }
+    //         ]
+    //     },
+    // },
 ]
