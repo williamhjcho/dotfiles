@@ -30,6 +30,7 @@
           - stow
           - openssl
           - tree
+          - ykman
           # nvim
           - nvim
           - luarocks
