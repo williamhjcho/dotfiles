@@ -145,4 +145,6 @@
   "python.analysis.autoImportCompletions": true,
   "python.analysis.indexing": true,
   "python.languageServer": "Pylance",
+  "git.openRepositoryInParentFolders": "never",
+  "windsurf.autocompleteSpeed": "fast",
 }

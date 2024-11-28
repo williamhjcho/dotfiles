@@ -119,3 +119,6 @@ fi
 
 # secrets
 [ -f ~/.env.personal ] && source ~/.env.personal
+
+# Added by Windsurf
+export PATH="/Users/whjc/.codeium/windsurf/bin:$PATH"
