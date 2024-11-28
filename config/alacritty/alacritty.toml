@@ -20,7 +20,7 @@ dimensions = { columns = 140, lines = 80 }
 padding = { x = 6, y = 6 }
 opacity = 0.92
 blur = false
-startup_mode = "Fullscreen"
+# startup_mode = "Fullscreen"
 decorations = "full"
 
 [scrolling]

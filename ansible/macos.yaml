@@ -41,7 +41,6 @@
           - pyenv-virtualenv
           - rbenv
           - dockutil
-          - koekeishiya/formulae/yabai
           - neofetch
           - delve # go debugger
           - fvm # flutter version manager
@@ -59,6 +58,7 @@
           - docker
           - slack
           - spotify
+          - nikitabobko/tap/aerospace
     - role: geerlingguy.mac.dock
       tags: [dock]
       vars:

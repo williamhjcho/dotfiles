@@ -23,8 +23,8 @@
 # adapted from Jeff Geerling's dotfiles
 
 if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root"
-	exit 1
+  echo "This script must be run as root"
+  exit 1
 fi
 
 ###############################################################################
@@ -188,6 +188,9 @@ defaults write com.apple.dock magnification -int 1
 defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock orientation -string "bottom"
 
+# this is a fix for aerospace app
+defaults write com.apple.dock expose-group-apps -bool true
+
 # disable most recent space rearranging automatically
 defaults write com.apple.dock "mru-spaces" -bool false
 
@@ -243,13 +246,13 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 echo "Setting Spotlight"
 
 if [[ "$RUN_AS_ROOT" = true ]]; then
-	# Disable Spotlight indexing for any volume that gets mounted and has not yet
-	# been indexed before.
-	# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-	sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+  # Disable Spotlight indexing for any volume that gets mounted and has not yet
+  # been indexed before.
+  # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
+  sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
-	# Restart spotlight
-	killall mds >/dev/null 2>&1
+  # Restart spotlight
+  killall mds >/dev/null 2>&1
 fi
 
 ###############################################################################
@@ -288,9 +291,9 @@ echo "Last step"
 
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
-	for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
-		killall "${app}" >/dev/null 2>&1
-	done
+  for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
+    killall "${app}" >/dev/null 2>&1
+  done
 fi
 
 printf "Please log out and log back in to make all settings take effect.\n"
