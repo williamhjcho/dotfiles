@@ -2,12 +2,12 @@
 #
 # https://alacritty.org/config-alacritty.html
 # https://sunnnychan.github.io/cheatsheet/linux/config/alacritty.yml.html
-import = [
+general.import = [
   # uncomment the color scheme: 
   "~/.config/alacritty/tokyonight_moon.toml",
 ]
 
-live_config_reload = true
+general.live_config_reload = true
 
 working_directory = "None"
 
