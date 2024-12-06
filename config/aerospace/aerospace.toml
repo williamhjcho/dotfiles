@@ -123,8 +123,7 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
-alt-c = 'workspace C' # Chat
-alt-i = 'workspace I' # IDE
+alt-c = 'workspace G' # GPT
 alt-t = 'workspace T' # Terminal
 alt-w = 'workspace W' # Web Browser
 
@@ -138,8 +137,7 @@ alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-c = 'move-node-to-workspace C'
-alt-shift-i = 'move-node-to-workspace I'
+alt-shift-c = 'move-node-to-workspace G'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-w = 'move-node-to-workspace W'
 
@@ -157,7 +155,7 @@ alt-shift-semicolon = 'mode service'
 1 = 'main'
 2 = 'main'
 3 = 'main'
-C = ['secondary']
+G = ['secondary']
 W = ['secondary']
 
 # 'service' binding mode declaration.
@@ -180,8 +178,20 @@ alt-shift-l = ['join-with right', 'mode main']
 # app to window callback
 # run: 'aerospace list-apps' to see which apps are open
 [[on-window-detected]]
+if.app-name-regex-substring = "^(Steam|Finder|Spotify)$"
+run = ["move-node-to-workspace 1"]
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ["move-node-to-workspace 2"]
+
+[[on-window-detected]]
+if.app-id = 'com.exafunction.windsurf'
+run = ["move-node-to-workspace 3"]
+
+[[on-window-detected]]
 if.app-id = 'com.openai.chat'
-run = ["move-node-to-workspace C"]
+run = ["move-node-to-workspace G"]
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
@@ -190,15 +200,3 @@ run = ["move-node-to-workspace T"]
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ["move-node-to-workspace W"]
-
-[[on-window-detected]]
-if.app-id = 'com.exafunction.windsurf'
-run = ["move-node-to-workspace I"]
-
-[[on-window-detected]]
-if.app-id = 'com.tinyspec.slackmacgap'
-run = ["move-node-to-workspace 2"]
-
-[[on-window-detected]]
-if.app-name-regex-substring = "^(Arc|Steam|Finder|Spotify)$"
-run = ["move-node-to-workspace 1"]
