@@ -1,9 +1,10 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed or {}, {
+    opts = {
+      ensure_installed = {
         "html",
+        "css",
         "javascript",
         "jsdoc",
         "json",
@@ -11,26 +12,24 @@ return {
         "json5",
         "tsx",
         "typescript",
-      })
-      opts.auto_install = true
-    end,
+        "astro",
+      },
+    },
   },
   {
     "mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
+    opts = {
+      ensure_installed = {
         "biome",
         "typescript-language-server",
         "tailwindcss-language-server",
-      })
-    end,
+      },
+    },
   },
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       vim.list_extend(opts.servers, {
-        ---- tsserver managed by extra plugin
-        -- tsserver = {},
         biome = {},
 
         -- web
