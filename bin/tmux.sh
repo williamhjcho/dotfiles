@@ -20,7 +20,7 @@ if [ $? != 0 ]; then
   tmux new-window -t $SESH -n "porfin/doctor" -c "$PORFIN/doctor-front"
   tmux split-window -t "$SESH:porfin/doctor" -h -d -c "$PORFIN/doctor-front"
 
-  tmux new-window -t $SESH -n "whjc.ai" -c "$WHJC/whjc.ai"
+  tmux new-window -t $SESH -n "whjc.dev" -c "$WHJC/whjc.dev"
 
   tmux select-window -t "$SESH:dotfiles"
 fi
