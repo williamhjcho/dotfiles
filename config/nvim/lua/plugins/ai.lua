@@ -2,29 +2,21 @@ return {
   -- https://github.com/yetone/avante.nvim
   {
     "yetone/avante.nvim",
-    enabled = false,
     event = "VeryLazy",
+    enabled = true,
     lazy = false,
-    version = false,
+    version = false, -- set this if you want to always pull the latest change
+    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
+    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
+      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      -- for providers='copilot'
-      {
-        "zbirenbaum/copilot.lua",
-        opts = {
-          suggestion = {
-            -- auto_trigger = true,
-            hide_during_completion = false,
-            debounce = 75,
-          },
-        },
-      },
+      "zbirenbaum/copilot.lua", -- for providers='copilot'
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -51,31 +43,18 @@ return {
         ft = { "markdown", "Avante" },
       },
     },
-    keys = {},
     opts = {
-      provider = "claude",
-      auto_suggestions_provider = "copilot",
       behaviour = {
-        auto_suggestions = true,
+        auto_suggestions = false,
       },
       mappings = {
-        submit = {
-          normal = "<CR>",
-          -- insert = "<C-CR>",
-        },
         suggestion = {
           accept = "<C-l>",
           next = "<C-]>",
           prev = "<C-]>",
         },
       },
-      hints = { enabled = true },
     },
-    config = function(_, opts)
-      require("avante").setup(opts)
-      -- recommended to be executed after color scheme setup
-      require("avante_lib").load()
-    end,
   },
   -- github copilot
   -- {
