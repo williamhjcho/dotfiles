@@ -8,7 +8,6 @@ return {
         python = { "ruff" },
         dockerfile = { "hadolint" },
         typescript = { "biomejs" },
-        go = { "golangcilint" },
       },
     },
   },
@@ -26,12 +25,6 @@ return {
         javascript = { "biome" },
         typescript = { "biome" },
         python = { "ruff_format" },
-
-        -- managed by the lazyvim.plugins.extras.lang.go
-        -- go = { "gofumpt", "goimports" },
-        -- BUG: https://github.com/stevearc/conform.nvim/issues/387
-        go = {},
-        templ = { "templ" },
       },
       formatters = {},
     },
