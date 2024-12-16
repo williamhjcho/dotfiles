@@ -16,7 +16,6 @@ return {
     opts = {
       -- log_level = vim.log.levels.DEBUG,
       formatters_by_ft = {
-        dart = { "dart_format" },
         lua = { "stylua" },
         sh = { "shfmt" },
         zsh = { "beautysh" },

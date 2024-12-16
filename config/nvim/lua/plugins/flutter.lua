@@ -2,7 +2,8 @@ return {
   -- Flutter
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
+    enabled = false,
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
@@ -44,15 +45,22 @@ return {
     },
   },
   {
-    {
-      "nvim-neotest/neotest",
-      dependencies = {
-        "sidlatau/neotest-dart",
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        dart = { "dart_format" },
       },
-      opts = {
-        adapters = {
-          "neotest-dart",
-        },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "sidlatau/neotest-dart",
+    },
+    opts = {
+      adapters = {
+        "neotest-dart",
       },
     },
   },
