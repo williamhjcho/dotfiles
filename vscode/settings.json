@@ -99,6 +99,15 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "biomejs.biome"
+  // },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "biomejs.biome"
+  // },
+  // "[typescriptreact]": {
+  //   "editor.defaultFormatter": "biomejs.biome"
+  // },
   // By default, VS Code will only switch to the Debug Console when you start
   // debugging the first time in a session. This setting tells VS Code to always
   // switch to the Debug Console when starting a session, so you can see the
@@ -131,20 +140,28 @@
     // strings. This setting will prevent that.
     "editor.wordBasedSuggestions": "off",
   },
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit",
-      "source.organizeImports": "explicit",
-    },
-  },
-  "extensions.ignoreRecommendations": true,
+  // "[python]": {
+  //   "editor.defaultFormatter": "charliermarsh.ruff",
+  //   "editor.formatOnSave": true,
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll": "explicit",
+  //     "source.organizeImports": "explicit",
+  //   },
+  // },
+  // "extensions.ignoreRecommendations": true,
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.typeCheckingMode": "standard",
   "python.analysis.autoImportCompletions": true,
   "python.analysis.indexing": true,
-  "python.languageServer": "Pylance",
   "git.openRepositoryInParentFolders": "never",
   "windsurf.autocompleteSpeed": "fast",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
 }
