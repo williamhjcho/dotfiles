@@ -37,6 +37,7 @@
           # programming
           - lazygit
           - direnv
+          - deno
           - pyenv
           - pyenv-virtualenv
           - rbenv
