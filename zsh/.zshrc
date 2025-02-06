@@ -96,10 +96,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Ruby
-eval "$(rbenv init - zsh)"
+command -v rbenv >/dev/null && eval "$(rbenv init - zsh)" || echo "'rbenv' not installed"
 
 # direnv
-eval "$(direnv hook zsh)"
+command -v direnv >/dev/null && eval "$(direnv hook zsh)" || echo "'direnv' not installed"
+
+# taskfile
+command -v task >/dev/null && eval "$(task --completion zsh)" || echo "'task' not installed"
 
 # bun
 if [ -s "$HOME/.bun/_bun" ]; then

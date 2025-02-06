@@ -45,6 +45,7 @@
           - neofetch
           - delve # go debugger
           - fvm # flutter version manager
+          - go-task # taskfile (makefile alternative)
         homebrew_taps:
           - homebrew/cask-fonts
           - leoafarias/fvm
