@@ -164,4 +164,5 @@
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "windsurf.autoExecutionPolicy": "off",
 }
