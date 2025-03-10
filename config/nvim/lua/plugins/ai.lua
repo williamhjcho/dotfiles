@@ -65,4 +65,26 @@ return {
   --   enabled = false,
   --   event = "BufEnter",
   -- },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "main",
+    opts = {
+      model = "claude-3.7-sonnet",
+      mappings = {
+        reset = {
+          normal = nil,
+          insert = nil,
+        },
+      },
+      prompts = {
+        WHJCDEV = {
+          sticky = {
+            "The current project is a golang application that uses htmx, tailwindcss (with daisyUI) and templ to generate the pages.",
+            "#files:**/*.templ",
+            "#files:**/input.css",
+          },
+        },
+      },
+    },
+  },
 }
