@@ -165,4 +165,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "windsurf.autoExecutionPolicy": "off",
+  "[templ]": {
+    "editor.defaultFormatter": "a-h.templ"
+  },
 }
