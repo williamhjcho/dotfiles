@@ -48,8 +48,7 @@
           - fvm # flutter version manager
           - go-task # taskfile (makefile alternative)
         homebrew_taps:
-          - homebrew/cask-fonts
-          - leoafarias/fvm
+          # - leoafarias/fvm
         homebrew_cask_apps:
           # in case it needs to be forced
           # - { name: appname, install_options: "force" }
