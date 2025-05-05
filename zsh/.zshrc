@@ -96,6 +96,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.jenv/shims:$PATH"
 eval "$(jenv init -)"
 
 # Ruby
