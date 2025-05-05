@@ -87,7 +87,6 @@ if [ -f "$TOOLS_HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$TOOLS_HOME
 alias zshconfig="nvim ~/.zshrc"
 alias lll='ls -l'
 alias lla='ls -la'
-alias vim='nvim'
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
