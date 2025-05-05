@@ -94,6 +94,10 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # Ruby
 command -v rbenv >/dev/null && eval "$(rbenv init - zsh)" || echo "'rbenv' not installed"
 
