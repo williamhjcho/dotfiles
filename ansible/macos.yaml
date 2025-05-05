@@ -57,7 +57,6 @@
           - font-jetbrains-mono-nerd-font
           - monitorcontrol
           - alacritty
-          - arc
           - docker
           - slack
           - spotify
@@ -88,12 +87,9 @@
           - name: Spotify
             path: "/Applications/Spotify.app/"
             pos: 2
-          - name: Arc
-            path: "/Applications/Arc.app/"
-            pos: 3
           - name: Slack
             path: "/Applications/Slack.app/"
-            pos: 4
+            pos: 3
 
   tasks:
     - name: Setup macos defaults
