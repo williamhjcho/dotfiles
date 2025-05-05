@@ -62,3 +62,6 @@ insteadOf = https://github.com/
 
 [init]
 defaultBranch = main
+
+[includeIf "gitdir:~/dev/180s/"]
+path = ~/dev/180s/.gitconfig
