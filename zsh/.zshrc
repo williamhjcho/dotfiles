@@ -130,3 +130,11 @@ fi
 # Added by Windsurf
 export PATH="/Users/whjc/.codeium/windsurf/bin:$PATH"
 
+# work 180s
+if [ -d "$HOME/.180cli" ]; then
+  autoload bashcompinit
+  bashcompinit
+  export i80_HOME="$HOME/.180cli"
+  export PATH="$i80_HOME/bin:$PATH"
+  source "$i80_HOME/autocomplete/bash_180cli"
+fi
