@@ -38,11 +38,9 @@ System Preferences
 
 - Keyboard > Modifier Keys > Caps to Left Ctrl
 
-Iterm2
+**Tmux**
 
-- Set `~/dotfiles/iterm2/` as the default profile path
-- Import `iterm2/Profiles`
-- Import `iterm2/KeyBindings`
+Each machine might need their own tmux configuration, so create a copy of one of the `bin/tmux.sh` file(s) and adjust accordingly.
 
 ---
 
