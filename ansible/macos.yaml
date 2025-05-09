@@ -41,6 +41,7 @@
           - deno
           - pyenv
           - pyenv-virtualenv
+          - jenv
           - rbenv
           - dockutil
           - neofetch
