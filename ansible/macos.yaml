@@ -57,6 +57,7 @@
           - font-jetbrains-mono-nerd-font
           - monitorcontrol
           - alacritty
+          - ghostty
           - docker
           - slack
           - spotify
