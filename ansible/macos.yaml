@@ -81,16 +81,16 @@
           - "Pages"
           - "Safari"
           - "TV"
-        dockitems_persist:
-          - name: Alacritty
-            path: "/Applications/Alacritty.app/"
-            pos: 1
-          - name: Spotify
-            path: "/Applications/Spotify.app/"
-            pos: 2
-          - name: Slack
-            path: "/Applications/Slack.app/"
-            pos: 3
+        # dockitems_persist:
+        #   - name: Alacritty
+        #     path: "/Applications/Alacritty.app/"
+        #     pos: 1
+        #   - name: Spotify
+        #     path: "/Applications/Spotify.app/"
+        #     pos: 2
+        #   - name: Slack
+        #     path: "/Applications/Slack.app/"
+        #     pos: 3
 
   tasks:
     - name: Setup macos defaults
