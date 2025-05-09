@@ -1,0 +1,7 @@
+# https://ghostty.org/docs/config
+# Use cmd+shift+, to reload config
+
+font-family = "FiraMono Nerd Font Mono"
+font-family-bold = "FiraMono Nerd Font Mono"
+font-family-italic = "FiraMono Nerd Font Mono"
+font-family-bold-italic = "FiraMono Nerd Font Mono"
