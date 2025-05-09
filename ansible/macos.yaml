@@ -48,8 +48,8 @@
           - delve # go debugger
           - fvm # flutter version manager
           - go-task # taskfile (makefile alternative)
-        homebrew_taps:
-          # - leoafarias/fvm
+        # homebrew_taps:
+        # - leoafarias/fvm
         homebrew_cask_apps:
           # in case it needs to be forced
           # - { name: appname, install_options: "force" }
