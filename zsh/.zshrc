@@ -138,3 +138,5 @@ if [ -d "$HOME/.180cli" ]; then
   export PATH="$i80_HOME/bin:$PATH"
   source "$i80_HOME/autocomplete/bash_180cli"
 fi
+
+. "$HOME/.local/bin/env"
