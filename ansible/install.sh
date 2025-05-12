@@ -11,9 +11,25 @@ have ansible || {
   exit 1
 }
 
+TAGS=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --dotfiles | --zsh | --homebrew | --dock)
+    TAG="${1#--}"
+    TAGS="${TAGS:+$TAGS,}$TAG"
+    ;;
+  *)
+    echo "Unknown option: '$1'"
+    exit 1
+    ;;
+  esac
+  shift
+done
+
+echo "running ansible:"
+echo "${TAGS:+(tags: $TAGS)}"
+
 ansible-playbook ./macos.yaml \
   --inventory ./inventory \
-  --ask-become-pass
-
-# add optional --tags to run specific sections, e.g.
-# --tags "dotfiles,zsh"
+  --ask-become-pass \
+  ${TAGS:+--tags "$TAGS"}

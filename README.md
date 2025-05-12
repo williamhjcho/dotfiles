@@ -26,6 +26,9 @@ ansible-galaxy install -r requirements.yaml
 
 # run the playbook
 ./install.sh
+
+# or run the playbook with specific tags
+./install.sh --homebrew --dotfiles
 ```
 
 ## 4. Manual settings
