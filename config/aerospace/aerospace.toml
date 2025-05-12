@@ -191,13 +191,14 @@ if.app-name-regex-substring = "^(Steam|Finder|Spotify)$"
 run = ["move-node-to-workspace 1"]
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+if.app-id = 'com.tinyspeck.slackmacgap' # Slack
 run = ["move-node-to-workspace 6"]
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = ["move-node-to-workspace G"]
 
+# terminals (T)
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
 run = ["move-node-to-workspace T"]
@@ -206,6 +207,7 @@ run = ["move-node-to-workspace T"]
 if.app-id = 'com.mitchellh.ghostty'
 run = ["move-node-to-workspace T"]
 
+# browsers (@)
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = ["move-node-to-workspace W"]
