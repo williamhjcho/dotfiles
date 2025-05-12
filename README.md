@@ -82,7 +82,8 @@ Post setup
 
 ## 5. Everyday usage
 
-Initialize tmux with pre-configured session: ./dotfiles/bin/tmux.sh
+Copy/edit one of the tmux files then symlink to home `ln -s ~/dotfiles/bin/<tmux-file>.sh ~/tmux.sh`
+Then initialize tmux with pre-configured session: `~/tmux.sh`
 
 [ansible-install]: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 [dotfiles-repo]: https://github.com/williamhjcho/dotfiles
