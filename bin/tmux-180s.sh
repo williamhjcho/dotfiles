@@ -10,16 +10,20 @@ if ! has_session "$WHJC"; then
   tmux new-session -d -s $WHJC -n "dotfiles" -c "$HOME/dotfiles"
   tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
   tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
+
+  tmux new-window -d -t "$WHJC:" -n "cisne" -c "$WORK_DIR/cisne"
+
   tmux select-window -t "$WHJC:dotfiles"
 fi
 
-if ! has_session "180s"; then
+WORK="180s"
+if ! has_session "$WORK"; then
   WORK_DIR="$HOME/dev/180s"
-  tmux new-session -d -s "180s" -n "180s" -c "$WORK_DIR"
+  tmux new-session -d -s "$WORK" -n "180s" -c "$WORK_DIR"
 
-  tmux new-window -d -t "180s:" -n "cisne" -c "$WORK_DIR/cisne"
-  tmux new-window -d -t "180s:" -n "camaleao" -c "$WORK_DIR/camaleao"
-  tmux new-window -d -t "180s:" -n "tatu" -c "$WORK_DIR/tatu"
+  tmux new-window -d -t "$WORK:" -n "cisne" -c "$WORK_DIR/cisne"
+  tmux new-window -d -t "$WORK:" -n "camaleao" -c "$WORK_DIR/camaleao"
+  tmux new-window -d -t "$WORK:" -n "tatu" -c "$WORK_DIR/tatu"
 
   # needs the trailing ':' on the session's name
   # tmux new-window -t "$WORK:" -n "<project-name>" -c "$WORK_DIR/<dir>"
