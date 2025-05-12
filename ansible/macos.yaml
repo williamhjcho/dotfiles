@@ -57,6 +57,7 @@
           - font-fira-mono-nerd-font
           - font-jetbrains-mono-nerd-font
           - monitorcontrol
+          - arc
           - ghostty
           - docker
           - slack
