@@ -12,18 +12,15 @@ if ! has_session "$WHJC"; then
   tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
   # tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
 
-  tmux new-window -t "$WHJC" -n "whjc.dev" -c "$PROJECTS_DIR/whjc.dev"
-  # tmux split-window -t "$WHJC:whjc.dev" -h -d -c "$PROJECTS_DIR/whjc.dev"
-
-  tmux new-window -t "$WHJC" -n "clojure" -c "$PROJECTS_DIR"
+  tmux new-window -t "$WHJC:" -n "whjc.dev" -c "$PROJECTS_DIR/whjc.dev"
 
   tmux select-window -t "$WHJC:dotfiles"
 fi
 
-WORK="work"
+WORK="dev"
 if ! has_session "$WORK"; then
-  WORK_DIR="$HOME/dev"
-  tmux new-session -d -s "$WORK" -n "work" -c "$WORK_DIR"
+  DEV_DIR="$HOME/dev"
+  tmux new-session -d -s "$WORK" -n "dev" -c "$DEV_DIR"
 fi
 
 SESSION="${1:-$WHJC}"
