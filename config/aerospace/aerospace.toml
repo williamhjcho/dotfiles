@@ -152,14 +152,16 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-6 = 'secondary'
-7 = 'secondary'
-8 = 'secondary'
-9 = 'secondary'
-0 = 'secondary'
+1 = ['main', 'secondary']
+2 = ['main', 'secondary']
+3 = ['main', 'secondary']
+4 = ['main', 'secondary']
+5 = ['main', 'secondary']
+6 = ['secondary', 'main']
+7 = ['secondary', 'main']
+8 = ['secondary', 'main']
+9 = ['secondary', 'main']
+0 = ['secondary', 'main']
 T = 'main'
 G = ['secondary']
 W = ['secondary']
