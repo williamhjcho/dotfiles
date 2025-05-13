@@ -72,8 +72,8 @@ return {
       model = "claude-3.7-sonnet",
       mappings = {
         reset = {
-          normal = nil,
-          insert = nil,
+          normal = "",
+          insert = "",
         },
       },
       prompts = {
