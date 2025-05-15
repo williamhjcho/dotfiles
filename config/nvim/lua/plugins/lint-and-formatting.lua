@@ -5,7 +5,6 @@ return {
       linters_by_ft = {
         sh = { "shellcheck" },
         zsh = { "zsh" },
-        python = { "ruff" },
         dockerfile = { "hadolint" },
         typescript = { "biomejs" },
       },
@@ -23,7 +22,6 @@ return {
         toml = { "taplo" },
         javascript = { "biome" },
         typescript = { "biome" },
-        python = { "ruff_format" },
       },
       formatters = {},
     },
