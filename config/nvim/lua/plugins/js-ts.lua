@@ -20,7 +20,9 @@ return {
     "mason.nvim",
     opts = {
       ensure_installed = {
-        "biome",
+        -- "biome",
+        "eslint-lsp",
+        "prettier",
         "typescript-language-server",
         "tailwindcss-language-server",
       },
@@ -30,7 +32,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       vim.list_extend(opts.servers, {
-        biome = {},
+        -- biome = {},
 
         -- web
         html = {
@@ -42,5 +44,23 @@ return {
         tailwindcss = {},
       })
     end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        typescript = { "eslint" },
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+      },
+      formatters = {},
+    },
   },
 }
