@@ -20,7 +20,7 @@ return {
     "mason.nvim",
     opts = {
       ensure_installed = {
-        -- "biome",
+        "biome",
         "eslint-lsp",
         "prettier",
         "typescript-language-server",
@@ -57,8 +57,8 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        javascript = { "prettier" },
-        typescript = { "prettier" },
+        javascript = { "biome" },
+        typescript = { "biome" },
       },
       formatters = {},
     },
