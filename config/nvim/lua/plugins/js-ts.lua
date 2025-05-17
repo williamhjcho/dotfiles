@@ -21,8 +21,8 @@ return {
     opts = {
       ensure_installed = {
         "biome",
-        "eslint-lsp",
-        "prettier",
+        -- "eslint-lsp",
+        -- "prettier",
         "typescript-language-server",
         "tailwindcss-language-server",
       },
@@ -32,7 +32,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       vim.list_extend(opts.servers, {
-        -- biome = {},
+        biome = {},
 
         -- web
         html = {
@@ -49,7 +49,7 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        typescript = { "eslint" },
+        typescript = { "biomejs" },
       },
     },
   },
