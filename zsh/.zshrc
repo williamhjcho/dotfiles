@@ -63,6 +63,12 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Flutter
 export PATH="$PATH":"$HOME/fvm/default/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+alias flutter='fvm flutter'
+alias f='fvm flutter'
+alias dart='fvm dart'
+alias d='fvm dart'
+export -f flutter
+export -f dart
 
 # Go
 export PATH="$PATH":"$HOME/go/bin"
@@ -140,3 +146,8 @@ if [ -d "$HOME/.180cli" ]; then
 fi
 
 . "$HOME/.local/bin/env"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh ]] && . /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
