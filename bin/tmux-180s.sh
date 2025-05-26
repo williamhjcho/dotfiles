@@ -11,8 +11,6 @@ if ! has_session "$WHJC"; then
   tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
   tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
 
-  tmux new-window -d -t "$WHJC:" -n "cisne" -c "$WORK_DIR/cisne"
-
   tmux select-window -t "$WHJC:dotfiles"
 fi
 
