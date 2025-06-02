@@ -22,8 +22,6 @@ return {
         "vimdoc",
         "xml",
         "yaml",
-        -- dart/flutter
-        "dart",
       })
       opts.auto_install = true
     end,
@@ -125,10 +123,6 @@ return {
           },
         },
         taplo = {},
-
-        -- flutter/dart
-        -- currently managed by flutter-tools
-        -- dartls = {},
       })
       vim.list_extend(opts.setup, {
         yamlls = function()

@@ -1,4 +1,12 @@
 return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, {
+        "dart",
+      })
+    end,
+  },
   -- Flutter
   {
     "akinsho/flutter-tools.nvim",
