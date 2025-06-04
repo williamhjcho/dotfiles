@@ -5,4 +5,7 @@
 vim/.vim/.netrwhist
 vim/.vim/plugged
 
+# tmux
+config/tmux/plugins
+
 .DS_Store
