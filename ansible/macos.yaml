@@ -102,3 +102,12 @@
         cmd: "./macos/osx.sh --no-restart"
       changed_when: false
       tags: [macos]
+
+    # https://github.com/tmux-plugins/tpm
+    - name: Install Tmux Plugin Manager (TPM)
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+        clone: yes
+        update: yes
+      tags: [tmux]
