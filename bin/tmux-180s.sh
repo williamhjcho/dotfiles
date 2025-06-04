@@ -7,9 +7,13 @@ has_session() {
 
 WHJC="whjc"
 if ! has_session "$WHJC"; then
+  PROJECTS_DIR="$HOME/dev/williamhjcho"
   tmux new-session -d -s $WHJC -n "dotfiles" -c "$HOME/dotfiles"
   tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
   tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
+
+  tmux new-window -d -t "$WHJC:" -n "vs" -c "$PROJECTS_DIR/vs"
+  tmux split-window -t "$WHJC:vs" -h -d -c "$PROJECTS_DIR/vs"
 
   tmux select-window -t "$WHJC:dotfiles"
 fi
