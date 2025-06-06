@@ -59,6 +59,7 @@ return {
       formatters_by_ft = {
         javascript = { "biome" },
         typescript = { "biome" },
+        json = { "biome" },
       },
       formatters = {},
     },

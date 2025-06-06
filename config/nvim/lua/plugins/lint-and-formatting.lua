@@ -1,5 +1,16 @@
 return {
   {
+    "mason.nvim",
+    opts = {
+      ensure_installed = {
+        "shellcheck",
+        "beautysh",
+        "hadolint",
+        "taplo",
+      },
+    },
+  },
+  {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {

@@ -30,11 +30,7 @@ return {
     "mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "shellcheck",
-        "json-lsp",
-        "beautysh",
         "yaml-language-server",
-        "hadolint",
       })
     end,
   },
@@ -64,20 +60,6 @@ return {
 
       vim.list_extend(opts.servers, {
         bashls = {},
-
-        -- json
-        jsonls = {
-          on_new_config = function(new_config)
-            new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-            vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-          end,
-          settings = {
-            json = {
-              format = { enable = true },
-              validate = { enable = true },
-            },
-          },
-        },
 
         -- docker
         dockerls = {},
