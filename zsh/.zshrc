@@ -116,16 +116,6 @@ command -v direnv >/dev/null && eval "$(direnv hook zsh)" || echo "'direnv' not 
 # taskfile
 command -v task >/dev/null && eval "$(task --completion zsh)" || echo "'task' not installed"
 
-# bun
-if [ -s "$HOME/.bun/_bun" ]; then
-    # bun
-    export BUN_INSTALL="$HOME/.bun"
-    export PATH="$BUN_INSTALL/bin:$PATH"
-    # bun completions
-    source "$HOME/.bun/_bun"
-fi
-
-
 # zsh plugins
 if type brew &>/dev/null; then
     source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -153,3 +143,7 @@ fi
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh ]] && . /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
