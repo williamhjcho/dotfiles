@@ -8,3 +8,5 @@ font-family-bold-italic = "FiraMono Nerd Font Mono"
 
 # fix macos alt accents
 macos-option-as-alt = false
+
+mouse-hide-while-typing = true
