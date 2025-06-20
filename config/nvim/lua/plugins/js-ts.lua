@@ -13,6 +13,7 @@ return {
         "tsx",
         "typescript",
         "astro",
+        "svelte",
       },
     },
   },
@@ -21,10 +22,9 @@ return {
     opts = {
       ensure_installed = {
         "biome",
-        -- "eslint-lsp",
-        -- "prettier",
         "typescript-language-server",
         "tailwindcss-language-server",
+        "svelte-language-server",
       },
     },
   },
@@ -60,6 +60,7 @@ return {
         javascript = { "biome" },
         typescript = { "biome" },
         json = { "biome" },
+        jsonc = { "biome" },
       },
       formatters = {},
     },
