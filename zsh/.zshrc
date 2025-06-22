@@ -63,12 +63,6 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Flutter
 export PATH="$PATH":"$HOME/fvm/default/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
-alias flutter='fvm flutter'
-alias f='fvm flutter'
-alias dart='fvm dart'
-alias d='fvm dart'
-export -f flutter
-export -f dart
 
 # Go
 export PATH="$PATH":"$HOME/go/bin"
