@@ -9,13 +9,11 @@ return {
   },
   -- Flutter
   {
-    "akinsho/flutter-tools.nvim",
-    enabled = false,
-    lazy = true,
+    "nvim-flutter/flutter-tools.nvim",
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
-      "neovim/nvim-lspconfig",
     },
     opts = {
       closing_tags = { enabled = false },
@@ -26,9 +24,9 @@ return {
         },
       },
     },
-    config = function()
-      require("telescope").load_extension("flutter")
-    end,
+    -- config = function()
+    --   require("telescope").load_extension("flutter")
+    -- end,
     keys = {
       {
         "<leader>Fl",
