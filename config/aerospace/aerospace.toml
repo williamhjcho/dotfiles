@@ -230,3 +230,7 @@ run = ["move-node-to-workspace 7"]
 [[on-window-detected]]
 if.app-id = 'com.apple.iphonesimulator'
 run = ["move-node-to-workspace 7"]
+
+[[on-window-detected]]
+if.app-name-regex-substring = "^(Cursor)$"
+run = ["move-node-to-workspace 2"]
