@@ -7,107 +7,10 @@
   // "workbench.colorTheme": "Default Dark+",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  // vim settings
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-s>": false,
-    "<C-z>": false,
-    // "g": false
-  },
-  "vim.insertModeKeyBindings": [],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        "editor.action.addSelectionToNextFindMatch"
-      ]
-    },
-    // {
-    //   "before": [
-    //     "<space>",
-    //     "g",
-    //     "g"
-    //   ],
-    //   "commands": [
-    //     {
-    //       "command": "workbench.action.terminal.newWithProfile",
-    //       "args": {
-    //         "profileName": "lazygit",
-    //         "splitActiveTerminal": false,
-    //         "location": {
-    //           "viewColumn": -2
-    //         }
-    //       },
-    //     }
-    //   ],
-    // },
-  ],
-  // "vim.normalModeKeyBindingsNonRecursive": [],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
-    },
-    {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
-    },
-    {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        "editor.action.addSelectionToNextFindMatch"
-      ]
-    },
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
-    },
-    {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
-    },
-  ],
-  "makefile.configureOnOpen": false,
+  "window.commandCenter": true,
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  // "[javascript]": {
-  //   "editor.defaultFormatter": "biomejs.biome"
-  // },
-  // "[typescript]": {
-  //   "editor.defaultFormatter": "biomejs.biome"
-  // },
-  // "[typescriptreact]": {
-  //   "editor.defaultFormatter": "biomejs.biome"
-  // },
   // By default, VS Code will only switch to the Debug Console when you start
   // debugging the first time in a session. This setting tells VS Code to always
   // switch to the Debug Console when starting a session, so you can see the
@@ -125,7 +28,8 @@
     },
     // Draw a guide line at 80 characters, where Dart's formatting will wrap code.
     "editor.rulers": [
-      80
+      80,
+      120
     ],
     // Disables built-in highlighting of words that match your selection. Without
     // this, all instances of the selected text will be highlighted, interfering
@@ -154,18 +58,27 @@
   "python.analysis.autoImportCompletions": true,
   "python.analysis.indexing": true,
   "git.openRepositoryInParentFolders": "never",
-  "windsurf.autocompleteSpeed": "fast",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "windsurf.autoExecutionPolicy": "off",
   "[templ]": {
     "editor.defaultFormatter": "a-h.templ"
   },
+  "[svelte]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/vscode.nvim.lua",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "svelte.enable-ts-plugin": true,
 }
