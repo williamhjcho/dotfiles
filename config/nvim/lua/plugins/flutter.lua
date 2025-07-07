@@ -48,6 +48,11 @@ return {
         "<cmd>FlutterCopyProfilesUrl<cr>",
         desc = "Flutter DevTools Copy URL",
       },
+      {
+        "<leader>co",
+        LazyVim.lsp.action["source.organizeImports"],
+        desc = "Organize Imports",
+      },
     },
   },
   {
