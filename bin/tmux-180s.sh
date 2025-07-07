@@ -17,6 +17,10 @@ if ! has_session "$WHJC"; then
   tmux split-window -t "$WHJC:vs" -h -d -c "$PROJECTS_DIR/vs"
   tmux resize-pane -t "$WHJC:vs.1" -R 60
 
+  tmux new-window -d -t "$WHJC" -n "travelzine" -c "$PROJECTS_DIR/travelzine"
+  tmux split-window -t "$WHJC:travelzine" -h -d -c "$PROJECTS_DIR/travelzine"
+  tmux resize-pane -t "$WHJC:travelzine.1" -R 60
+
   tmux new-window -d -t "$WHJC" -n "goodnewz" -c "$PROJECTS_DIR/goodnewz.ai"
   tmux split-window -t "$WHJC:goodnewz" -h -d -c "$PROJECTS_DIR/goodnewz.ai"
   tmux resize-pane -t "$WHJC:goodnewz.1" -R 60

@@ -14,6 +14,10 @@ if ! has_session "$WHJC"; then
 
   tmux new-window -t "$WHJC:" -n "whjc.dev" -c "$PROJECTS_DIR/whjc.dev"
 
+  tmux new-window -d -t "$WHJC" -n "travelzine" -c "$PROJECTS_DIR/travelzine"
+  tmux split-window -t "$WHJC:travelzine" -h -d -c "$PROJECTS_DIR/travelzine"
+  tmux resize-pane -t "$WHJC:travelzine.1" -R 60
+
   tmux select-window -t "$WHJC:dotfiles"
 fi
 
