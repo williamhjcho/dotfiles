@@ -1,30 +1,23 @@
 return {
   {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    build = ':Copilot auth',
+    event = 'BufReadPost',
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+  {
     'CopilotC-Nvim/CopilotChat.nvim',
     dependencies = {
-      {
-        -- the main github copilot integration
-        'zbirenbaum/copilot.lua',
-        cmd = 'Copilot',
-        build = ':Copilot auth',
-        event = 'BufReadPost',
-        opts = {
-          suggestion = {
-            enabled = false,
-            auto_trigger = true,
-            keymap = {
-              accept = false, -- handled by nvim-cmp / blink.cmp
-              next = '<M-]>',
-              prev = '<M-[>',
-            },
-          },
-          panel = { enabled = false },
-          filetypes = {
-            markdown = true,
-            help = true,
-          },
-        },
-      },
+      -- the main github copilot integration
+      'zbirenbaum/copilot.lua',
       { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log and async functions
     },
     branch = 'main',
