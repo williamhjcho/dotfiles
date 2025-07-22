@@ -308,9 +308,10 @@ return {
       vim.lsp.enable({
         'lua_ls',
         'gopls',
-        'biome',
-        'taplo',
+        'taplo', -- TOML LSP
         'yaml_ls',
+        'biome', -- general web formatter & linter (js, ts, json, etc)
+        'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
       })
     end,
   },
