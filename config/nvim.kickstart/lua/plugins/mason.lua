@@ -4,9 +4,6 @@ return {
     lazy = false,
     cmd = { 'Mason' },
     build = ':MasonUpdate',
-    keys = {
-      { '<leader>cm', '<cmd>Mason<cr>', { desc = 'Mason' } },
-    },
     opts_extended = { 'ensure_installed' },
     opts = {
       ensure_installed = {
@@ -15,7 +12,7 @@ return {
         -- 'shellcheck', -- sh linter
         -- 'hadolint', -- Docker lint
         'clojure-lsp', -- clojure LSP
-        -- web/js/ts
+        'vtsls', -- js/ts LSP
         'svelte-language-server',
         'tflint', -- terraform linter
       },
@@ -47,5 +44,8 @@ return {
         install_packages()
       end
     end,
+    keys = {
+      { '<leader>cm', '<cmd>Mason<cr>', desc = 'Mason' },
+    },
   },
 }

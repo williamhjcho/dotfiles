@@ -84,11 +84,6 @@ vim.keymap.set('n', '<leader>sg', function()
   Snacks.picker.grep({})
 end, { desc = 'Grep' })
 
--- Code actions
-vim.keymap.set('', '<leader>cf', function()
-  require('conform').format({ async = true, lsp_format = 'fallback' })
-end, { desc = 'Format Buffer' })
-
 -- quickfix/diagnostics
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
