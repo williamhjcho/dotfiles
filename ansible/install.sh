@@ -26,8 +26,7 @@ while [[ $# -gt 0 ]]; do
   shift
 done
 
-echo "running ansible:"
-echo "${TAGS:+(tags: $TAGS)}"
+echo "running ansible: ${TAGS:+(tags: $TAGS)}"
 
 ansible-playbook ./macos.yaml \
   --inventory ./inventory \

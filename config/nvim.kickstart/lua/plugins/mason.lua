@@ -11,25 +11,13 @@ return {
     opts = {
       ensure_installed = {
         -- general
-        'lua-language-server', -- lua LSP
-        'stylua',
         'beautysh', -- sh, zsh formatter
         -- 'shellcheck', -- sh linter
         -- 'hadolint', -- Docker lint
-        'taplo', -- TOML LSP
-        'yaml-language-server',
-        'ruff', -- python formatter & linter
         'clojure-lsp', -- clojure LSP
         -- web/js/ts
-        'biome', -- js/ts formatter & linter
-        'typescript-language-server',
-        'tailwindcss-language-server',
         'svelte-language-server',
         'tflint', -- terraform linter
-        -- go
-        'goimports', -- formatter
-        'gofumpt', -- formatter
-        'delve', -- dap
       },
     },
     config = function(_, opts)

@@ -41,13 +41,22 @@
           - direnv
           - deno
           - pyenv
+          - lua-language-server # lua LSP
+          - stylua # lua formatter
           - pyenv-virtualenv
+          - ruff # python formatter & linter
+          - yaml-language-server # YAML LSP
+          - taplo # TOML LSP
           - jenv
           - rbenv
+          - typescript-language-server # js/ts LSP
+          - biome # js/ts/general web file formatter & linter
+          - tailwindcss-language-server # tailwindcss LSP
           - dockutil
           - neofetch
-          - delve # go debugger
           - fvm # flutter version manager
+          - delve # go debugger
+          - goimports # go formatter
           - go-task # taskfile (makefile alternative)
         # homebrew_taps:
         # - leoafarias/fvm
