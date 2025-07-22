@@ -49,7 +49,6 @@
           - taplo # TOML LSP
           - jenv
           - rbenv
-          - typescript-language-server # js/ts LSP
           - biome # js/ts/general web file formatter & linter
           - tailwindcss-language-server # tailwindcss LSP
           - dockutil
