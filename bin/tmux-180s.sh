@@ -35,7 +35,7 @@ if ! has_session "$WORK"; then
 
   tmux new-window -d -t "$WORK:" -n "cisne" -c "$WORK_DIR/cisne"
   tmux split-window -t "$WORK:cisne" -h -d -c "$WORK_DIR/cisne"
-  tmux resize-pane -t "$WORK:cisne.1" -R 60
+  tmux resize-pane -t "$WORK:cisne.1" -L 60
 
   tmux new-window -d -t "$WORK:" -n "camaleao" -c "$WORK_DIR/camaleao"
   tmux split-window -t "$WORK:camaleao" -h -d -c "$WORK_DIR/arraia"
