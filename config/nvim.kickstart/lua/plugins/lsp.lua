@@ -173,20 +173,12 @@ return {
             -- overriding vtsls organize imports with biome
             if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' }, ft) then
               vim.lsp.buf.code_action({
-                context = {
-                  only = { 'source.organizeImports.biome' },
-                  diagnostics = {},
-                },
+                context = { only = { 'source.fixAll.biome' }, diagnostics = {} },
                 apply = true,
               })
-
-              -- vim.lsp.buf.code_action({ context = { only = { 'source.fixAll.biome' } }, apply = true })
             else
               vim.lsp.buf.code_action({
-                context = {
-                  only = { 'source.organizeImports' },
-                  diagnostics = {},
-                },
+                context = { only = { 'source.organizeImports' }, diagnostics = {} },
                 apply = true,
               })
             end
