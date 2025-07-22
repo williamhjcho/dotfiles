@@ -39,7 +39,9 @@ return {
         templ = { 'templ' }, -- go templ templates
         -- web/js/ts
         javascript = { 'biome' },
+        javascriptreact = { 'biome' },
         typescript = { 'biome' },
+        typescriptreact = { 'biome' },
         -- dart/flutter
         dart = { 'dart_format' },
         -- python
