@@ -161,6 +161,36 @@ return {
           map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', {'n', 'x'})
           map('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
           -- stylua: ignore end
+
+          map('<leader>co', function()
+            local ft = vim.bo.filetype
+            local clients = vim.lsp.get_clients({ bufnr = 0 })
+            -- stylua: ignore
+            local client_has_name = function(name)
+              return vim.tbl_contains(vim.tbl_map(function(c) return c.name end, clients), name)
+            end
+
+            -- overriding vtsls organize imports with biome
+            if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' }, ft) then
+              vim.lsp.buf.code_action({
+                context = {
+                  only = { 'source.organizeImports.biome' },
+                  diagnostics = {},
+                },
+                apply = true,
+              })
+
+              -- vim.lsp.buf.code_action({ context = { only = { 'source.fixAll.biome' } }, apply = true })
+            else
+              vim.lsp.buf.code_action({
+                context = {
+                  only = { 'source.organizeImports' },
+                  diagnostics = {},
+                },
+                apply = true,
+              })
+            end
+          end, 'Organize Imports')
           --
           -- map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
           -- Execute a code action, usually your cursor needs to be on top of an error
@@ -307,7 +337,7 @@ return {
       -- enable the LSPs
       vim.lsp.enable({
         'lua_ls',
-        'gopls',
+        'gopls', -- go LSP
         'taplo', -- TOML LSP
         'yaml_ls',
         'biome', -- general web formatter & linter (js, ts, json, etc)
