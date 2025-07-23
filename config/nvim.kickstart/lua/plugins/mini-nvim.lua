@@ -28,6 +28,9 @@ return {
 
       require('mini.icons').setup({
         file = {
+          -- go
+          ['.go-version'] = { glyph = '', hl = 'MiniIconsBlue' },
+          -- web/js/ts
           ['.eslintrc.js'] = { glyph = '󰱺', hl = 'MiniIconsYellow' },
           ['.node-version'] = { glyph = '', hl = 'MiniIconsGreen' },
           ['.prettierrc'] = { glyph = '', hl = 'MiniIconsPurple' },
@@ -37,6 +40,10 @@ return {
           ['tsconfig.json'] = { glyph = '', hl = 'MiniIconsAzure' },
           ['tsconfig.build.json'] = { glyph = '', hl = 'MiniIconsAzure' },
           ['yarn.lock'] = { glyph = '', hl = 'MiniIconsBlue' },
+        },
+        filetype = {
+          -- go
+          gotmpl = { glyph = '󰟓', hl = 'MiniIconsGrey' },
         },
       })
 
