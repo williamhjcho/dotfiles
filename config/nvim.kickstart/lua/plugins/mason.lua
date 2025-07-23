@@ -9,8 +9,8 @@ return {
       ensure_installed = {
         -- general
         'beautysh', -- sh, zsh formatter
-        -- 'shellcheck', -- sh linter
-        -- 'hadolint', -- Docker lint
+        'shellcheck', -- sh linter
+        'hadolint', -- Docker lint
         'clojure-lsp', -- clojure LSP
         'vtsls', -- js/ts LSP
         'svelte-language-server',
