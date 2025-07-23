@@ -336,6 +336,7 @@ return {
         'biome', -- general web formatter & linter (js, ts, json, etc)
         'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
         'tailwindcss', -- tailwind css LSP
+        'clojure_lsp', -- Clojure LSP
       })
     end,
   },
