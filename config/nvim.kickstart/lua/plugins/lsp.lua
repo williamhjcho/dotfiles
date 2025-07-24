@@ -378,4 +378,10 @@ return {
   --     end, { desc = '[S]earch [N]eovim files' })
   --   end,
   -- },
+
+  {
+    'folke/ts-comments.nvim',
+    opts = {},
+    event = 'VeryLazy',
+  },
 }
