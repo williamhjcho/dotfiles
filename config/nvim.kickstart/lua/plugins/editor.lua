@@ -59,6 +59,11 @@ return {
         },
       },
       indent = { enabled = true },
+      lazygit = {},
+    },
+    -- stylua: ignore
+    keys = {
+      { '<leader>gg', function() Snacks.lazygit() end, desc = 'Lazygit (root dir)' },
     },
   },
 
