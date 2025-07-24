@@ -103,13 +103,11 @@ vim.keymap.set('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning'
 vim.keymap.set('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 
 -- Explorer
-vim.keymap.set('n', '<leader>fe', function()
-  Snacks.explorer({})
-end, { desc = 'Explorer (cwd)' })
+  -- stylua: ignore
+vim.keymap.set('n', '<leader>fe', function() Snacks.explorer({}) end, { desc = 'Explorer (cwd)' })
 
 -- lazygit
 if vim.fn.executable('lazygit') == 1 then
-  vim.keymap.set('n', '<leader>gg', function()
-    Snacks.lazygit()
-  end, { desc = 'Lazygit (Root Dir)' })
+  -- stylua: ignore
+  vim.keymap.set('n', '<leader>gg', function() Snacks.lazygit() end, { desc = 'Lazygit (Root Dir)' })
 end
