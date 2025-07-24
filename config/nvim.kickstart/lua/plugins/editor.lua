@@ -60,10 +60,12 @@ return {
       },
       indent = { enabled = true },
       lazygit = {},
+      explorer = {},
     },
     -- stylua: ignore
     keys = {
       { '<leader>gg', function() Snacks.lazygit() end, desc = 'Lazygit (root dir)' },
+      { '<leader>fe', function() Snacks.explorer() end, desc = 'Explorer (cwd)' },
     },
   },
 
