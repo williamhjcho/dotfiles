@@ -31,9 +31,9 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
 
 -- Buffers
+-- stylua: ignore start
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
--- stylua: ignore start
 vim.keymap.set('n', '<leader>bd', function() Snacks.bufdelete() end, { desc = 'Delete Buffer' })
 vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 vim.keymap.set('n', '<leader>bo', function() Snacks.bufdelete.other() end, { desc = 'Delete Other Buffers' })

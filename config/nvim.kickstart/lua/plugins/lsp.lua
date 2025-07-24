@@ -144,7 +144,76 @@ return {
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
-    config = function()
+    opts = {
+      enable_servers = {
+        'lua_ls',
+        'gopls', -- go LSP
+        'taplo', -- TOML LSP
+        'yaml_ls',
+        'biome', -- general web formatter & linter (js, ts, json, etc)
+        'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
+        'tailwindcss', -- tailwind css LSP
+        'clojure_lsp', -- Clojure LSP
+      },
+      --- @type vim.diagnostic.Opts
+      diagnostics = {
+        severity_sort = true,
+        float = { border = 'rounded', source = 'if_many' },
+        underline = { severity = vim.diagnostic.severity.ERROR },
+        signs = vim.g.have_nerd_font and {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '󰅚 ',
+            [vim.diagnostic.severity.WARN] = '󰀪 ',
+            [vim.diagnostic.severity.INFO] = '󰋽 ',
+            [vim.diagnostic.severity.HINT] = '󰌶 ',
+          },
+        } or {},
+        virtual_text = {
+          source = 'if_many',
+          spacing = 2,
+          format = function(diagnostic)
+            local diagnostic_message = {
+              [vim.diagnostic.severity.ERROR] = diagnostic.message,
+              [vim.diagnostic.severity.WARN] = diagnostic.message,
+              [vim.diagnostic.severity.INFO] = diagnostic.message,
+              [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+          end,
+        },
+      },
+    },
+    config = function(_, opts)
+      -- Disable the default keybinds
+      for _, bind in ipairs({ 'grn', 'gra', 'gri', 'grr' }) do
+        pcall(vim.keymap.del, 'n', bind)
+      end
+
+      -- LSP Commands
+      -- vim.api.nvim_create_user_command('LspInfo', function()
+      --   vim.cmd('silent checkhealth vim.lsp')
+      -- end, { desc = 'LSP info' })
+      --
+      -- vim.api.nvim_create_user_command('LspStop', function()
+      --   vim.cmd('vim.lsp.stop_client(vim.lsp.get_clients())')
+      -- end, { desc = 'Stop LSP clients on buffer(s)' })
+      --
+      -- vim.api.nvim_create_user_command('LspRestart', function()
+      --   local bufnr = vim.api.nvim_get_current_buf()
+      --   local clients = vim.lsp.get_clients({ bufnr = bufnr })
+      --
+      --   for _, client in ipairs(clients) do
+      --     vim.lsp.stop_client(client.id)
+      --   end
+      --
+      --   vim.defer_fn(function()
+      --     vim.cmd('edit')
+      --   end, 100)
+      -- end, { desc = 'Restarts LSP clients on current buffer' })
+
+      vim.diagnostic.config(opts.diagnostics)
+      vim.lsp.enable(opts.enable_servers)
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
         callback = function(event)
@@ -154,11 +223,13 @@ return {
           end
 
           -- stylua: ignore start
-          map('K', function() vim.lsp.buf.hover() end, 'Open Hover')
+          map('K', vim.lsp.buf.hover, 'Open Hover')
           map('gd', function() Snacks.picker.lsp_definitions() end, 'Goto Definitions')
           map('gD', function() Snacks.picker.lsp_declarations() end, 'Goto Declarations')
           map('gr', function() Snacks.picker.lsp_references() end, 'Goto References')
           map('gI', function() Snacks.picker.lsp_implementations() end, 'Goto Implementations')
+          map('grn', vim.lsp.buf.rename, 'Rename')
+          map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
           map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', {'n', 'x'})
           map('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
           -- stylua: ignore end
@@ -184,17 +255,9 @@ return {
               })
             end
           end, 'Organize Imports')
-          --
-          -- map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate.
-          -- map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
-          -- -- Find references for the word under your cursor.
-          -- map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-          -- --
-          -- -- Jump to the implementation of the word under your cursor.
-          -- --  Useful when your language has ways of declaring types without an actual implementation.
+          -- Jump to the implementation of the word under your cursor.
+          --  Useful when your language has ways of declaring types without an actual implementation.
           -- map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           --
           -- -- Jump to the definition of the word under your cursor.
@@ -271,72 +334,6 @@ return {
             end, '[T]oggle Inlay [H]ints')
           end
         end,
-      })
-
-      -- Disable the default keybinds
-      for _, bind in ipairs({ 'grn', 'gra', 'gri', 'grr' }) do
-        pcall(vim.keymap.del, 'n', bind)
-      end
-
-      -- LSP Commands
-      -- vim.api.nvim_create_user_command('LspInfo', function()
-      --   vim.cmd('silent checkhealth vim.lsp')
-      -- end, { desc = 'LSP info' })
-      --
-      -- vim.api.nvim_create_user_command('LspStop', function()
-      --   vim.cmd('vim.lsp.stop_client(vim.lsp.get_clients())')
-      -- end, { desc = 'Stop LSP clients on buffer(s)' })
-      --
-      -- vim.api.nvim_create_user_command('LspRestart', function()
-      --   local bufnr = vim.api.nvim_get_current_buf()
-      --   local clients = vim.lsp.get_clients({ bufnr = bufnr })
-      --
-      --   for _, client in ipairs(clients) do
-      --     vim.lsp.stop_client(client.id)
-      --   end
-      --
-      --   vim.defer_fn(function()
-      --     vim.cmd('edit')
-      --   end, 100)
-      -- end, { desc = 'Restarts LSP clients on current buffer' })
-
-      vim.diagnostic.config({
-        severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
-        signs = vim.g.have_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
-      })
-
-      -- enable the LSPs
-      vim.lsp.enable({
-        'lua_ls',
-        'gopls', -- go LSP
-        'taplo', -- TOML LSP
-        'yaml_ls',
-        'biome', -- general web formatter & linter (js, ts, json, etc)
-        'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
-        'tailwindcss', -- tailwind css LSP
-        'clojure_lsp', -- Clojure LSP
       })
     end,
   },
