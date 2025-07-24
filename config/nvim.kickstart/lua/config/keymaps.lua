@@ -86,10 +86,12 @@ end, { desc = 'Grep' })
 
 -- quickfix/diagnostics
 local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
+  local get_diagnostic = next and vim.diagnostic.get_next or vim.diagnostic.get_prev
+
   return function()
-    go({ severity = severity })
+    vim.diagnostic.jump({
+      diagnostic = get_diagnostic({ severity = severity }),
+    })
   end
 end
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
@@ -97,7 +99,7 @@ vim.keymap.set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 vim.keymap.set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 vim.keymap.set('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
 vim.keymap.set('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
-vim.keymap.set('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
-vim.keymap.set('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
-vim.keymap.set('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
-vim.keymap.set('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
+vim.keymap.set('n', ']e', diagnostic_goto(true, vim.diagnostic.severity.ERROR), { desc = 'Next Error' })
+vim.keymap.set('n', '[e', diagnostic_goto(false, vim.diagnostic.severity.ERROR), { desc = 'Prev Error' })
+vim.keymap.set('n', ']w', diagnostic_goto(true, vim.diagnostic.severity.WARN), { desc = 'Next Warning' })
+vim.keymap.set('n', '[w', diagnostic_goto(false, vim.diagnostic.severity.WARN), { desc = 'Prev Warning' })
