@@ -23,10 +23,10 @@ return {
       -- auto installing ensure_installed tools
       local mr = require('mason-registry')
 
-      local notify = vim.schedule_wrap(function(msg, level)
-        level = level or vim.log.levels.INFO
-        vim.notify(msg, level, { title = 'mason-auto-install' })
-      end)
+      -- local notify = vim.schedule_wrap(function(msg, level)
+      --   level = level or vim.log.levels.INFO
+      --   vim.notify(msg, level, { title = 'mason-auto-install' })
+      -- end)
 
       local function install_packages()
         for _, tool in ipairs(opts.ensure_installed) do
