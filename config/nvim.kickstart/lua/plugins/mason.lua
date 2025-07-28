@@ -15,6 +15,7 @@ return {
         'vtsls', -- js/ts LSP
         'svelte-language-server',
         'tflint', -- terraform linter
+        'yaml-language-server', -- YAML linter
       },
     },
     config = function(_, opts)
