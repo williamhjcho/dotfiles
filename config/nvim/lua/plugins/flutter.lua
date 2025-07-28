@@ -1,19 +1,10 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed or {}, {
-        "dart",
-      })
-    end,
-  },
-  -- Flutter
-  {
-    "nvim-flutter/flutter-tools.nvim",
+    'nvim-flutter/flutter-tools.nvim',
     lazy = false,
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
     },
     opts = {
       closing_tags = { enabled = false },
@@ -24,55 +15,32 @@ return {
         },
       },
     },
-    -- config = function()
-    --   require("telescope").load_extension("flutter")
-    -- end,
     keys = {
       {
-        "<leader>Fl",
-        "<cmd>Telescope flutter commands<cr>",
-        desc = "Flutter Commands",
+        '<leader>Fl',
+        '<cmd>Telescope flutter commands<cr>',
+        desc = 'Flutter Commands',
       },
       {
-        "<leader>Fr",
-        "<cmd>FlutterRun<cr>",
-        desc = "Flutter Run",
+        '<leader>Fr',
+        '<cmd>FlutterRun<cr>',
+        desc = 'Flutter Run',
       },
       {
-        "<leader>Fq",
-        "<cmd>FlutterQuit<cr>",
-        desc = "Flutter Quit",
+        '<leader>Fq',
+        '<cmd>FlutterQuit<cr>',
+        desc = 'Flutter Quit',
       },
       {
-        "<leader>Fdc",
-        "<cmd>FlutterCopyProfilesUrl<cr>",
-        desc = "Flutter DevTools Copy URL",
+        '<leader>Fdc',
+        '<cmd>FlutterCopyProfilesUrl<cr>',
+        desc = 'Flutter DevTools Copy URL',
       },
-      {
-        "<leader>co",
-        LazyVim.lsp.action["source.organizeImports"],
-        desc = "Organize Imports",
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        dart = { "dart_format" },
-      },
-    },
-  },
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "sidlatau/neotest-dart",
-    },
-    opts = {
-      adapters = {
-        "neotest-dart",
-      },
+      -- {
+      --   '<leader>co',
+      --   LazyVim.lsp.action['source.organizeImports'],
+      --   desc = 'Organize Imports',
+      -- },
     },
   },
 }
