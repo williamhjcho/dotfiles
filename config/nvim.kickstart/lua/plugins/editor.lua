@@ -61,6 +61,7 @@ return {
       indent = { enabled = true },
       lazygit = {},
       explorer = {},
+      picker = {},
     },
     -- stylua: ignore
     keys = {
