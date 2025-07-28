@@ -21,9 +21,9 @@ if ! has_session "$WHJC"; then
   tmux split-window -t "$WHJC:travelzine" -h -d -c "$PROJECTS_DIR/travelzine"
   tmux resize-pane -t "$WHJC:travelzine.1" -R 60
 
-  tmux new-window -d -t "$WHJC" -n "goodnewz" -c "$PROJECTS_DIR/goodnewz.ai"
-  tmux split-window -t "$WHJC:goodnewz" -h -d -c "$PROJECTS_DIR/goodnewz.ai"
-  tmux resize-pane -t "$WHJC:goodnewz.1" -R 60
+  tmux new-window -d -t "$WHJC" -n "splitbill" -c "$PROJECTS_DIR/splitbill"
+  tmux split-window -t "$WHJC:splitbill" -h -d -c "$PROJECTS_DIR/splitbill"
+  tmux resize-pane -t "$WHJC:splitbill.1" -L 60
 
   tmux select-window -t "$WHJC:dotfiles"
 fi
