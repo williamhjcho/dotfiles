@@ -4,6 +4,8 @@ return {
     dependencies = { 'mason-org/mason.nvim' },
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
+    --- @module 'conform'
+    --- @type conform.setupOpts
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
@@ -42,20 +44,16 @@ return {
         javascriptreact = { 'biome' },
         typescript = { 'biome' },
         typescriptreact = { 'biome' },
+        svelte = { 'biome', lsp_format = 'first' },
         -- dart/flutter
         dart = { 'dart_format' },
         -- python
         python = { 'ruff' },
       },
     },
+    -- stylua: ignore
     keys = {
-      {
-        '<leader>cf',
-        function()
-          require('conform').format({ async = true, lsp_format = 'fallback' })
-        end,
-        desc = 'Format Buffer',
-      },
+      { '<leader>cf', function() require('conform').format() end, desc = 'Format Buffer' },
     },
   },
 }
