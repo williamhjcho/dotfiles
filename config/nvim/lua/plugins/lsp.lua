@@ -112,12 +112,12 @@ return {
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
-        else
-          return {
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-          }
         end
+
+        return {
+          timeout_ms = 500,
+          lsp_format = 'fallback',
+        }
       end,
       formatters_by_ft = {
         -- general
@@ -137,6 +137,7 @@ return {
         go = { 'goimports', 'gofumpt' },
         templ = { 'templ' }, -- go templ templates
         -- web/js/ts
+        css = { 'biome' },
         javascript = { 'biome' },
         javascriptreact = { 'biome' },
         typescript = { 'biome' },
