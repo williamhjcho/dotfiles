@@ -80,9 +80,12 @@ vim.keymap.set('n', '<leader>f:', function() Snacks.picker.command_history() end
 -- stylua: ignore end
 
 -- search
-vim.keymap.set('n', '<leader>sg', function()
-  Snacks.picker.grep({})
-end, { desc = 'Grep' })
+-- stylua: ignore start
+vim.keymap.set('n', '<leader>sk', Snacks.picker.keymaps , { desc = 'Search Keymaps' })
+vim.keymap.set('n', '<leader>sg', Snacks.picker.grep, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>sd', Snacks.picker.diagnostics, { desc = 'Search Diagnostics' })
+vim.keymap.set('n', '<leader>sr', Snacks.picker.resume, { desc = 'Search Resume' })
+-- stylua: ignore end
 
 -- quickfix/diagnostics
 local diagnostic_goto = function(next, severity)

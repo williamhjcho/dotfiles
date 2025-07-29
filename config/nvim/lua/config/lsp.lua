@@ -67,68 +67,6 @@ vim.lsp.config('vtsls', {
       },
     },
   },
-
-  -- - biome (id: 2)
-  --   - Version: 2.1.1
-  --   - Root directory: ~/dev/williamhjcho/splitbill
-  --   - Command: { "biome", "lsp-proxy" }
-  --   - Settings: vim.empty_dict()
-  --   - Attached buffers: 49, 55
-
-  -----
-  -- {
-  --     complete_function_calls = true,
-  --     javascript = {
-  --       inlayHints = <1>{
-  --         enumMemberValues = {
-  --           enabled = true
-  --         },
-  --         functionLikeReturnTypes = {
-  --           enabled = true
-  --         },
-  --         parameterNames = {
-  --           enabled = "literals"
-  --         },
-  --         parameterTypes = {
-  --           enabled = true
-  --         },
-  --         propertyDeclarationTypes = {
-  --           enabled = true
-  --         },
-  --         variableTypes = {
-  --           enabled = false
-  --         }
-  --       },
-  --       suggest = <2>{
-  --         completeFunctionCalls = true
-  --       },
-  --       updateImportsOnFileMove = <3>{
-  --         enabled = "always"
-  --       }
-  --     },
-  --     typescript = {
-  --       inlayHints = <table 1>,
-  --       suggest = <table 2>,
-  --       updateImportsOnFileMove = <table 3>
-  --     },
-  --     vtsls = {
-  --       autoUseWorkspaceTsdk = true,
-  --       enableMoveToFileCodeAction = true,
-  --       experimental = {
-  --         completion = {
-  --           enableServerSideFuzzyMatch = true
-  --         },
-  --         maxInlayHintLength = 30
-  --       },
-  --       tsserver = {
-  --         globalPlugins = { {
-  --             enableForWorkspaceTypeScriptVersions = true,
-  --             location = "/Users/william.cho/.local/share/nvim/mason/packages/svelte-language-server//node_modules/typescript-svelte-plugin",
-  --             name = "typescript-svelte-plugin"
-  --           } }
-  --       }
-  --     }
-  --   }
 })
 vim.lsp.config('svelte', {
   capabilities = {
@@ -180,18 +118,18 @@ vim.lsp.enable({
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
   callback = function(event)
-    local Snacks = require('snacks')
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
+    local Snacks = require('snacks')
     -- stylua: ignore start
     map('K', vim.lsp.buf.hover, 'Open Hover')
-    map('gd', function() Snacks.picker.lsp_definitions() end, 'Goto Definitions')
-    map('gD', function() Snacks.picker.lsp_declarations() end, 'Goto Declarations')
-    map('gr', function() Snacks.picker.lsp_references() end, 'Goto References')
-    map('gI', function() Snacks.picker.lsp_implementations() end, 'Goto Implementations')
+    map('gd', Snacks.picker.lsp_definitions, 'Goto Definitions')
+    map('gD', Snacks.picker.lsp_declarations, 'Goto Declarations')
+    map('gr', Snacks.picker.lsp_references, 'Goto References')
+    map('gI', Snacks.picker.lsp_implementations, 'Goto Implementations')
     map('grn', vim.lsp.buf.rename, 'Rename')
     map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
     map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', {'n', 'x'})
@@ -292,41 +230,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
-
---     TODO: add some of these keybinds for fzf
---     local builtin = require('telescope.builtin')
---     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
---     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
---     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
---     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
---     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
---     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
---     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
---     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
---     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
---     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
---
---     -- Slightly advanced example of overriding default behavior and theme
---     vim.keymap.set('n', '<leader>/', function()
---       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
---       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
---         winblend = 10,
---         previewer = false,
---       }))
---     end, { desc = '[/] Fuzzily search in current buffer' })
---
---     -- It's also possible to pass additional configuration options.
---     --  See `:help telescope.builtin.live_grep()` for information about particular keys
---     vim.keymap.set('n', '<leader>s/', function()
---       builtin.live_grep({
---         grep_open_files = true,
---         prompt_title = 'Live Grep in Open Files',
---       })
---     end, { desc = '[S]earch [/] in Open Files' })
---
---     -- Shortcut for searching your Neovim configuration files
---     vim.keymap.set('n', '<leader>sn', function()
---       builtin.find_files({ cwd = vim.fn.stdpath('config') })
---     end, { desc = '[S]earch [N]eovim files' })
---   end,
--- },
