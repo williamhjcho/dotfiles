@@ -81,10 +81,10 @@ vim.keymap.set('n', '<leader>f:', function() Snacks.picker.command_history() end
 
 -- search
 -- stylua: ignore start
-vim.keymap.set('n', '<leader>sk', Snacks.picker.keymaps , { desc = 'Search Keymaps' })
-vim.keymap.set('n', '<leader>sg', Snacks.picker.grep, { desc = 'Grep' })
-vim.keymap.set('n', '<leader>sd', Snacks.picker.diagnostics, { desc = 'Search Diagnostics' })
-vim.keymap.set('n', '<leader>sr', Snacks.picker.resume, { desc = 'Search Resume' })
+vim.keymap.set('n', '<leader>sk', function() Snacks.picker.keymaps() end , { desc = 'Search Keymaps' })
+vim.keymap.set('n', '<leader>sg', function() Snacks.picker.grep() end, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>sd', function() Snacks.picker.diagnostics() end, { desc = 'Search Diagnostics' })
+vim.keymap.set('n', '<leader>sr', function() Snacks.picker.resume() end, { desc = 'Search Resume' })
 -- stylua: ignore end
 
 -- quickfix/diagnostics
