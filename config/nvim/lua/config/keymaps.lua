@@ -95,6 +95,9 @@ local diagnostic_goto = function(next, severity)
     vim.diagnostic.jump({
       diagnostic = get_diagnostic({ severity = severity }),
     })
+    vim.schedule(function()
+      vim.diagnostic.open_float()
+    end)
   end
 end
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
