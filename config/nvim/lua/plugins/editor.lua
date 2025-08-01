@@ -110,6 +110,49 @@ return {
     end,
   },
 
+  -- session management
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    opts = {},
+    keys = {
+      {
+        '<leader>qs',
+        function()
+          require('persistence').load()
+        end,
+        desc = 'Restore Session',
+      },
+      {
+        '<leader>qS',
+        function()
+          require('persistence').select()
+        end,
+        desc = 'Select Session',
+      },
+      {
+        '<leader>ql',
+        function()
+          require('persistence').load({ last = true })
+        end,
+        desc = 'Restore Last Session',
+      },
+      {
+        '<leader>qd',
+        function()
+          require('persistence').stop()
+        end,
+        desc = "Don't Save Current Session",
+      },
+    },
+  },
+
+  {
+    'b0o/SchemaStore.nvim',
+    lazy = true,
+    version = false, -- last release is way too old
+  },
+
   { 'j-hui/fidget.nvim', opts = {} },
 
   {
@@ -273,5 +316,85 @@ return {
         return '%2l:%-2v %p%%'
       end
     end,
+  },
+
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    -- Sets main module to use for opts
+    main = 'nvim-treesitter.configs',
+    opts = {
+      ensure_installed = {
+        -- general
+        'bash',
+        'diff',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'regex',
+        'toml',
+        'xml',
+        'yaml',
+        'json',
+        'jsonc',
+        'json5',
+        -- git
+        'git_config',
+        'git_rebase',
+        'gitattributes',
+        'gitcommit',
+        'gitignore',
+        -- lua/vim/nvim
+        'lua',
+        'luap',
+        'luadoc',
+        'vim',
+        'vimdoc',
+        -- terraform
+        'terraform',
+        'hcl',
+        -- web/js/ts
+        'html',
+        'css',
+        'jsdoc',
+        'tsx',
+        'typescript',
+        'astro',
+        'svelte',
+        -- go
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+        -- python
+        'python',
+        -- dart/flutter
+        'dart',
+        -- clojure
+        'clojure',
+      },
+      -- Autoinstall languages that are not installed
+      auto_install = true,
+      highlight = {
+        enable = true,
+        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+        --  If you are experiencing weird indenting issues, add the language to
+        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+        additional_vim_regex_highlighting = { 'ruby' },
+      },
+      indent = { enable = true, disable = { 'ruby' } },
+    },
+    -- There are additional nvim-treesitter modules that you can use to interact
+    -- with nvim-treesitter. You should go explore a few and see what interests you:
+    --
+    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+    --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
+    --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+
+  {
+    'windwp/nvim-ts-autotag',
+    event = { 'BufReadPre', 'BufNewFile' },
+    opts = {},
   },
 }
