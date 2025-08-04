@@ -321,6 +321,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    version = false,
     -- Sets main module to use for opts
     main = 'nvim-treesitter.configs',
     opts = {
