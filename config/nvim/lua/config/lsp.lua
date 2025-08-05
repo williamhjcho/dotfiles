@@ -152,6 +152,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
       -- overriding vtsls organize imports with biome
       if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'svelte' }, ft) then
+        if vim.tbl_contains({ 'svelte' }) then
+          vim.lsp.buf.code_action({
+            context = { only = { 'source.organizeImports' }, diagnostics = {} },
+            apply = true,
+          })
+        end
+
         vim.lsp.buf.code_action({
           context = { only = { 'source.fixAll.biome' }, diagnostics = {} },
           apply = true,
