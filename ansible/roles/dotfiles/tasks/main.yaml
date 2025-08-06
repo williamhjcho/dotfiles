@@ -52,14 +52,3 @@
     dest: "{{ item.dest }}"
     state: link
 
-- name: windsurf (macos)
-  when: ansible_facts['os_family'] == "Darwin"
-  loop:
-    - { src: "{{ dotfiles_home }}/vscode/settings.json", dest: "~/Library/Application Support/Windsurf/User/settings.json" }
-    - { src: "{{ dotfiles_home }}/vscode/keybindings.json", dest: "~/Library/Application Support/Windsurf/User/keybindings.json" }
-  loop_control:
-    label: "{{ item.dest }}"
-  file:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    state: link
