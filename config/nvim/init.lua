@@ -3,5 +3,7 @@ require('config.keymaps')
 require('config.autocmds')
 require('config.lazy')
 
--- requires lazy packages
+-- requires packages to already be present
 require('config.lsp')
+
+vim.cmd.colorscheme('tokyonight')

@@ -18,9 +18,6 @@ return {
         -- gl.DiagnosticUnnecessary = { fg = commentColor }
       end,
     },
-    init = function()
-      vim.cmd.colorscheme('tokyonight')
-    end,
   },
 
   {
