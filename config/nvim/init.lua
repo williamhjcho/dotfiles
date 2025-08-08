@@ -6,4 +6,4 @@ require('config.lazy')
 -- requires packages to already be present
 require('config.lsp')
 
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('onedark')
