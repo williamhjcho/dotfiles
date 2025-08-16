@@ -75,11 +75,6 @@ return {
       explorer = {},
       picker = {},
     },
-    -- stylua: ignore
-    keys = {
-      { '<leader>gg', function() Snacks.lazygit() end, desc = 'Lazygit (root dir)' },
-      { '<leader>fe', function() Snacks.explorer() end, desc = 'Explorer (cwd)' },
-    },
   },
 
   {
