@@ -42,34 +42,6 @@ return {
     --- @module 'snacks'
     --- @type snacks.Config
     opts = {
-      dashboard = {
-        enabled = true,
-        preset = {
-          -- pick = function(cmd, opts)
-          --   return LazyVim.pick(cmd, opts)()
-          -- end,
-          header = [[
-        ╔══════════════════════════════════════╗
-        ║  ██╗    ██╗██╗  ██╗     ██╗ ██████╗  ║
-        ║  ██║    ██║██║  ██║     ██║██╔════╝  ║
-        ║  ██║ █╗ ██║███████║     ██║██║       ║
-        ║  ██║███╗██║██╔══██║██   ██║██║       ║
-        ║  ╚███╔███╔╝██║  ██║╚█████╔╝╚██████╗  ║
-        ║   ╚══╝╚══╝ ╚═╝  ╚═╝ ╚════╝  ╚═════╝  ║
-        ╚══════════════════════════════════════╝
- ]],
-          ---@type snacks.dashboard.Item[]
-          keys = {
-            { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
-            { icon = ' ', key = 'g', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
-            { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-            { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
-            { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy' },
-            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
-          },
-        },
-      },
       indent = { enabled = true },
       lazygit = {},
       explorer = {},
@@ -77,81 +49,11 @@ return {
     },
   },
 
-  {
-    'akinsho/bufferline.nvim',
-    event = 'VeryLazy',
-    opts = {
-      options = {
-        close_command = function(n)
-          Snacks.bufdelete(n)
-        end,
-        right_mouse_command = function(n)
-          Snacks.bufdelete(n)
-        end,
-        diagnostics = 'nvim_lsp',
-        always_show_bufferline = false,
-        -- diagnostics_indicator = function(_, _, diag)
-        --   local icons = LazyVim.config.icons.diagnostics
-        --   local ret = (diag.error and icons.Error .. diag.error .. ' ' or '') .. (diag.warning and icons.Warn .. diag.warning or '')
-        --   return vim.trim(ret)
-        -- end,
-        offsets = {
-          { filetype = 'snacks_layout_box' },
-        },
-        ---@param opts bufferline.IconFetcherOpts
-        -- get_element_icon = function(opts)
-        --   return LazyVim.config.icons.ft[opts.filetype]
-        -- end,
-      },
-    },
-    config = function(_, opts)
-      require('bufferline').setup(opts)
-      -- Fix bufferline when restoring a session
-      vim.api.nvim_create_autocmd({ 'BufAdd', 'BufDelete' }, {
-        callback = function()
-          vim.schedule(function()
-            pcall(nvim_bufferline)
-          end)
-        end,
-      })
-    end,
-  },
-
   -- session management
   {
     'folke/persistence.nvim',
     event = 'BufReadPre',
     opts = {},
-    keys = {
-      {
-        '<leader>qs',
-        function()
-          require('persistence').load()
-        end,
-        desc = 'Restore Session',
-      },
-      {
-        '<leader>qS',
-        function()
-          require('persistence').select()
-        end,
-        desc = 'Select Session',
-      },
-      {
-        '<leader>ql',
-        function()
-          require('persistence').load({ last = true })
-        end,
-        desc = 'Restore Last Session',
-      },
-      {
-        '<leader>qd',
-        function()
-          require('persistence').stop()
-        end,
-        desc = "Don't Save Current Session",
-      },
-    },
   },
 
   {
@@ -213,24 +115,6 @@ return {
   {
     'MagicDuck/grug-far.nvim',
     opts = { headerMaxWidth = 80 },
-    cmd = 'GrugFar',
-    keys = {
-      {
-        '<leader>sr',
-        function()
-          local grug = require('grug-far')
-          local ext = vim.bo.buftype == '' and vim.fn.expand('%:e')
-          grug.open({
-            transient = true,
-            prefills = {
-              filesFilter = ext and ext ~= '' and '*.' .. ext or nil,
-            },
-          })
-        end,
-        mode = { 'n', 'v' },
-        desc = 'Search and Replace',
-      },
-    },
   },
 
   -- Collection of various small independent plugins/modules

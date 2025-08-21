@@ -90,6 +90,16 @@ vim.keymap.set('n', '<leader>sg', function() Snacks.picker.grep() end, { desc = 
 vim.keymap.set('n', '<leader>sd', function() Snacks.picker.diagnostics() end, { desc = 'Search Diagnostics' })
 vim.keymap.set('n', '<leader>sr', function() Snacks.picker.resume() end, { desc = 'Search Resume' })
 -- stylua: ignore end
+vim.keymap.set({ 'n', 'v' }, '<leader>sR', function()
+  local grug = require('grug-far')
+  local ext = vim.bo.buftype == '' and vim.fn.expand('%:e')
+  grug.open({
+    transient = true,
+    prefills = {
+      filesFilter = ext and ext ~= '' and '*.' .. ext or nil,
+    },
+  })
+end, { desc = 'Search and Replace' })
 
 -- quickfix/diagnostics
 local diagnostic_goto = function(next, severity)
@@ -113,3 +123,17 @@ vim.keymap.set('n', ']e', diagnostic_goto(true, vim.diagnostic.severity.ERROR), 
 vim.keymap.set('n', '[e', diagnostic_goto(false, vim.diagnostic.severity.ERROR), { desc = 'Prev Error' })
 vim.keymap.set('n', ']w', diagnostic_goto(true, vim.diagnostic.severity.WARN), { desc = 'Next Warning' })
 vim.keymap.set('n', '[w', diagnostic_goto(false, vim.diagnostic.severity.WARN), { desc = 'Prev Warning' })
+
+-- tmux
+vim.keymap.set('n', '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>', { desc = 'tmux navigate left' })
+vim.keymap.set('n', '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>', { desc = 'tmux navigate down' })
+vim.keymap.set('n', '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>', { desc = 'tmux navigate up' })
+vim.keymap.set('n', '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>', { desc = 'tmux navigate right' })
+
+-- persistence
+-- stylua: ignore start
+vim.keymap.set('n', '<leader>qs', function() require('persistence').load() end, { desc = 'Restore Session' })
+vim.keymap.set('n', '<leader>qS', function() require('persistence').select() end, { desc = 'Select Session' })
+vim.keymap.set('n', '<leader>ql', function() require('persistence').load({ last = true }) end, { desc = 'Restore Last Session' })
+vim.keymap.set('n', '<leader>qd', function() require('persistence').stop() end, { desc = "Don't Save Current Session" })
+-- stylua: ignore end
