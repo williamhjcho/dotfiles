@@ -1,9 +1,9 @@
-require('config.options')
-require('config.keymaps')
-require('config.autocmds')
-require('config.lazy')
+require('options')
+require('keymaps')
+require('autocmds')
+require('lazy-init')
 
 -- requires packages to already be present
-require('config.lsp')
+require('lsp')
 
 vim.cmd.colorscheme('onedark')
