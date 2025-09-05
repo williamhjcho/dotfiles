@@ -57,6 +57,7 @@
           - delve # go debugger
           - goimports # go formatter
           - go-task # taskfile (makefile alternative)
+          - bob # nvim installation manager
         # homebrew_taps:
         # - leoafarias/fvm
         homebrew_cask_apps:
