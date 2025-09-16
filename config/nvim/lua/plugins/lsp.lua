@@ -151,10 +151,6 @@ return {
         clojure = { lsp_format = 'fallback' },
       },
     },
-    -- stylua: ignore
-    keys = {
-      { '<leader>cf', function() require('conform').format() end, desc = 'Format Buffer' },
-    },
   },
   {
     'mfussenegger/nvim-lint',

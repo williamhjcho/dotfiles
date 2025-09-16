@@ -61,6 +61,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
     map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', {'n', 'x'})
     map('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
+    -- conform
+    map('<leader>cf', function() require('conform').format() end, 'Format Buffer')
     -- stylua: ignore end
 
     map('<leader>cF', function()
