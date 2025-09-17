@@ -115,8 +115,6 @@ return {
     version = false, -- last release is way too old
   },
 
-  { 'j-hui/fidget.nvim', opts = {} },
-
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
