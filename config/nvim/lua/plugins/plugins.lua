@@ -333,6 +333,16 @@ return {
   },
 
   {
+    'chrisgrieser/nvim-origami',
+    event = 'VeryLazy',
+    opts = {
+      autoFold = {
+        enabled = false,
+      },
+    },
+  },
+
+  {
     'jake-stewart/multicursor.nvim',
     config = function()
       local mc = require('multicursor-nvim')

@@ -18,7 +18,13 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlihgting of the current line
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.fillchars = { foldopen = '', foldclose = '', fold = ' ', foldsep = ' ', diff = '╱', eob = ' ' }
+
+-- vim.opt.foldenable = true
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+-- vim.opt.foldcolumn = '0'
 vim.opt.foldlevel = 99
+
 vim.opt.inccommand = 'split' -- Preview substitutions live
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.mouse = 'a' -- Enable mouse mode
