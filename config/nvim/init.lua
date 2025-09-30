@@ -6,7 +6,7 @@ vim.pack.add({
   --
   { src = 'https://github.com/folke/tokyonight.nvim' },
 
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+  -- { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' }, -- FIXME:
   { src = 'https://github.com/chrisgrieser/nvim-origami' },
 
   { src = 'https://github.com/christoomey/vim-tmux-navigator' }, -- TODO: fix tmux load/setup
@@ -77,23 +77,22 @@ require('origami').setup({
 
 local multicursor = require('multicursor-nvim')
 multicursor.setup()
-
---- Mappings defined in a keymap layer only apply when there are
+-- Mappings defined in a keymap layer only apply when there are
 -- multiple cursors. This lets you have overlapping mappings.
 multicursor.addKeymapLayer(function(layerSet)
   -- Select a different cursor as the main one.
-  layerSet({ 'n', 'x' }, '<left>', mc.prevCursor)
-  layerSet({ 'n', 'x' }, '<right>', mc.nextCursor)
+  layerSet({ 'n', 'x' }, '<left>', multicursor.prevCursor)
+  layerSet({ 'n', 'x' }, '<right>', multicursor.nextCursor)
 
-  -- Delete the main cursor.
-  layerSet({ 'n', 'x' }, '<leader>x', mc.deleteCursor)
+  -- Delete the current cursor.
+  layerSet({ 'n', 'x' }, '<leader>x', multicursor.deleteCursor)
 
   -- Enable and clear cursors using escape.
   layerSet('n', '<esc>', function()
-    if not mc.cursorsEnabled() then
-      mc.enableCursors()
+    if not multicursor.cursorsEnabled() then
+      multicursor.enableCursors()
     else
-      mc.clearCursors()
+      multicursor.clearCursors()
     end
   end)
 end)
