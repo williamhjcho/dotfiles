@@ -52,41 +52,41 @@ return {
 
   'christoomey/vim-tmux-navigator',
 
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {
-      -- storm, moon, night, day
-      style = 'moon',
-      on_colors = function(colors)
-        -- makes comments a little brighter so its easier to see
-        colors.comment = '#7c86bf'
-      end,
-      on_highlights = function(hl, c)
-        hl.LineNr.fg = c.comment
-        hl.LineNrAbove.fg = c.comment
-        hl.LineNrBelow.fg = c.comment
-        -- hl.CursorLineNr.fg = "#00FF00"
-        -- gl.DiagnosticUnnecessary = { fg = commentColor }
-      end,
-    },
-  },
-  {
-    'rebelot/kanagawa.nvim',
-    priority = 1000,
-    opts = {
-      -- wave, dragon, lotus
-      theme = 'wave',
-    },
-  },
-  {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    opts = {
-      style = 'cool',
-    },
-  },
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     -- storm, moon, night, day
+  --     style = 'moon',
+  --     on_colors = function(colors)
+  --       -- makes comments a little brighter so its easier to see
+  --       colors.comment = '#7c86bf'
+  --     end,
+  --     on_highlights = function(hl, c)
+  --       hl.LineNr.fg = c.comment
+  --       hl.LineNrAbove.fg = c.comment
+  --       hl.LineNrBelow.fg = c.comment
+  --       -- hl.CursorLineNr.fg = "#00FF00"
+  --       -- gl.DiagnosticUnnecessary = { fg = commentColor }
+  --     end,
+  --   },
+  -- },
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   priority = 1000,
+  --   opts = {
+  --     -- wave, dragon, lotus
+  --     theme = 'wave',
+  --   },
+  -- },
+  -- {
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   opts = {
+  --     style = 'cool',
+  --   },
+  -- },
 
   {
     'folke/snacks.nvim',
@@ -109,11 +109,11 @@ return {
     opts = {},
   },
 
-  {
-    'b0o/SchemaStore.nvim',
-    lazy = true,
-    version = false, -- last release is way too old
-  },
+  -- {
+  --   'b0o/SchemaStore.nvim',
+  --   lazy = true,
+  --   version = false, -- last release is way too old
+  -- },
 
   {
     'folke/which-key.nvim',
@@ -160,13 +160,13 @@ return {
   },
 
   -- Detect tabstop and shiftwidth automatically
-  { 'NMAC427/guess-indent.nvim', opts = {} },
+  -- { 'NMAC427/guess-indent.nvim', opts = {} },
 
   -- better find x replace
-  {
-    'MagicDuck/grug-far.nvim',
-    opts = { headerMaxWidth = 80 },
-  },
+  -- {
+  --   'MagicDuck/grug-far.nvim',
+  --   opts = { headerMaxWidth = 80 },
+  -- },
 
   -- Collection of various small independent plugins/modules
   -- https://github.com/echasnovski/mini.nvim
@@ -260,123 +260,137 @@ return {
     end,
   },
 
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    version = false,
-    -- Sets main module to use for opts
-    main = 'nvim-treesitter.configs',
-    opts = {
-      ensure_installed = {
-        -- general
-        'bash',
-        'diff',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'regex',
-        'toml',
-        'xml',
-        'yaml',
-        'json',
-        'jsonc',
-        'json5',
-        -- git
-        'git_config',
-        'git_rebase',
-        'gitattributes',
-        'gitcommit',
-        'gitignore',
-        -- lua/vim/nvim
-        'lua',
-        'luap',
-        'luadoc',
-        'vim',
-        'vimdoc',
-        -- terraform
-        'terraform',
-        'hcl',
-        -- web/js/ts
-        'html',
-        'css',
-        'jsdoc',
-        'tsx',
-        'typescript',
-        'astro',
-        'svelte',
-        -- go
-        'go',
-        'gomod',
-        'gowork',
-        'gosum',
-        -- python
-        'python',
-        -- dart/flutter
-        'dart',
-        -- clojure
-        'clojure',
-      },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = { enable = true },
-    },
-  },
+  -- {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   branch = 'main',
+  --   version = false,
+  --   lazy = false,
+  --   build = ':TSUpdate',
+  --   opts = {
+  --     ensure_installed = {
+  --       -- general
+  --       'bash',
+  --       'diff',
+  --       'markdown',
+  --       'markdown_inline',
+  --       'query',
+  --       'regex',
+  --       'toml',
+  --       'xml',
+  --       'yaml',
+  --       'json',
+  --       -- 'jsonc', -- 403 issue
+  --       'json5',
+  --       -- git
+  --       'git_config',
+  --       'git_rebase',
+  --       'gitattributes',
+  --       'gitcommit',
+  --       'gitignore',
+  --       -- lua/vim/nvim
+  --       'lua',
+  --       'luap',
+  --       'luadoc',
+  --       'vim',
+  --       'vimdoc',
+  --       -- terraform
+  --       'terraform',
+  --       'hcl',
+  --       -- web/js/ts
+  --       'html',
+  --       'css',
+  --       'jsdoc',
+  --       'tsx',
+  --       'typescript',
+  --       'astro',
+  --       'svelte',
+  --       -- go
+  --       'go',
+  --       'gomod',
+  --       'gowork',
+  --       'gosum',
+  --       -- python
+  --       'python',
+  --       -- dart/flutter
+  --       'dart',
+  --       -- clojure
+  --       'clojure',
+  --     },
+  --     -- Autoinstall languages that are not installed
+  --     auto_install = true,
+  --     highlight = {
+  --       enable = true,
+  --       additional_vim_regex_highlighting = false,
+  --     },
+  --     indent = { enable = true },
+  --   },
+  --   config = function(_, opts)
+  --     local ts = require('nvim-treesitter')
+  --     local to_install = opts.ensure_installed
+  --     local already_installed = ts.get_installed()
+  --     to_install = vim
+  --       .iter(to_install)
+  --       :filter(function(parser)
+  --         return not vim.tbl_contains(already_installed, parser)
+  --       end)
+  --       :totable()
+  --     if #to_install > 0 then
+  --       ts.install(to_install)
+  --     end
+  --   end,
+  -- },
 
-  {
-    'windwp/nvim-ts-autotag',
-    event = { 'BufReadPre', 'BufNewFile' },
-    opts = {},
-  },
+  -- {
+  --   'windwp/nvim-ts-autotag',
+  --   event = { 'BufReadPre', 'BufNewFile' },
+  --   opts = {},
+  -- },
 
-  {
-    'chrisgrieser/nvim-origami',
-    event = 'VeryLazy',
-    opts = {
-      autoFold = {
-        enabled = false,
-      },
-    },
-  },
+  -- {
+  --   'chrisgrieser/nvim-origami',
+  --   event = 'VeryLazy',
+  --   opts = {
+  --     autoFold = {
+  --       enabled = false,
+  --     },
+  --   },
+  -- },
 
-  {
-    'jake-stewart/multicursor.nvim',
-    config = function()
-      local mc = require('multicursor-nvim')
-      mc.setup()
-
-      -- stylua: ignore start
-      vim.keymap.set({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
-      vim.keymap.set({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
-      vim.keymap.set({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
-      vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
-
-      vim.keymap.set({ 'n', 'x' }, '<leader>n', function() mc.matchAddCursor(1) end)
-      vim.keymap.set({ 'n', 'x' }, '<leader>N', function() mc.matchAddCursor(-1) end)
-      -- stylua: ignore end
-
-      --- Mappings defined in a keymap layer only apply when there are
-      -- multiple cursors. This lets you have overlapping mappings.
-      mc.addKeymapLayer(function(layerSet)
-        -- Select a different cursor as the main one.
-        layerSet({ 'n', 'x' }, '<left>', mc.prevCursor)
-        layerSet({ 'n', 'x' }, '<right>', mc.nextCursor)
-
-        -- Delete the main cursor.
-        layerSet({ 'n', 'x' }, '<leader>x', mc.deleteCursor)
-
-        -- Enable and clear cursors using escape.
-        layerSet('n', '<esc>', function()
-          if not mc.cursorsEnabled() then
-            mc.enableCursors()
-          else
-            mc.clearCursors()
-          end
-        end)
-      end)
-    end,
-  },
+  -- {
+  --   'jake-stewart/multicursor.nvim',
+  --   config = function()
+  --     local mc = require('multicursor-nvim')
+  --     mc.setup()
+  --
+  --     -- stylua: ignore start
+  --     vim.keymap.set({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
+  --     vim.keymap.set({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
+  --     vim.keymap.set({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
+  --     vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
+  --
+  --     vim.keymap.set({ 'n', 'x' }, '<leader>n', function() mc.matchAddCursor(1) end)
+  --     vim.keymap.set({ 'n', 'x' }, '<leader>N', function() mc.matchAddCursor(-1) end)
+  --     -- stylua: ignore end
+  --
+  --     --- Mappings defined in a keymap layer only apply when there are
+  --     -- multiple cursors. This lets you have overlapping mappings.
+  --     mc.addKeymapLayer(function(layerSet)
+  --       -- Select a different cursor as the main one.
+  --       layerSet({ 'n', 'x' }, '<left>', mc.prevCursor)
+  --       layerSet({ 'n', 'x' }, '<right>', mc.nextCursor)
+  --
+  --       -- Delete the main cursor.
+  --       layerSet({ 'n', 'x' }, '<leader>x', mc.deleteCursor)
+  --
+  --       -- Enable and clear cursors using escape.
+  --       layerSet('n', '<esc>', function()
+  --         if not mc.cursorsEnabled() then
+  --           mc.enableCursors()
+  --         else
+  --           mc.clearCursors()
+  --         end
+  --       end)
+  --     end)
+  --   end,
+  -- },
 }

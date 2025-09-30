@@ -1,4 +1,3 @@
--- TODO: add dap
 return {
   {
     'mfussenegger/nvim-dap',
