@@ -20,13 +20,17 @@ vim.pack.add({
   -- { src = 'https://github.com/folke/ts-comments.nvim' }, -- TODO: not working with pack
 })
 
+local debug = false
+
 local pack_plugins = vim.pack.get()
-print(vim
-  .iter(pack_plugins)
-  :map(function(plugin)
-    return string.format('%s (%s): %s', plugin.spec.name, tostring(plugin.active), plugin.path)
-  end)
-  :join('\n'))
+if debug then
+  print(vim
+    .iter(pack_plugins)
+    :map(function(plugin)
+      return string.format('%s (%s): %s', plugin.spec.name, tostring(plugin.active), plugin.path)
+    end)
+    :join('\n'))
+end
 
 local to_delete = vim
   .iter(pack_plugins)
@@ -38,6 +42,9 @@ local to_delete = vim
   end)
   :totable()
 if #to_delete > 0 then
+  if debug then
+    print(string.format('Deleting packages (%d): %s', #to_delete, table.concat(to_delete, ', ')))
+  end
   vim.pack.del(to_delete)
 end
 
