@@ -14,10 +14,10 @@ vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', ex
 -- vim pack
 vim.keymap.set({ 'n', 'x' }, '<leader>pu', function()
   vim.pack.update()
-end)
+end, { desc = 'Vim Pack Update' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pl', function()
   print(vim.inspect(vim.pack.get()))
-end)
+end, { desc = 'Vim Pack List' })
 
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
