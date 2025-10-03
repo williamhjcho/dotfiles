@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- require('autocmds')
+require('autocmds')
 require('lazy-init')
 
 -- requires packages to already be present
