@@ -85,12 +85,10 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
   },
   {
     'folke/ts-comments.nvim',
     opts = {},
-    event = 'VeryLazy',
   },
   {
     'stevearc/conform.nvim',
