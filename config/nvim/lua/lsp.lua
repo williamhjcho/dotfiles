@@ -41,6 +41,7 @@ vim.lsp.enable({
   'tailwindcss', -- tailwind css LSP
   'clojure_lsp', -- Clojure LSP
 })
+vim.lsp.inline_completion.enable()
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
