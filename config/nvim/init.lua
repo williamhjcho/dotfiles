@@ -1,22 +1,20 @@
 require('options')
 
 vim.pack.add({
+  -- colorschemes
   { src = 'https://github.com/navarasu/onedark.nvim' },
   -- { src = 'https://github.com/rebelot/kanagawa.nvim' },
   -- { src = 'https://github.com/folke/tokyonight.nvim' },
 
-  -- { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' }, -- FIXME:
+  -- editor plugins
   { src = 'https://github.com/chrisgrieser/nvim-origami' },
-
-  { src = 'https://github.com/christoomey/vim-tmux-navigator' }, -- TODO: fix tmux load/setup
   { src = 'https://github.com/jake-stewart/multicursor.nvim' },
+  { src = 'https://github.com/NMAC427/guess-indent.nvim' }, -- Detect tabstop and shiftwidth automatically
+
+  -- lsp related
   { src = 'https://github.com/b0o/SchemaStore.nvim' },
-  -- Detect tabstop and shiftwidth automatically
-  { src = 'https://github.com/NMAC427/guess-indent.nvim' },
-  -- better find/replace
-  { src = 'https://github.com/MagicDuck/grug-far.nvim' },
+  { src = 'https://github.com/MagicDuck/grug-far.nvim' }, -- better find/replace
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
-  -- { src = 'https://github.com/folke/ts-comments.nvim' }, -- TODO: not working with pack
 })
 
 local debug = false
@@ -87,10 +85,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>N', function() multicursor.matchAddCursor(
 require('guess-indent').setup({})
 require('grug-far').setup({ headerMaxWidth = 80 })
 require('nvim-ts-autotag').setup({})
--- require('ts-comments').setup({})
 
--- TODO: do something
--- FIXME: fix something
 require('keymaps')
 
 -- Highlight when yanking
