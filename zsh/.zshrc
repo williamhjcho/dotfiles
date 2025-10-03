@@ -150,8 +150,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# claude
-alias claude="~/.claude/local/claude"
-
 # bob
 . "$HOME/.local/share/bob/env/env.sh"
