@@ -50,43 +50,7 @@ return {
     },
   },
 
-  'christoomey/vim-tmux-navigator',
-
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     -- storm, moon, night, day
-  --     style = 'moon',
-  --     on_colors = function(colors)
-  --       -- makes comments a little brighter so its easier to see
-  --       colors.comment = '#7c86bf'
-  --     end,
-  --     on_highlights = function(hl, c)
-  --       hl.LineNr.fg = c.comment
-  --       hl.LineNrAbove.fg = c.comment
-  --       hl.LineNrBelow.fg = c.comment
-  --       -- hl.CursorLineNr.fg = "#00FF00"
-  --       -- gl.DiagnosticUnnecessary = { fg = commentColor }
-  --     end,
-  --   },
-  -- },
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   priority = 1000,
-  --   opts = {
-  --     -- wave, dragon, lotus
-  --     theme = 'wave',
-  --   },
-  -- },
-  -- {
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   opts = {
-  --     style = 'cool',
-  --   },
-  -- },
+  { 'christoomey/vim-tmux-navigator' },
 
   {
     'folke/snacks.nvim',
@@ -108,12 +72,6 @@ return {
     event = 'BufReadPre',
     opts = {},
   },
-
-  -- {
-  --   'b0o/SchemaStore.nvim',
-  --   lazy = true,
-  --   version = false, -- last release is way too old
-  -- },
 
   {
     'folke/which-key.nvim',
@@ -350,58 +308,4 @@ return {
       })
     end,
   },
-
-  -- {
-  --   'windwp/nvim-ts-autotag',
-  --   event = { 'BufReadPre', 'BufNewFile' },
-  --   opts = {},
-  -- },
-
-  -- {
-  --   'chrisgrieser/nvim-origami',
-  --   event = 'VeryLazy',
-  --   opts = {
-  --     autoFold = {
-  --       enabled = false,
-  --     },
-  --   },
-  -- },
-
-  -- {
-  --   'jake-stewart/multicursor.nvim',
-  --   config = function()
-  --     local mc = require('multicursor-nvim')
-  --     mc.setup()
-  --
-  --     -- stylua: ignore start
-  --     vim.keymap.set({ 'n', 'x' }, '<up>', function() mc.lineAddCursor(-1) end)
-  --     vim.keymap.set({ 'n', 'x' }, '<down>', function() mc.lineAddCursor(1) end)
-  --     vim.keymap.set({ 'n', 'x' }, '<leader><up>', function() mc.lineSkipCursor(-1) end)
-  --     vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() mc.lineSkipCursor(1) end)
-  --
-  --     vim.keymap.set({ 'n', 'x' }, '<leader>n', function() mc.matchAddCursor(1) end)
-  --     vim.keymap.set({ 'n', 'x' }, '<leader>N', function() mc.matchAddCursor(-1) end)
-  --     -- stylua: ignore end
-  --
-  --     --- Mappings defined in a keymap layer only apply when there are
-  --     -- multiple cursors. This lets you have overlapping mappings.
-  --     mc.addKeymapLayer(function(layerSet)
-  --       -- Select a different cursor as the main one.
-  --       layerSet({ 'n', 'x' }, '<left>', mc.prevCursor)
-  --       layerSet({ 'n', 'x' }, '<right>', mc.nextCursor)
-  --
-  --       -- Delete the main cursor.
-  --       layerSet({ 'n', 'x' }, '<leader>x', mc.deleteCursor)
-  --
-  --       -- Enable and clear cursors using escape.
-  --       layerSet('n', '<esc>', function()
-  --         if not mc.cursorsEnabled() then
-  --           mc.enableCursors()
-  --         else
-  --           mc.clearCursors()
-  --         end
-  --       end)
-  --     end)
-  --   end,
-  -- },
 }
