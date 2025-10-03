@@ -326,6 +326,8 @@ return {
     },
     config = function(_, opts)
       local ts = require('nvim-treesitter')
+      ts.setup(opts)
+
       local to_install = opts.ensure_installed
       local already_installed = ts.get_installed()
       to_install = vim
@@ -337,6 +339,15 @@ return {
       if #to_install > 0 then
         ts.install(to_install)
       end
+
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('whjc_treesitter', { clear = true }),
+        callback = function(ev)
+          if vim.tbl_get(opts, 'highlight', 'enable') ~= false then
+            pcall(vim.treesitter.start)
+          end
+        end,
+      })
     end,
   },
 
