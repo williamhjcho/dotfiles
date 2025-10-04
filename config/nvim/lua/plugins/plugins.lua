@@ -16,6 +16,7 @@ return {
         'svelte-language-server',
         'tflint', -- terraform linter
         'yaml-language-server', -- YAML linter
+        'json-lsp', -- JSON lsp (used by schemastore)
       },
     },
     config = function(_, opts)
@@ -98,7 +99,7 @@ return {
     opts = { headerMaxWidth = 80 },
   },
 
-  { 'b0o/SchemaStore.nvim' },
+  { 'b0o/SchemaStore.nvim', version = false },
 
   -- auto closes and renames html tags
   { 'windwp/nvim-ts-autotag' },

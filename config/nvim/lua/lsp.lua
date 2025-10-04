@@ -36,6 +36,7 @@ vim.lsp.enable({
   'taplo', -- TOML LSP
   'yamlls', -- YAML LSP
   'biome', -- general web formatter & linter (js, ts, json, etc)
+  'jsonls',
   'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
   'svelte', -- svelte LSP
   'tailwindcss', -- tailwind css LSP
