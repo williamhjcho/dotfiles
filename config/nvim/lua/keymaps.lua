@@ -31,10 +31,13 @@ end, { desc = 'Vim Pack List' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Move to window using <ctrl> hjkl keys `:help wincmd`
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Go to left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Go to right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
+-- only install if vim-tmux-navigator is not available, since it already provides this keymaps
+if vim.fn.exists(':TmuxNavigateLeft') == 0 then
+  vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Go to left window' })
+  vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Go to right window' })
+  vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
+  vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
+end
 
 -- Buffers
 -- stylua: ignore start

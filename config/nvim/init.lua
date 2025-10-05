@@ -6,6 +6,9 @@ vim.pack.add({
   -- { src = 'https://github.com/rebelot/kanagawa.nvim' },
   -- { src = 'https://github.com/folke/tokyonight.nvim' },
 })
+vim.pack.add({
+  { src = 'https://github.com/christoomey/vim-tmux-navigator' },
+}, { load = true })
 
 local debug = false
 
@@ -36,9 +39,10 @@ if #to_delete > 0 then
 end
 
 require('colorschemes')
+-- plugin setups
 require('lazy-init')
+
+-- config setups
 require('keymaps')
 require('autocmds')
-
--- requires packages to already be present
 require('lsp')
