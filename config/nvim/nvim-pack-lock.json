@@ -4,6 +4,10 @@
       "rev": "84a4987",
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
     "onedark.nvim": {
       "rev": "de495fa",
       "src": "https://github.com/navarasu/onedark.nvim"

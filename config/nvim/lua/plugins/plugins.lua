@@ -51,9 +51,6 @@ return {
     },
   },
 
-  -- Detect tabstop and shiftwidth automatically
-  -- { 'NMAC427/guess-indent.nvim', opts = {} },
-
   {
     'chrisgrieser/nvim-origami',
     opts = {
@@ -95,9 +92,6 @@ return {
   },
 
   { 'b0o/SchemaStore.nvim', version = false },
-
-  -- auto closes and renames html tags
-  { 'windwp/nvim-ts-autotag' },
 
   {
     'folke/snacks.nvim',

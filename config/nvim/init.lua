@@ -9,6 +9,8 @@ vim.pack.add({
 vim.pack.add({
   { src = 'https://github.com/christoomey/vim-tmux-navigator' },
   { src = 'https://github.com/NMAC427/guess-indent.nvim' },
+  -- auto closes and renames html tags
+  { src = 'https://github.com/windwp/nvim-ts-autotag' },
 }, { load = true })
 
 local debug = false
@@ -42,6 +44,7 @@ end
 require('colorschemes')
 -- plugin setups
 require('guess-indent').setup({})
+require('nvim-ts-autotag').setup({})
 require('lazy-init')
 
 -- config setups
