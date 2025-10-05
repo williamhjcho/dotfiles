@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "guess-indent.nvim": {
+      "rev": "84a4987",
+      "src": "https://github.com/NMAC427/guess-indent.nvim"
+    },
+    "onedark.nvim": {
+      "rev": "de495fa",
+      "src": "https://github.com/navarasu/onedark.nvim"
+    },
+    "vim-tmux-navigator": {
+      "rev": "c45243d",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    }
+  }
+}
