@@ -1,7 +1,7 @@
 # https://ghostty.org/docs/config
 # Use cmd+shift+, to reload config
 
-theme = tokyonight_moon
+# theme = tokyonight_moon
 
 font-family = "FiraMono Nerd Font Mono"
 font-family-bold = "FiraMono Nerd Font Mono"
