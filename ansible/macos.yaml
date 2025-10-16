@@ -58,6 +58,7 @@
           - goimports # go formatter
           - go-task # taskfile (makefile alternative)
           - bob # nvim installation manager
+          - tree-sitter-cli # needed by treesitter (nvim)
         # homebrew_taps:
         # - leoafarias/fvm
         homebrew_cask_apps:
