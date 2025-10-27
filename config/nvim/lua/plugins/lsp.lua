@@ -150,7 +150,11 @@ return {
         -- dart/flutter
         dart = { 'dart_format' },
         -- python
-        python = { 'ruff' },
+        python = {
+          'ruff_fix', -- fix auto-fixable lint errors
+          'ruff_format',
+          'ruff_organize_imports',
+        },
         -- clojure
         clojure = { lsp_format = 'fallback' },
       },

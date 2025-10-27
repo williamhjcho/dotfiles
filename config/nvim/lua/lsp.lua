@@ -41,12 +41,19 @@ vim.lsp.enable({
   'svelte', -- svelte LSP
   'tailwindcss', -- tailwind css LSP
   'clojure_lsp', -- Clojure LSP
+  'ruff', --  python LSP
+  'basedpyright', --  python LSP
 })
 vim.lsp.inline_completion.enable()
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
   callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client == nil then
+      return
+    end
+
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -76,10 +83,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('<leader>co', function()
       local ft = vim.bo.filetype
       local clients = vim.lsp.get_clients({ bufnr = 0 })
-        -- stylua: ignore
-        local client_has_name = function(name)
-          return vim.tbl_contains(vim.tbl_map(function(c) return c.name end, clients), name)
-        end
+
+      -- stylua: ignore
+      local client_has_name = function(name)
+        return vim.tbl_contains(vim.tbl_map(function(c) return c.name end, clients), name)
+      end
 
       -- overriding vtsls organize imports with biome
       if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'svelte' }, ft) then
@@ -133,8 +141,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --    See `:help CursorHold` for information about when this is executed
     --
     -- When you move your cursor, the highlights will be cleared (the second autocommand).
-    local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
       local highlight_augroup = vim.api.nvim_create_augroup('whjc-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
@@ -161,10 +168,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- code, if the language server you are using supports them
     --
     -- This may be unwanted, since they displace some of your code
-    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
       map('<leader>th', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
       end, '[T]oggle Inlay [H]ints')
+    end
+
+    -- python LSP
+    if client.name == 'ruff' then
+      -- Disable hover in favor of based pyright
+      client.server_capabilities.hoverProvider = false
     end
   end,
 })
