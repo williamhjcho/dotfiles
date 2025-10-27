@@ -9,23 +9,12 @@ WHJC="whjc"
 if ! has_session "$WHJC"; then
   PROJECTS_DIR="$HOME/dev/williamhjcho"
   tmux new-session -d -s $WHJC -n "dotfiles" -c "$HOME/dotfiles"
-  tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
   tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
-  tmux resize-pane -t "$WHJC:dotfiles.1" -R 60
+  tmux split-window -t "$WHJC:dotfiles.1" -v -d -c "$HOME/dotfiles"
+  tmux resize-pane -t "$WHJC:dotfiles.1" -L 100
+  tmux send-keys -t "$WHJC:dotfiles.3" "nvim" C-m
 
-  tmux new-window -d -t "$WHJC" -n "vs" -c "$PROJECTS_DIR/vs"
-  tmux split-window -t "$WHJC:vs" -h -d -c "$PROJECTS_DIR/vs"
-  tmux resize-pane -t "$WHJC:vs.1" -R 60
-
-  tmux new-window -d -t "$WHJC" -n "travelzine" -c "$PROJECTS_DIR/travelzine"
-  tmux split-window -t "$WHJC:travelzine" -h -d -c "$PROJECTS_DIR/travelzine"
-  tmux resize-pane -t "$WHJC:travelzine.1" -R 60
-
-  tmux new-window -d -t "$WHJC" -n "dev-blog" -c "$PROJECTS_DIR/dev-blog"
-  tmux split-window -t "$WHJC:dev-blog" -h -d -c "$PROJECTS_DIR/dev-blog"
-  tmux resize-pane -t "$WHJC:dev-blog.1" -L 60
-
-  tmux select-window -t "$WHJC:dotfiles"
+  tmux select-pane -t "$WHJC:dotfiles.3"
 fi
 
 WORK="180s"
@@ -35,12 +24,12 @@ if ! has_session "$WORK"; then
 
   tmux new-window -d -t "$WORK:" -n "cisne" -c "$WORK_DIR/cisne"
   tmux split-window -t "$WORK:cisne" -h -d -c "$WORK_DIR/cisne"
-  tmux resize-pane -t "$WORK:cisne.1" -L 60
+  tmux split-window -t "$WORK:cisne.1" -v -d -c "$WORK_DIR/cisne"
+  tmux resize-pane -t "$WORK:cisne.1" -L 100
+  tmux select-pane -t "$WORK:cisne.3"
 
   tmux new-window -d -t "$WORK:" -n "camaleao" -c "$WORK_DIR/camaleao"
-  tmux split-window -t "$WORK:camaleao" -h -d -c "$WORK_DIR/arraia"
-
-  tmux new-window -d -t "$WORK:" -n "arraia" -c "$WORK_DIR/arraia"
+  tmux new-window -d -t "$WORK:" -n "tatu" -c "$WORK_DIR/tatu"
 
   # needs the trailing ':' on the session's name
   # tmux new-window -t "$WORK:" -n "<project-name>" -c "$WORK_DIR/<dir>"
