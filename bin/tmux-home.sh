@@ -9,23 +9,28 @@ WHJC="whjc"
 if ! has_session "$WHJC"; then
   PROJECTS_DIR="$HOME/dev/williamhjcho"
   tmux new-session -d -s $WHJC -n "dotfiles" -c "$HOME/dotfiles"
-  tmux send-keys -t "$WHJC:dotfiles" "nvim" C-m
-  # tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
+  tmux split-window -t "$WHJC:dotfiles" -h -d -c "$HOME/dotfiles"
+  tmux split-window -t "$WHJC:dotfiles.1" -v -d -c "$HOME/dotfiles"
+  tmux resize-pane -t "$WHJC:dotfiles.1" -L 100
+  tmux send-keys -t "$WHJC:dotfiles.3" "nvim" C-m
 
-  tmux new-window -t "$WHJC:" -n "whjc.dev" -c "$PROJECTS_DIR/whjc.dev"
+  # tmux new-window -t "$WHJC:" -n "whjc.dev" -c "$PROJECTS_DIR/whjc.dev"
 
-  tmux new-window -d -t "$WHJC" -n "travelzine" -c "$PROJECTS_DIR/travelzine"
-  tmux split-window -t "$WHJC:travelzine" -h -d -c "$PROJECTS_DIR/travelzine"
-  tmux resize-pane -t "$WHJC:travelzine.1" -R 60
+  tmux new-window -d -t "$WHJC" -n "memories" -c "$PROJECTS_DIR/memories"
+  tmux split-window -t "$WHJC:memories" -h -d -c "$PROJECTS_DIR/memories"
+  tmux split-window -t "$WHJC:memories.1" -v -d -c "$PROJECTS_DIR/memories"
+  tmux resize-pane -t "$WHJC:memories.1" -L 100
+  tmux send-keys -t "$WHJC:memories.3" "nvim" C-m
 
-  tmux select-window -t "$WHJC:dotfiles"
+  # tmux select-window -t "$WHJC:dotfiles"
+  tmux select-pane -t "$WHJC:dotfiles.3"
 fi
 
-WORK="dev"
-if ! has_session "$WORK"; then
-  DEV_DIR="$HOME/dev"
-  tmux new-session -d -s "$WORK" -n "dev" -c "$DEV_DIR"
-fi
+# WORK="dev"
+# if ! has_session "$WORK"; then
+#   DEV_DIR="$HOME/dev"
+#   tmux new-session -d -s "$WORK" -n "dev" -c "$DEV_DIR"
+# fi
 
 SESSION="${1:-$WHJC}"
 if has_session "$SESSION"; then
