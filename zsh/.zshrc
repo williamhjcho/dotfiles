@@ -124,11 +124,11 @@ export PATH="/Users/whjc/.codeium/windsurf/bin:$PATH"
 
 # work 180s
 if [ -d "$HOME/.180cli" ]; then
-  autoload bashcompinit
-  bashcompinit
-  export i80_HOME="$HOME/.180cli"
-  export PATH="$i80_HOME/bin:$PATH"
-  source "$i80_HOME/autocomplete/bash_180cli"
+    autoload bashcompinit
+    bashcompinit
+    export i80_HOME="$HOME/.180cli"
+    export PATH="$i80_HOME/bin:$PATH"
+    source "$i80_HOME/autocomplete/bash_180cli"
 fi
 
 . "$HOME/.local/bin/env"
@@ -145,8 +145,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
