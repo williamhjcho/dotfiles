@@ -30,14 +30,6 @@ end, { desc = 'Vim Pack List' })
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Move to window using <ctrl> hjkl keys `:help wincmd`
--- only install if vim-tmux-navigator is not available, since it already provides this keymaps
-if vim.fn.exists(':TmuxNavigateLeft') == 0 then
-  vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Go to left window' })
-  vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Go to right window' })
-  vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
-  vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
-end
 
 -- Buffers
 -- stylua: ignore start
@@ -79,7 +71,7 @@ vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap
 -- Lazy
 -- stylua: ignore start
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Open [L]azy' })
-vim.keymap.set("n", '<leader>gg', function() Snacks.lazygit.open() end, { desc = 'Lazygit (root dir)' })
+vim.keymap.set("n", '<leader>gg', function() Snacks.lazygit() end, { desc = 'Lazygit' })
 vim.keymap.set("n", '<leader>fe', function() Snacks.explorer() end, { desc = 'Explorer (cwd)' })
 --stylua: ignore end
 
@@ -133,11 +125,26 @@ vim.keymap.set('n', '[e', diagnostic_goto(false, vim.diagnostic.severity.ERROR),
 vim.keymap.set('n', ']w', diagnostic_goto(true, vim.diagnostic.severity.WARN), { desc = 'Next Warning' })
 vim.keymap.set('n', '[w', diagnostic_goto(false, vim.diagnostic.severity.WARN), { desc = 'Prev Warning' })
 
--- tmux
--- vim.keymap.set('n', '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>', { desc = 'tmux navigate left' })
--- vim.keymap.set('n', '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>', { desc = 'tmux navigate down' })
--- vim.keymap.set('n', '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>', { desc = 'tmux navigate up' })
--- vim.keymap.set('n', '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>', { desc = 'tmux navigate right' })
+-- Move to window using <ctrl> hjkl keys `:help wincmd`
+-- only install if vim-tmux-navigator is not available, since it already provides this keymaps
+if vim.fn.exists(':TmuxNavigateLeft') == 0 then
+  vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Go to left window' })
+  vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Go to right window' })
+  vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
+  vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
+else
+  -- tmux already sets these keymaps
+  -- vim.keymap.set('n', '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>', { desc = 'tmux navigate left' })
+  -- vim.keymap.set('n', '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>', { desc = 'tmux navigate down' })
+  -- vim.keymap.set('n', '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>', { desc = 'tmux navigate up' })
+  -- vim.keymap.set('n', '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>', { desc = 'tmux navigate right' })
+
+  -- disable tmux keymaps for lazygit integration
+  vim.keymap.del('t', '<C-h>')
+  vim.keymap.del('t', '<C-l>')
+  vim.keymap.del('t', '<C-j>')
+  vim.keymap.del('t', '<C-k>')
+end
 
 -- persistence
 -- stylua: ignore start
