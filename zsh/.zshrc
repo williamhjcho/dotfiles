@@ -110,6 +110,9 @@ command -v direnv >/dev/null && eval "$(direnv hook zsh)" || echo "'direnv' not 
 # taskfile
 command -v task >/dev/null && eval "$(task --completion zsh)" || echo "'task' not installed"
 
+# mise
+command -v mise >/dev/null && eval "$(mise activate zsh)" || echo "'mise' not installed"
+
 # zsh plugins
 if type brew &>/dev/null; then
     source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
