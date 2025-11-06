@@ -70,7 +70,7 @@ vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap
 
 -- Lazy
 -- stylua: ignore start
-vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Open [L]azy' })
+vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Open [L]azy' })
 vim.keymap.set("n", '<leader>gg', function() Snacks.lazygit() end, { desc = 'Lazygit' })
 vim.keymap.set("n", '<leader>fe', function() Snacks.explorer() end, { desc = 'Explorer (cwd)' })
 --stylua: ignore end
