@@ -77,3 +77,5 @@ vim.filetype.add({
     ['%.env%.[%w_.-]+'] = 'dotenv',
   },
 })
+
+vim.o.exrc = true
