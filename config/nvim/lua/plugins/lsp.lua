@@ -218,11 +218,6 @@ return {
     },
     keys = {
       {
-        '<leader>Fl',
-        '<cmd>Telescope flutter commands<cr>',
-        desc = 'Flutter Commands',
-      },
-      {
         '<leader>Fr',
         '<cmd>FlutterRun<cr>',
         desc = 'Flutter Run',
@@ -231,6 +226,21 @@ return {
         '<leader>Fq',
         '<cmd>FlutterQuit<cr>',
         desc = 'Flutter Quit',
+      },
+      {
+        '<leader>FR',
+        '<cmd>FlutterRestart<cr>',
+        desc = 'Flutter Restart',
+      },
+      {
+        '<leader>Fq',
+        '<cmd>FlutterQuit<cr>',
+        desc = 'Flutter Quit',
+      },
+      {
+        '<leader>Fl',
+        '<cmd>FlutterLogToggle<cr>',
+        desc = 'Flutter Log Toggle',
       },
       {
         '<leader>Fdc',
