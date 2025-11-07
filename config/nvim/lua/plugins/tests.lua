@@ -24,6 +24,10 @@ return {
       local config = vim.tbl_deep_extend('force', opts, {
         adapters = {
           require('neotest-golang'),
+          require('neotest-dart')({
+            command = 'flutter',
+            use_lsp = true,
+          }),
         },
       })
       require('neotest').setup(config)
