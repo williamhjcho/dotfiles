@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # Personal configurations start
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_HOME="$HOME/dev"
+export DOTFILES_HOME="$HOME/dotfiles"
 export TOOLS_HOME="$HOME/tools"
 export EDITOR=nvim
 
@@ -72,12 +73,13 @@ export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
 
 # Google Cloud CLI
+GCLOUD_HOME="$HOME/google-cloud-sdk";
 # The next line enables shell command completion for gcloud.
-if [ -f "$TOOLS_HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$TOOLS_HOME/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f "$GCLOUD_HOME/completion.zsh.inc" ]; then . "$GCLOUD_HOME/completion.zsh.inc"; fi
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/william.cho/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/william.cho/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$GCLOUD_HOME/path.zsh.inc" ]; then . "$GCLOUD_HOME/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/william.cho/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/william.cho/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$GCLOUD_HOME/completion.zsh.inc" ]; then . "$GCLOUD_HOME/completion.zsh.inc"; fi
 
 # Rover
 [ -d "$HOME/.rover" ] && source "$HOME/.rover/env"
@@ -152,6 +154,9 @@ case ":$PATH:" in
     *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# custom bin
+source "$DOTFILES_HOME/bin/generators.sh"
 
 # bob
 . "$HOME/.local/share/bob/env/env.sh"
