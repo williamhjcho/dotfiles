@@ -1,4 +1,4 @@
-require('options')
+require('whjc.options')
 
 vim.pack.add({
   -- colorschemes
@@ -41,13 +41,14 @@ if #to_delete > 0 then
   vim.pack.del(to_delete)
 end
 
-require('colorschemes')
+require('whjc.colorschemes')
 -- plugin setups
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
-require('lazy-init')
+
+require('whjc.lazy-init')
 
 -- config setups
-require('keymaps')
-require('autocmds')
-require('lsp')
+require('whjc.keymaps')
+require('whjc.autocmds')
+require('whjc.lsp')
