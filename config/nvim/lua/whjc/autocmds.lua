@@ -1,13 +1,7 @@
--- Basic Autocommands
---  See `:help lua-guide-autocommands`
-local function augroup(name)
-  return vim.api.nvim_create_augroup('whjc_' .. name, { clear = true })
-end
-
 -- Highlight when yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = augroup('highlight_yank'),
+  group = vim.api.nvim_create_augroup('whjc_highlight_yank', { clear = true }),
   callback = function()
     vim.hl.on_yank()
   end,
@@ -15,7 +9,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
-  group = augroup('checktime'),
+  group = vim.api.nvim_create_augroup('whjc_checktime', { clear = true }),
   callback = function()
     if vim.o.buftype ~= 'nofile' then
       vim.cmd('checktime')
@@ -25,7 +19,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd('BufReadPost', {
-  group = augroup('last_loc'),
+  group = vim.api.nvim_create_augroup('whjc_last_loc', { clear = true }),
   callback = function(event)
     local exclude = { 'gitcommit' }
     local buf = event.buf
@@ -43,7 +37,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd('FileType', {
-  group = augroup('close_with_q'),
+  group = vim.api.nvim_create_augroup('whjc_close_with_q', { clear = true }),
   pattern = {
     'PlenaryTestPopup',
     'checkhealth',
@@ -78,7 +72,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- make it easier to close man-files when opened inline
 vim.api.nvim_create_autocmd('FileType', {
-  group = augroup('man_unlisted'),
+  group = vim.api.nvim_create_augroup('whjc_man_unlisted', { clear = true }),
   pattern = { 'man' },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
@@ -87,7 +81,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd('FileType', {
-  group = augroup('wrap_spell'),
+  group = vim.api.nvim_create_augroup('whjc_wrap_spell', { clear = true }),
   pattern = { 'text', 'plaintex', 'typst', 'gitcommit', 'markdown' },
   callback = function()
     vim.opt_local.wrap = true
@@ -97,7 +91,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  group = augroup('auto_create_dir'),
+  group = vim.api.nvim_create_augroup('whjc_auto_create_dir', { clear = true }),
   callback = function(event)
     if event.match:match('^%w%w+:[\\/][\\/]') then
       return
