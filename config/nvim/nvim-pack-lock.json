@@ -4,6 +4,18 @@
       "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
+    "multicursor.nvim": {
+      "rev": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd",
+      "src": "https://github.com/jake-stewart/multicursor.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-origami": {
+      "rev": "d42d11008a32f5f8c92bca6fd63f6782f197d114",
+      "src": "https://github.com/chrisgrieser/nvim-origami"
+    },
     "nvim-ts-autotag": {
       "rev": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc",
       "src": "https://github.com/windwp/nvim-ts-autotag"

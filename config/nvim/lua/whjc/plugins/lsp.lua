@@ -93,9 +93,7 @@ return {
     },
     opts_extend = { 'sources.default' },
   },
-  {
-    'neovim/nvim-lspconfig',
-  },
+  -- { 'neovim/nvim-lspconfig', },
   {
     'folke/ts-comments.nvim',
     opts = {},

@@ -189,3 +189,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() require('multicursor-n
 vim.keymap.set({ 'n', 'x' }, '<leader>n', function() require('multicursor-nvim').matchAddCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader>N', function() require('multicursor-nvim').matchAddCursor(-1) end)
 -- stylua: ignore end
+
+vim.keymap.set({ 'n', 'x' }, '<leader>?', function()
+  require('which-key').show({ global = false })
+end, { desc = 'Buffer Keymaps (which-key}' })
