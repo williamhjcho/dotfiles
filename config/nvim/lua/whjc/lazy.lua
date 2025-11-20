@@ -12,19 +12,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
+
+-- add lazy to `runtimepath` (= 'require' visibiilty)
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   spec = {
-    -- import/override with custom plugins
-    { import = 'plugins' },
+    { import = 'whjc.plugins' },
   },
   install = {
-    missing = true,
     colorscheme = { 'tokyonight' },
   },
-  checker = {
-    enabled = true,
+  change_detection = {
+    enabled = false,
     notify = false,
   },
   performance = {

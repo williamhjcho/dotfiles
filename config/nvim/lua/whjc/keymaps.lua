@@ -18,6 +18,31 @@ end, { desc = 'Vim Pack Update' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pl', function()
   print(vim.inspect(vim.pack.get()))
 end, { desc = 'Vim Pack List' })
+vim.keymap.set({ 'n', 'x' }, '<leader>pd', function()
+  local inactive = vim
+    .iter(vim.pack.get())
+    :filter(function(p)
+      return not p.active
+    end)
+    :map(function(p)
+      return p.spec.name
+    end)
+    :totable()
+  if #inactive > 0 then
+    print('Deleting inactive plugins: ' .. table.concat(inactive, ', '))
+    vim.pack.del(inactive)
+  end
+end, { desc = 'Vim Pack Delete (inactive)' })
+vim.keymap.set({ 'n', 'x' }, '<leader>pD', function()
+  local plugins = vim
+    .iter(vim.pack.get())
+    :map(function(p)
+      return p.spec.name
+    end)
+    :totable()
+  print('Deleting all plugins: ' .. table.concat(plugins, ', '))
+  vim.pack.del(plugins)
+end, { desc = 'Vim Pack Delete (all)' })
 
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

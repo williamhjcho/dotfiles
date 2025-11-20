@@ -42,11 +42,12 @@ if #to_delete > 0 then
 end
 
 require('whjc.colorschemes')
+
 -- plugin setups
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
 
-require('whjc.lazy-init')
+require('whjc.lazy')
 
 -- config setups
 require('whjc.keymaps')
