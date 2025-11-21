@@ -18,6 +18,7 @@ vim.pack.add({
   { src = 'https://github.com/lewis6991/gitsigns.nvim' },
   { src = 'https://github.com/chrisgrieser/nvim-origami' },
   { src = 'https://github.com/folke/persistence.nvim' },
+  { src = 'https://github.com/echasnovski/mini.nvim' },
 
   -- lsp
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
@@ -49,6 +50,7 @@ require('whjc.lsp')
 -- plugin setups
 require('whjc.mason')
 require('whjc.multicursor')
+require('whjc.mini')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
 require('snacks').setup({
