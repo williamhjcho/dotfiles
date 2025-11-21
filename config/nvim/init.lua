@@ -22,6 +22,7 @@ vim.pack.add({
   { src = 'https://github.com/MagicDuck/grug-far.nvim' },
 
   -- lsp
+  { src = 'https://github.com/stevearc/conform.nvim' },
   { src = 'https://github.com/folke/ts-comments.nvim' },
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
 }, {
@@ -88,4 +89,6 @@ require('grug-far').setup({
   headerMaxWidth = 80,
 })
 
+-- editor plugins
+require('whjc.conform')
 -- require('whjc.lazy')
