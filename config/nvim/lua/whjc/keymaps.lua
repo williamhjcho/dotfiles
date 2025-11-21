@@ -17,17 +17,24 @@ vim.keymap.set({ 'n', 'x' }, '<leader>pu', function()
   vim.pack.update()
 end, { desc = 'Vim Pack Update' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pl', function()
-  print(vim.inspect(vim.pack.get()))
+  -- stylua: ignore
+  local packages = vim
+    .iter(vim.pack.get())
+    :map(function(p) return {
+        active = p.active,
+        name = p.spec.name,
+        src = p.spec.src,
+        rev = p.rev,
+    } end)
+    :totable()
+  print(vim.inspect(packages))
 end, { desc = 'Vim Pack List' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pd', function()
+  -- stylua: ignore
   local inactive = vim
     .iter(vim.pack.get())
-    :filter(function(p)
-      return not p.active
-    end)
-    :map(function(p)
-      return p.spec.name
-    end)
+    :filter(function(p) return not p.active end)
+    :map(function(p) return p.spec.name end)
     :totable()
   if #inactive > 0 then
     print('Deleting inactive plugins: ' .. table.concat(inactive, ', '))
