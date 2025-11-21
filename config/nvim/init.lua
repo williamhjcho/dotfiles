@@ -11,6 +11,7 @@ vim.pack.add({
   -- editor
   { src = 'https://github.com/christoomey/vim-tmux-navigator' },
   { src = 'https://github.com/jake-stewart/multicursor.nvim' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
   { src = 'https://github.com/folke/snacks.nvim' },
   { src = 'https://github.com/folke/which-key.nvim' },
   { src = 'https://github.com/b0o/SchemaStore.nvim' },
@@ -53,6 +54,7 @@ require('whjc.lsp')
 
 -- plugin setups
 require('whjc.mason')
+require('whjc.treesitter')
 require('whjc.multicursor')
 require('whjc.mini')
 require('guess-indent').setup({})
