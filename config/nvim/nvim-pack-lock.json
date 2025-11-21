@@ -26,6 +26,10 @@
       "rev": "230de4232577ef52e2044ea4ab5f65cd926a11e2",
       "src": "https://github.com/Olical/conjure"
     },
+    "copilot.lua": {
+      "rev": "4383e05a47493d7ff77b058c0548129eb38ec7fb",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
     "gitsigns.nvim": {
       "rev": "cdafc320f03f2572c40ab93a4eecb733d4016d07",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -78,6 +82,10 @@
     "persistence.nvim": {
       "rev": "b20b2a7887bd39c1a356980b45e03250f3dce49c",
       "src": "https://github.com/folke/persistence.nvim"
+    },
+    "sidekick.nvim": {
+      "rev": "c2bdf8cfcd87a6be5f8b84322c1b5052e78e302e",
+      "src": "https://github.com/folke/sidekick.nvim"
     },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
