@@ -7,24 +7,23 @@ vim.pack.add({
   --     require('luasnip.loaders.from_vscode').lazy_load()
   --   end,
   -- },
-  -- copilot provider
-  -- 'giuxtaposition/blink-cmp-copilot',
+  'https://github.com/giuxtaposition/blink-cmp-copilot', -- copilot provider
 }, { confirm = false })
 
 local blink = require('blink.cmp')
 blink.setup({
   keymap = {
     preset = 'default',
-    -- ['<Tab>'] = {
-    --   'snippet_forward',
-    --   function()
-    --     return require('sidekick').nes_jump_or_apply()
-    --   end,
-    --   function()
-    --     return vim.lsp.inline_completion.get()
-    --   end,
-    --   'fallback',
-    -- },
+    ['<Tab>'] = {
+      'snippet_forward',
+      function()
+        return require('sidekick').nes_jump_or_apply()
+      end,
+      function()
+        return vim.lsp.inline_completion.get()
+      end,
+      'fallback',
+    },
   },
   appearance = {
     nerd_font_variant = 'mono',
@@ -34,16 +33,16 @@ blink.setup({
   },
   sources = {
     -- default = { 'lsp', 'path', 'snippets', 'lazydev', 'copilot', 'buffer' },
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = { 'lsp', 'path', 'snippets', 'copilot', 'buffer' },
 
     providers = {
       -- github copilot
-      -- copilot = {
-      --   name = 'copilot',
-      --   module = 'blink-cmp-copilot',
-      --   score_offset = 100, -- make copilot suggestions top priority
-      --   async = true,
-      -- },
+      copilot = {
+        name = 'copilot',
+        module = 'blink-cmp-copilot',
+        score_offset = 100, -- make copilot suggestions top priority
+        async = true,
+      },
       -- lazydev = {
       --   module = 'lazydev.integrations.blink',
       --   score_offset = 99, -- make lazydev completions top priority

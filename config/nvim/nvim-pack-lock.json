@@ -13,6 +13,10 @@
       "rev": "1b25eac3ac03659c3d3af75c7455e179e5f197f7",
       "src": "https://github.com/m00qek/baleia.nvim"
     },
+    "blink-cmp-copilot": {
+      "rev": "439cff78780c033aa23cf061d7315314b347e3c1",
+      "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
+    },
     "blink.cmp": {
       "rev": "b19413d214068f316c78978b08264ed1c41830ec",
       "src": "https://github.com/saghen/blink.cmp",
