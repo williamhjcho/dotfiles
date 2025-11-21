@@ -21,6 +21,7 @@ vim.pack.add({
   { src = 'https://github.com/echasnovski/mini.nvim' },
 
   -- lsp
+  { src = 'https://github.com/folke/ts-comments.nvim' },
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
 }, {
   load = true,
@@ -80,6 +81,7 @@ require('gitsigns').setup({})
 require('origami').setup({
   autoFold = { enabled = false },
 })
+require('ts-comments').setup({})
 require('persistence').setup({})
 
 -- require('whjc.lazy')
