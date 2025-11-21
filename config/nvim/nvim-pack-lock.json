@@ -1,5 +1,10 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "5a1e39223db9a0498024a77b8441169d260c8c25",
+      "src": "https://github.com/L3MON4D3/LuaSnip",
+      "version": "2.0.0 - 3.0.0"
+    },
     "SchemaStore.nvim": {
       "rev": "1d0932eef16b068e65e0c6ceb4461edd774dd521",
       "src": "https://github.com/b0o/SchemaStore.nvim"
@@ -7,6 +12,11 @@
     "baleia.nvim": {
       "rev": "1b25eac3ac03659c3d3af75c7455e179e5f197f7",
       "src": "https://github.com/m00qek/baleia.nvim"
+    },
+    "blink.cmp": {
+      "rev": "b19413d214068f316c78978b08264ed1c41830ec",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
       "rev": "1bf8b5b9caee51507aa51eaed3da5b0f2595c6b9",

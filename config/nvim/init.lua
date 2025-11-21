@@ -33,21 +33,6 @@ vim.pack.add({
   confirm = false,
 })
 
-local pack_plugins = vim.pack.get()
-
-local to_delete = vim
-  .iter(pack_plugins)
-  :filter(function(plugin)
-    return not plugin.active
-  end)
-  :map(function(plugin)
-    return plugin.spec.name
-  end)
-  :totable()
-if #to_delete > 0 then
-  vim.pack.del(to_delete)
-end
-
 require('whjc.colorschemes')
 require('whjc.keymaps')
 require('whjc.autocmds')
@@ -98,5 +83,7 @@ require('todo-comments').setup({
   signs = false,
 })
 
+-- lsp setups
+require('whjc.blink')
 require('whjc.conform')
 require('whjc.clojure')
