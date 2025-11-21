@@ -11,8 +11,13 @@ vim.pack.add({
   -- editor
   { src = 'https://github.com/christoomey/vim-tmux-navigator' },
   { src = 'https://github.com/jake-stewart/multicursor.nvim' },
+  { src = 'https://github.com/folke/snacks.nvim' },
+  { src = 'https://github.com/folke/which-key.nvim' },
+  { src = 'https://github.com/b0o/SchemaStore.nvim' },
   { src = 'https://github.com/NMAC427/guess-indent.nvim' },
+  { src = 'https://github.com/lewis6991/gitsigns.nvim' },
   { src = 'https://github.com/chrisgrieser/nvim-origami' },
+  { src = 'https://github.com/folke/persistence.nvim' },
 
   -- lsp
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
@@ -45,9 +50,34 @@ require('whjc.lsp')
 require('whjc.mason')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
+require('snacks').setup({
+  indent = { enabled = true },
+  lazygit = {},
+  explorer = {},
+  picker = {},
+})
+require('which-key').setup({
+  preset = 'helix',
+  defaults = {},
+  spec = {
+    { '<leader><tab>', group = 'tabs' },
+    { '<leader>b', group = 'buffer' },
+    { '<leader>c', group = 'code' },
+    { '<leader>d', group = 'debug' },
+    { '<leader>f', group = 'file|find' },
+    { '<leader>q', group = 'quit|session' },
+    { '<leader>s', group = 'search' },
+    { '<leader>x', group = 'diagnostics|quickfix' },
+    { 'g', group = 'goto' },
+    { 'gs', group = 'surround' },
+    { 'z', group = 'fold' },
+  },
+})
+require('gitsigns').setup({})
 require('origami').setup({
   autoFold = { enabled = false },
 })
+require('persistence').setup({})
 
 local multicursor = require('multicursor-nvim')
 multicursor.setup()

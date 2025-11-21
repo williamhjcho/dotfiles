@@ -6,66 +6,6 @@ return {
     opts = { headerMaxWidth = 80 },
   },
 
-  { 'b0o/SchemaStore.nvim', version = false },
-
-  {
-    'folke/snacks.nvim',
-    priority = 1000,
-    lazy = false,
-    --- @module 'snacks'
-    --- @type snacks.Config
-    opts = {
-      indent = { enabled = true },
-      lazygit = {},
-      explorer = {},
-      picker = {},
-    },
-  },
-
-  -- session management
-  {
-    'folke/persistence.nvim',
-    event = 'BufReadPre',
-    opts = {},
-  },
-
-  {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    opts = {
-      preset = 'helix',
-      defaults = {},
-      spec = {
-        { '<leader><tab>', group = 'tabs' },
-        { '<leader>b', group = 'buffer' },
-        { '<leader>c', group = 'code' },
-        { '<leader>d', group = 'debug' },
-        { '<leader>f', group = 'file|find' },
-        { '<leader>q', group = 'quit|session' },
-        { '<leader>s', group = 'search' },
-        { '<leader>x', group = 'diagnostics|quickfix' },
-        { 'g', group = 'goto' },
-        { 'gs', group = 'surround' },
-        { 'z', group = 'fold' },
-      },
-    },
-    keys = {
-      {
-        '<Leader>?',
-        function()
-          require('which-key').show({ global = false })
-        end,
-        { desc = 'Buffer Keymaps (which-key)' },
-      },
-    },
-  },
-
-  {
-    'lewis6991/gitsigns.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
-
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
