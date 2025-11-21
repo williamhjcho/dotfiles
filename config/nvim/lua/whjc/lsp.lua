@@ -1,3 +1,14 @@
+-- stylua: ignore
+local lsps = vim
+  .iter(require('whjc.languages'))
+  :map(function(i) return i.lsp end)
+  :filter(function(i) return i end)
+  :flatten()
+  :totable()
+
+vim.lsp.enable(lsps)
+vim.lsp.inline_completion.enable()
+
 -- Disable the default keybinds
 for _, bind in ipairs({ 'grn', 'gra', 'gri', 'grr' }) do
   pcall(vim.keymap.del, 'n', bind)
@@ -29,22 +40,6 @@ vim.diagnostic.config({
     end,
   },
 })
-
-vim.lsp.enable({
-  'lua_ls',
-  'gopls', -- go LSP
-  'taplo', -- TOML LSP
-  'yamlls', -- YAML LSP
-  'biome', -- general web formatter & linter (js, ts, json, etc)
-  'jsonls',
-  'vtsls', -- javscript/typescript LSP -- same as lazy.nvim
-  'svelte', -- svelte LSP
-  'tailwindcss', -- tailwind css LSP
-  'clojure_lsp', -- Clojure LSP
-  'ruff', --  python LSP
-  'basedpyright', --  python LSP
-})
-vim.lsp.inline_completion.enable()
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
