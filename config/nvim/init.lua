@@ -6,6 +6,9 @@ vim.pack.add({
   -- { src = 'https://github.com/rebelot/kanagawa.nvim' },
   -- { src = 'https://github.com/folke/tokyonight.nvim' },
   { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/mason-org/mason.nvim' },
+
+  -- editor
   { src = 'https://github.com/christoomey/vim-tmux-navigator' },
   { src = 'https://github.com/jake-stewart/multicursor.nvim' },
   { src = 'https://github.com/NMAC427/guess-indent.nvim' },
@@ -39,6 +42,7 @@ require('whjc.autocmds')
 require('whjc.lsp')
 
 -- plugin setups
+require('whjc.mason')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
 require('origami').setup({
