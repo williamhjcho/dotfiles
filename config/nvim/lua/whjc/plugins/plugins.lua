@@ -1,21 +1,5 @@
 return {
   {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
-  },
-
-  -- Detect tabstop and shiftwidth automatically
-  -- { 'NMAC427/guess-indent.nvim', opts = {} },
-
-  -- better find x replace
-  -- {
-  --   'MagicDuck/grug-far.nvim',
-  --   opts = { headerMaxWidth = 80 },
-  -- },
-
-  {
     'nvim-treesitter/nvim-treesitter',
     branch = 'main',
     version = false,

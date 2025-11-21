@@ -20,6 +20,7 @@ vim.pack.add({
   { src = 'https://github.com/folke/persistence.nvim' },
   { src = 'https://github.com/echasnovski/mini.nvim' },
   { src = 'https://github.com/MagicDuck/grug-far.nvim' },
+  { src = 'https://github.com/folke/todo-comments.nvim' },
 
   -- lsp
   { src = 'https://github.com/stevearc/conform.nvim' },
@@ -87,6 +88,11 @@ require('ts-comments').setup({})
 require('persistence').setup({})
 require('grug-far').setup({
   headerMaxWidth = 80,
+})
+require('todo-comments').setup({
+  -- event = 'VimEnter',
+  -- dependencies = { 'nvim-lua/plenary.nvim' },
+  signs = false,
 })
 
 -- editor plugins
