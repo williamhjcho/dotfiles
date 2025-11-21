@@ -19,6 +19,7 @@ vim.pack.add({
   { src = 'https://github.com/chrisgrieser/nvim-origami' },
   { src = 'https://github.com/folke/persistence.nvim' },
   { src = 'https://github.com/echasnovski/mini.nvim' },
+  { src = 'https://github.com/MagicDuck/grug-far.nvim' },
 
   -- lsp
   { src = 'https://github.com/folke/ts-comments.nvim' },
@@ -83,5 +84,8 @@ require('origami').setup({
 })
 require('ts-comments').setup({})
 require('persistence').setup({})
+require('grug-far').setup({
+  headerMaxWidth = 80,
+})
 
 -- require('whjc.lazy')

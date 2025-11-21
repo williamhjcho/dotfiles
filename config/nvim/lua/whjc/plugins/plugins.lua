@@ -1,11 +1,4 @@
 return {
-
-  -- better find/replace
-  {
-    'MagicDuck/grug-far.nvim',
-    opts = { headerMaxWidth = 80 },
-  },
-
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
@@ -21,7 +14,6 @@ return {
   --   'MagicDuck/grug-far.nvim',
   --   opts = { headerMaxWidth = 80 },
   -- },
-
 
   {
     'nvim-treesitter/nvim-treesitter',
