@@ -98,6 +98,5 @@ require('todo-comments').setup({
   signs = false,
 })
 
--- editor plugins
 require('whjc.conform')
--- require('whjc.lazy')
+require('whjc.clojure')

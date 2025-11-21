@@ -4,9 +4,17 @@
       "rev": "1d0932eef16b068e65e0c6ceb4461edd774dd521",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
+    "baleia.nvim": {
+      "rev": "1b25eac3ac03659c3d3af75c7455e179e5f197f7",
+      "src": "https://github.com/m00qek/baleia.nvim"
+    },
     "conform.nvim": {
       "rev": "1bf8b5b9caee51507aa51eaed3da5b0f2595c6b9",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "conjure": {
+      "rev": "230de4232577ef52e2044ea4ab5f65cd926a11e2",
+      "src": "https://github.com/Olical/conjure"
     },
     "gitsigns.nvim": {
       "rev": "cdafc320f03f2572c40ab93a4eecb733d4016d07",
