@@ -7,32 +7,13 @@ local languages = vim
   :totable()
 
 local ts = require('nvim-treesitter')
-ts.setup({
-  ensure_installed = languages,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  indent = { enable = true },
-})
-
--- local to_install = opts.ensure_installed
--- local already_installed = ts.get_installed()
--- to_install = vim
---   .iter(to_install)
---   :filter(function(parser)
---     return not vim.tbl_contains(already_installed, parser)
---   end)
---   :totable()
--- if #to_install > 0 then
---   ts.install(to_install)
--- end
+ts.setup({})
+ts.install(languages)
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
   group = vim.api.nvim_create_augroup('whjc_treesitter_start', { clear = true }),
-  callback = function(ev)
+  callback = function(args)
     local ft = vim.bo.filetype
     local lang = vim.treesitter.language.get_lang(ft)
 
@@ -40,9 +21,7 @@ vim.api.nvim_create_autocmd('FileType', {
       return
     end
 
-    -- if vim.tbl_get(opts, 'highlight', 'enable') ~= false then
-    vim.treesitter.start()
-    -- end
+    pcall(vim.treesitter.start)
 
     -- if vim.treesitter.query.get(lang, 'folds') then
     --   vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'

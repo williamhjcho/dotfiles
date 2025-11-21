@@ -2,31 +2,32 @@ require('whjc.options')
 
 vim.pack.add({
   -- colorschemes
-  { src = 'https://github.com/navarasu/onedark.nvim' },
-  -- { src = 'https://github.com/rebelot/kanagawa.nvim' },
-  -- { src = 'https://github.com/folke/tokyonight.nvim' },
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
-  { src = 'https://github.com/mason-org/mason.nvim' },
+  'https://github.com/navarasu/onedark.nvim',
+  -- 'https://github.com/rebelot/kanagawa.nvim',
+  -- 'https://github.com/folke/tokyonight.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/mason-org/mason.nvim',
 
   -- editor
-  { src = 'https://github.com/christoomey/vim-tmux-navigator' },
-  { src = 'https://github.com/jake-stewart/multicursor.nvim' },
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
-  { src = 'https://github.com/folke/snacks.nvim' },
-  { src = 'https://github.com/folke/which-key.nvim' },
-  { src = 'https://github.com/b0o/SchemaStore.nvim' },
-  { src = 'https://github.com/NMAC427/guess-indent.nvim' },
-  { src = 'https://github.com/lewis6991/gitsigns.nvim' },
-  { src = 'https://github.com/chrisgrieser/nvim-origami' },
-  { src = 'https://github.com/folke/persistence.nvim' },
-  { src = 'https://github.com/echasnovski/mini.nvim' },
-  { src = 'https://github.com/MagicDuck/grug-far.nvim' },
-  { src = 'https://github.com/folke/todo-comments.nvim' },
+  'https://github.com/christoomey/vim-tmux-navigator',
+  'https://github.com/jake-stewart/multicursor.nvim',
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+  'https://github.com/folke/snacks.nvim',
+  'https://github.com/folke/which-key.nvim',
+  -- end
+  'https://github.com/b0o/SchemaStore.nvim',
+  'https://github.com/NMAC427/guess-indent.nvim',
+  'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/chrisgrieser/nvim-origami',
+  'https://github.com/folke/persistence.nvim',
+  'https://github.com/echasnovski/mini.nvim',
+  'https://github.com/MagicDuck/grug-far.nvim',
+  'https://github.com/folke/todo-comments.nvim',
 
   -- lsp
-  { src = 'https://github.com/stevearc/conform.nvim' },
-  { src = 'https://github.com/folke/ts-comments.nvim' },
-  { src = 'https://github.com/windwp/nvim-ts-autotag' },
+  'https://github.com/stevearc/conform.nvim',
+  'https://github.com/folke/ts-comments.nvim',
+  'https://github.com/windwp/nvim-ts-autotag',
 }, {
   load = true,
   confirm = false,
