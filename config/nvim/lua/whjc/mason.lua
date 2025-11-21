@@ -1,31 +1,34 @@
 require('mason').setup()
 
-local ensure_installed = {
-  'beautysh', -- sh, zsh formatter
-  'shellcheck', -- sh linter
-  'hadolint', -- Docker lint
-  'clojure-lsp', -- clojure LSP
-  'vtsls', -- js/ts LSP
-  'svelte-language-server',
-  'tflint', -- terraform linter
-  'yaml-language-server', -- YAML linter
-  'json-lsp', -- JSON lsp (used by schemastore)
-}
+-- stylua: ignore
+local packages = vim
+  .iter(require('whjc.languages'))
+  :map(function(i) return i.mason end)
+  :filter(function(i) return i end)
+  :flatten()
+  :totable()
+local registry = require('mason-registry')
 
--- auto installing ensure_installed tools
-local mr = require('mason-registry')
 local function install_packages()
-  for _, tool in ipairs(ensure_installed) do
-    if mr.has_package(tool) then
-      local p = mr.get_package(tool)
+  for _, name in ipairs(packages) do
+    if registry.has_package(name) then
+      local p = registry.get_package(name)
       if not p:is_installed() then
         p:install()
       end
     end
   end
 end
-if mr.refresh then
-  mr.refresh(install_packages)
-else
-  install_packages()
+
+local function uninstall_unwanted()
+  for _, name in ipairs(registry.get_installed_package_names()) do
+    if not vim.tbl_contains(packages, name) then
+      local p = registry.get_package(name)
+      p:uninstall()
+    end
+  end
 end
+
+registry.refresh(function()
+  install_packages()
+end)
