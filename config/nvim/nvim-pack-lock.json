@@ -50,6 +50,10 @@
       "rev": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd",
       "src": "https://github.com/jake-stewart/multicursor.nvim"
     },
+    "nvim-lint": {
+      "rev": "a0718addcf9b5ba4325eb45441020bb824af9503",
+      "src": "https://github.com/mfussenegger/nvim-lint"
+    },
     "nvim-lspconfig": {
       "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
       "src": "https://github.com/neovim/nvim-lspconfig"

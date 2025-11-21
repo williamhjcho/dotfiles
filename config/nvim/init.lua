@@ -86,4 +86,5 @@ require('todo-comments').setup({
 -- lsp setups
 require('whjc.blink')
 require('whjc.conform')
+require('whjc.nvim-lint')
 require('whjc.clojure')
