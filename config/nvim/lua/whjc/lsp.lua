@@ -179,5 +179,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
       -- Disable hover in favor of based pyright
       client.server_capabilities.hoverProvider = false
     end
+
+    -- dart/flutter LSP
+    if client.name == 'dartls' then
+      map('<leader>ll', '<cmd>FlutterLogToggle<cr>', 'Flutter Log Toggle')
+      map('<leader>lx', '<cmd>FlutterLogClear<cr>', 'Flutter Log Toggle')
+    end
   end,
 })
