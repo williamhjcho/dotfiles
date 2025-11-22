@@ -23,6 +23,7 @@ require('conform').setup({
     toml = { 'taplo' },
     json = { 'biome' },
     jsonc = { 'biome' },
+    sql = { 'pg_format' },
     -- terraform
     hcl = { 'packer_fmt' },
     terraform = { 'terraform_fmt' },

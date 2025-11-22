@@ -8,7 +8,7 @@ return {
   { treesitter = { 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'diff' } },
   -- general
   {
-    mason = { 'beautysh', 'shellcheck' },
+    mason = { 'beautysh', 'shellcheck', 'pgformatter' },
     treesitter = { 'bash', 'markdown', 'markdown_inline', 'query', 'regex' },
   },
   -- Docker
