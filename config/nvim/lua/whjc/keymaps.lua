@@ -133,9 +133,12 @@ local diagnostic_goto = function(next, severity)
   local get_diagnostic = next and vim.diagnostic.get_next or vim.diagnostic.get_prev
 
   return function()
-    vim.diagnostic.jump({
-      diagnostic = get_diagnostic({ severity = severity }),
-    })
+    local diagnostic = get_diagnostic({ severity = severity })
+    if not diagnostic then
+      return
+    end
+
+    vim.diagnostic.jump({ diagnostic = diagnostic })
     vim.schedule(function()
       vim.diagnostic.open_float()
     end)
