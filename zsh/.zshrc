@@ -159,4 +159,5 @@ esac
 source "$DOTFILES_HOME/bin/generators.sh"
 
 # bob
-. "$HOME/.local/share/bob/env/env.sh"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
