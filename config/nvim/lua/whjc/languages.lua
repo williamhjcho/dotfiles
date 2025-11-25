@@ -18,9 +18,18 @@ return {
       sh = { 'beautysh' },
       zsh = { 'beautysh' },
     },
+    linters = {
+      -- sh = { 'shellcheck' },
+      -- zsh = { 'zsh' },
+    },
   },
   -- Docker
-  { mason = { 'hadolint' } },
+  {
+    mason = { 'hadolint' },
+    linters = {
+      dockerfile = { 'hadolint' },
+    },
+  },
   -- JSON/YAML/TOML
   {
     mason = { 'json-lsp', 'yaml-language-server' },
@@ -53,6 +62,9 @@ return {
       typescriptreact = { 'biome' },
       svelte = { 'biome', lsp_format = 'first' },
     },
+    linters = {
+      typescript = { 'biomejs' },
+    },
   },
   {
     mason = { 'svelte-language-server' },
@@ -78,6 +90,9 @@ return {
         'ruff_format',
         'ruff_organize_imports',
       },
+    },
+    linters = {
+      python = { 'ruff' },
     },
   },
   -- dart/flutter
