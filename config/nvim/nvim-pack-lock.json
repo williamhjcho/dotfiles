@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "1d0932eef16b068e65e0c6ceb4461edd774dd521",
+      "rev": "aa25399c48236b77af71d4b64cdf157d2ba4e990",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -23,11 +23,11 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "1bf8b5b9caee51507aa51eaed3da5b0f2595c6b9",
+      "rev": "4993e07fac6679d0a5005aa7499e0bad2bd39f19",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "conjure": {
-      "rev": "230de4232577ef52e2044ea4ab5f65cd926a11e2",
+      "rev": "a02dd9d510ac86c76411e4bf5d4fd49595176487",
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
@@ -59,7 +59,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "6e885e4c27743ae6bf5957ea78ce86c032835f09",
+      "rev": "72b0194c56c984476c5975b62eb340fd1aa1686a",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -95,11 +95,11 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "a0718addcf9b5ba4325eb45441020bb824af9503",
+      "rev": "d1118791070d090777398792a73032a0ca5c79ff",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
+      "rev": "30a2b191bccf541ce1797946324c9329e90ec448",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "d42d11008a32f5f8c92bca6fd63f6782f197d114",
+      "rev": "f502ce98772a974629f0606fccecf8f86034613b",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "bb83a676128d95c865e40ba71376d883bdadec14",
+      "rev": "c5871d9d870c866fea9f271f1a3b3f29049a4793",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -120,7 +120,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "onedark.nvim": {
-      "rev": "6c10964f91321c6a0f09bcc41dd64e7a6602bc4f",
+      "rev": "213c23ae45a04797572242568d5d51937181792d",
       "src": "https://github.com/navarasu/onedark.nvim"
     },
     "persistence.nvim": {
