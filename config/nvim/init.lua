@@ -5,7 +5,6 @@ vim.pack.add({
   'https://github.com/navarasu/onedark.nvim',
   -- 'https://github.com/rebelot/kanagawa.nvim',
   -- 'https://github.com/folke/tokyonight.nvim',
-  'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/mason-org/mason.nvim',
 
   -- editor
@@ -25,7 +24,9 @@ vim.pack.add({
   'https://github.com/folke/todo-comments.nvim',
 
   -- lsp
+  'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/stevearc/conform.nvim',
+  'https://github.com/mfussenegger/nvim-lint',
   'https://github.com/folke/ts-comments.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
 }, {
