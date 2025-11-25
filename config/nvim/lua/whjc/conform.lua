@@ -1,3 +1,12 @@
+-- stylua: ignore
+local formatters = vim
+  .iter(require('whjc.languages'))
+  :map(function(i) return i.formatters end)
+  :filter(function(i) return i end)
+  :fold({}, function(acc, formatters)
+    return vim.tbl_extend('force', acc, formatters)
+  end)
+
 require('conform').setup({
   notify_on_error = false,
   format_on_save = function(bufnr)
@@ -14,40 +23,5 @@ require('conform').setup({
       lsp_format = 'fallback',
     }
   end,
-  formatters_by_ft = {
-    -- general
-    lua = { 'stylua' },
-    sh = { 'beautysh' },
-    zsh = { 'beautysh' },
-    terraform_fmt = { 'terraform' },
-    toml = { 'taplo' },
-    json = { 'biome' },
-    jsonc = { 'biome' },
-    sql = { 'pg_format' },
-    -- terraform
-    hcl = { 'packer_fmt' },
-    terraform = { 'terraform_fmt' },
-    tf = { 'terraform_fmt' },
-    ['terraform-vars'] = { 'terraform_fmt' },
-    -- go
-    go = { 'goimports', 'gofumpt' },
-    templ = { 'templ' }, -- go templ templates
-    -- web/js/ts
-    css = { 'biome' },
-    javascript = { 'biome' },
-    javascriptreact = { 'biome' },
-    typescript = { 'biome' },
-    typescriptreact = { 'biome' },
-    svelte = { 'biome', lsp_format = 'first' },
-    -- dart/flutter
-    dart = { 'dart_format' },
-    -- python
-    python = {
-      'ruff_fix', -- fix auto-fixable lint errors
-      'ruff_format',
-      'ruff_organize_imports',
-    },
-    -- clojure
-    clojure = { lsp_format = 'fallback' },
-  },
+  formatters_by_ft = formatters,
 })
