@@ -32,34 +32,37 @@
           - tree
           - ykman
           - stats
+          - tldr
           # nvim
           - nvim
           - luarocks
-          - tldr
-          # programming
+          # general
           - lazygit
           - direnv
-          - deno
-          - pyenv
-          - lua-language-server # lua LSP
-          - stylua # lua formatter
-          - pyenv-virtualenv
-          - ruff # python formatter & linter
-          - yaml-language-server # YAML LSP
-          - taplo # TOML LSP
-          - jenv
-          - rbenv
-          - biome # js/ts/general web file formatter & linter
-          - tailwindcss-language-server # tailwindcss LSP
-          - dockutil
-          - neofetch
-          - fvm # flutter version manager
-          - delve # go debugger
-          - goimports # go formatter
-          - go-task # taskfile (makefile alternative)
           - bob # nvim installation manager
           - tree-sitter-cli # needed by treesitter (nvim)
           - mise # dev env management
+          # javascript/typescript/web
+          - deno
+          - biome # js/ts/general web file formatter & linter
+          - tailwindcss-language-server # tailwindcss LSP
+          # lua
+          - lua-language-server # lua LSP
+          - stylua # lua formatter
+          # python
+          - pyenv
+          - pyenv-virtualenv
+          - ruff # python formatter & linter
+          # yaml/toml
+          - yaml-language-server # YAML LSP
+          - taplo # TOML LSP
+          - jenv # java
+          - rbenv # ruby
+          - dockutil
+          # golang
+          - delve # go debugger
+          - goimports # go formatter
+          - go-task # taskfile (makefile alternative)
         # homebrew_taps:
         # - leoafarias/fvm
         homebrew_cask_apps:
