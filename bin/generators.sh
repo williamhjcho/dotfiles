@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function uuid() {
-    uuidgen
+    uuid=$(uuidgen)
+    echo -n "$uuid"
 }
 
 function cpf() {
@@ -82,9 +83,9 @@ function cpf() {
 
     if [[ "$formatted" == true ]]; then
         # local cpf_result="${digits}${digit1}${digit2}"
-        echo "${digits:0:3}.${digits:3:3}.${digits:6:3}-${digit1}${digit2}"
+        echo -n "${digits:0:3}.${digits:3:3}.${digits:6:3}-${digit1}${digit2}"
     else
-        echo "${digits}${digit1}${digit2}"
+        echo -n "${digits}${digit1}${digit2}"
     fi
 }
 
@@ -169,8 +170,8 @@ function cnpj() {
     local digit2=$((remainder < 2 ? 0 : 11 - remainder))
 
     if [[ "$formatted" == true ]]; then
-        echo "${digits:0:2}.${digits:2:3}.${digits:5:3}/${digits:8:4}-${digit1}${digit2}"
+        echo -n "${digits:0:2}.${digits:2:3}.${digits:5:3}/${digits:8:4}-${digit1}${digit2}"
     else
-        echo "${digits}${digit1}${digit2}"
+        echo -n "${digits}${digit1}${digit2}"
     fi
 }
