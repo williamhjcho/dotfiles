@@ -13,7 +13,6 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
-  -- end
   'https://github.com/b0o/SchemaStore.nvim',
   'https://github.com/NMAC427/guess-indent.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
