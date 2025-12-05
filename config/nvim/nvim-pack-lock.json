@@ -39,7 +39,7 @@
       "src": "https://github.com/stevearc/dressing.nvim"
     },
     "flutter-tools.nvim": {
-      "rev": "c7dfaa9ccca008fbc55ca0b4e5d9ef80e0248902",
+      "rev": "539e84f5a652d96917f0afc1341c20f0d59dd789",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "gitsigns.nvim": {
@@ -95,11 +95,11 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "d111879",
+      "rev": "5122c0c00a65cf6ce434b16b6a7587b62b6af00d",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "effe4bf2e1afb881ea67291c648b68dd3dfc927a",
+      "rev": "f7c6e585fd80d5a2c075ab27ac312ac55bcf1550",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "8fb4e6b",
+      "rev": "4b29144e0c745e0b4341eb3ed387f3d5cf4d6fc6",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "c5623d3486c1cda5f73e28a3a4abb454f708c48c",
+      "rev": "75797cdd8ac125c7ace065b17788b439dcf89a71",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
