@@ -224,7 +224,7 @@ run = ["move-node-to-workspace W"]
 
 # debugging
 [[on-window-detected]]
-if.app-id = 'org.chromium.Chromium'
+if.app-id = 'com.google.chrome.for.testing'
 run = ["move-node-to-workspace 7"]
 
 [[on-window-detected]]
