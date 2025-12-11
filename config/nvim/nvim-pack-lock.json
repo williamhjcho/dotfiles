@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "21645280ad06fce01ef109e82d76302dcbe62756",
+      "rev": "c103ea363c4776ea9079eccaae54b42aa537a80e",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -31,7 +31,7 @@
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "efe563802a550b7f1b7743b007987e97cba22718",
+      "rev": "a064570939f23ef155698654c98c81e0fc2dc54a",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
-      "rev": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd",
+      "rev": "a0ea3303a6c4b233cf3272fb1e358d4c842e5260",
       "src": "https://github.com/jake-stewart/multicursor.nvim"
     },
     "neotest": {
@@ -75,7 +75,7 @@
       "src": "https://github.com/sidlatau/neotest-dart"
     },
     "neotest-golang": {
-      "rev": "b982da5f39980797c1bdec875d688a302245f31f",
+      "rev": "37e400cfe9d193e508b1a512e96cbef83b08deb6",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-dap": {
@@ -95,7 +95,7 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "ebe535956106c60405b02220246e135910f6853d",
+      "rev": "897f7771c1ca4b11659dfe372d9376acd9fe3097",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "ca985b4101c4a6e899bed30bd3ec01ecf27fd003",
+      "rev": "5d8bc3d4a089e363e508c8a0f5cd187c2871014e",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "93537d699851b35ae8518af17ee858981f5ea6ea",
+      "rev": "2979e048b356cfd32dc419d5803dc356b9832adf",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
