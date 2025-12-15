@@ -23,6 +23,11 @@ return {
       -- zsh = { 'zsh' },
     },
   },
+  -- AI
+  {
+    mason = { 'copilot-language-server' },
+    lsp = { 'copilot' },
+  },
   -- Docker
   {
     mason = { 'hadolint' },
