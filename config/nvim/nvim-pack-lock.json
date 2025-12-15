@@ -23,15 +23,15 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "ffe26e8df8115c9665d24231f8a49fadb2d611ce",
+      "rev": "9b8fa5e",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "conjure": {
-      "rev": "a02dd9d5",
+      "rev": "f92b09ed",
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "a064570939f23ef155698654c98c81e0fc2dc54a",
+      "rev": "508d8b0",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
-      "rev": "a0ea3303a6c4b233cf3272fb1e358d4c842e5260",
+      "rev": "a0ea330",
       "src": "https://github.com/jake-stewart/multicursor.nvim"
     },
     "neotest": {
@@ -75,7 +75,7 @@
       "src": "https://github.com/sidlatau/neotest-dart"
     },
     "neotest-golang": {
-      "rev": "37e400cfe9d193e508b1a512e96cbef83b08deb6",
+      "rev": "37e400c",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-dap": {
@@ -95,7 +95,7 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "897f7771c1ca4b11659dfe372d9376acd9fe3097",
+      "rev": "ae64d64",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "5d8bc3d4a089e363e508c8a0f5cd187c2871014e",
+      "rev": "ad252be",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "2979e048b356cfd32dc419d5803dc356b9832adf",
+      "rev": "d3218d98",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
