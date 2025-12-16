@@ -10,7 +10,7 @@ vim.pack.add({
   -- editor
   'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/jake-stewart/multicursor.nvim',
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+  'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/b0o/SchemaStore.nvim',
