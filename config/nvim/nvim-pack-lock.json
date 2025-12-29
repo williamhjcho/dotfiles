@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "8b92ea89835b8e5dbc779a675ebb0e5fcb9a1993",
+      "rev": "60f1b3d1bde39396cdfb1362dd207970ec57e731",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -43,11 +43,11 @@
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "5813e48",
+      "rev": "130beacf8a51f00aede9c31064c749136679a321",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grug-far.nvim": {
-      "rev": "bc589a1ba340a00ae40bf1436401eac5b1454687",
+      "rev": "74eef260e1142264ab994fb9c88e4f420e9486d7",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
     "guess-indent.nvim": {
@@ -75,7 +75,7 @@
       "src": "https://github.com/sidlatau/neotest-dart"
     },
     "neotest-golang": {
-      "rev": "37e400c",
+      "rev": "97bf34a811806166b62494b40bbd4959c221647f",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-dap": {
@@ -99,7 +99,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "8973916a3d015d65a8c4614e141f4270a713cf33",
+      "rev": "d696e36d5792daf828f8c8e8d4b9aa90c1a10c2a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "e33d5cac5a3097f77a087274948c13736f25d2f8",
+      "rev": "dfa7e718eddcd7de7192a9e580d4fe13e985dc07",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "6e42d823ce0a5a76180c473c119c7677738a09d1",
+      "rev": "45d08da7bb3ea206d698b33f0576fdf9661e2979",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
