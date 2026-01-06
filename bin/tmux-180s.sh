@@ -20,6 +20,8 @@ if ! has_session "$WHJC"; then
     tmux resize-pane -t "$PROJECTS_DIR:memories.1" -L 100
     tmux select-pane -t "$PROJECTS_DIR:memories.3"
 
+    tmux new-window -d -t "$WHJC:" -n "others" -c "$PROJECTS_DIR"
+
     tmux select-pane -t "$WHJC:dotfiles.3"
 fi
 
