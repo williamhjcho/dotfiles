@@ -112,21 +112,21 @@ function cnpj() {
         local provided_digit2="${clean_cnpj:13:1}"
 
         # Calculate first check digit
-        local weights=(5 4 3 2 9 8 7 6 5 4 3 2)
+        local weights1="543298765432"
         local sum=0
         for i in {0..11}; do
-            sum=$((sum + ${digits:$i:1} * ${weights[$i]}))
+            sum=$((sum + ${digits:$i:1} * ${weights1:$i:1}))
         done
         local remainder=$((sum % 11))
         local calculated_digit1=$((remainder < 2 ? 0 : 11 - remainder))
 
         # Calculate second check digit
-        weights=(6 5 4 3 2 9 8 7 6 5 4 3 2)
+        local weights2="6543298765432"
         sum=0
         for i in {0..11}; do
-            sum=$((sum + ${digits:$i:1} * ${weights[$i]}))
+            sum=$((sum + ${digits:$i:1} * ${weights2:$i:1}))
         done
-        sum=$((sum + calculated_digit1 * ${weights[12]}))
+        sum=$((sum + calculated_digit1 * ${weights2:12:1}))
         remainder=$((sum % 11))
         local calculated_digit2=$((remainder < 2 ? 0 : 11 - remainder))
 
@@ -151,21 +151,21 @@ function cnpj() {
     done
 
     # Calculate first check digit
-    local weights=(5 4 3 2 9 8 7 6 5 4 3 2)
+    local weights1="543298765432"
     local sum=0
     for i in {0..11}; do
-        sum=$((sum + ${digits:$i:1} * ${weights[$i]}))
+        sum=$((sum + ${digits:$i:1} * ${weights1:$i:1}))
     done
     local remainder=$((sum % 11))
     local digit1=$((remainder < 2 ? 0 : 11 - remainder))
 
     # Calculate second check digit
-    weights=(6 5 4 3 2 9 8 7 6 5 4 3 2)
+    local weights2="6543298765432"
     sum=0
     for i in {0..11}; do
-        sum=$((sum + ${digits:$i:1} * ${weights[$i]}))
+        sum=$((sum + ${digits:$i:1} * ${weights2:$i:1}))
     done
-    sum=$((sum + digit1 * ${weights[12]}))
+    sum=$((sum + digit1 * ${weights2:12:1}))
     remainder=$((sum % 11))
     local digit2=$((remainder < 2 ? 0 : 11 - remainder))
 
