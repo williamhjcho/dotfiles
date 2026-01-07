@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "1b83928",
+      "rev": "1b83928c9ff8ff9d9506acc1aa8e0bdee635c570",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -59,7 +59,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "fb4ccfe",
+      "rev": "fb4ccfed03c1f0d9db702f93a65cb4c0c6c2832b",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -107,7 +107,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "c660a3d",
+      "rev": "c660a3d7e3db602faa5fb6b5ff19ba7a1d9e71fe",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
