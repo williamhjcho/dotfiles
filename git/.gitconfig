@@ -1,6 +1,7 @@
 [core]
 excludesfile = $HOME/.gitignore_global
 editor = nvim
+abbrev-commit = 7
 
 [user]
 name = William Cho
