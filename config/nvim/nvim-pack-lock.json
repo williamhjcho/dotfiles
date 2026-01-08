@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "1b83928c9ff8ff9d9506acc1aa8e0bdee635c570",
+      "rev": "d568773",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -39,11 +39,11 @@
       "src": "https://github.com/stevearc/dressing.nvim"
     },
     "flutter-tools.nvim": {
-      "rev": "dd767fb",
+      "rev": "e45f4ea",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "dfac404",
+      "rev": "30e5c51",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grug-far.nvim": {
@@ -55,11 +55,11 @@
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
     "mason.nvim": {
-      "rev": "57e5a8a",
+      "rev": "44d1e90",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "fb4ccfed03c1f0d9db702f93a65cb4c0c6c2832b",
+      "rev": "fb4ccfe",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -95,11 +95,11 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "1e6b2ac",
+      "rev": "ca6ea12",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "0b38bc7",
+      "rev": "5a82e10",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -107,11 +107,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "c660a3d7e3db602faa5fb6b5ff19ba7a1d9e71fe",
+      "rev": "c660a3d",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "b033ab33",
+      "rev": "2ba5ec18",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
