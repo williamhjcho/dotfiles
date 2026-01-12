@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "d568773",
+      "rev": "d5687736d15cfc3c1ac943485cad7808ba487d2b",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -23,7 +23,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "5420c4b",
+      "rev": "238f542a118984a88124fc915d5b981680418707",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "conjure": {
@@ -31,7 +31,7 @@
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "e78d1ff",
+      "rev": "5ace9ecd0db9a7a6c14064e4ce4ede5b800325f3",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -39,11 +39,11 @@
       "src": "https://github.com/stevearc/dressing.nvim"
     },
     "flutter-tools.nvim": {
-      "rev": "e45f4ea",
+      "rev": "5d5abfd2488acfee767cfea3207247bd5c86ac54",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "30e5c51",
+      "rev": "72acb69020c92d99cf388bfeb390481ccec50c04",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "grug-far.nvim": {
@@ -55,11 +55,11 @@
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
     "mason.nvim": {
-      "rev": "44d1e90",
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "fb4ccfe",
+      "rev": "8dccba88fc4dce006ca0ad668067c9e0d5ce7702",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -95,11 +95,11 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "ca6ea12",
+      "rev": "ca6ea12daf0a4d92dc24c5c9ae22a1f0418ade37",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "5a82e10",
+      "rev": "5a82e10b2df0ed31bec642c1c0344baee7c458b6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -111,7 +111,7 @@
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "2ba5ec18",
+      "rev": "5a7e5638e7d220575b1c22c8a2e099b52231886e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
