@@ -101,9 +101,10 @@ vim.keymap.set('i', ';', ';<c-g>u')
 vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap = true })
 vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
 
--- Lazy
+-- Lsp
 -- stylua: ignore start
-vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Open [L]azy' })
+vim.keymap.set('n', '<leader>LR', '<cmd>LspRestart<cr>', { desc = 'Lsp Restart' })
+vim.keymap.set("n", '<leader>Li', '<cmd>LspInfo<cr>', { desc = 'Lsp Info' })
 vim.keymap.set("n", '<leader>gg', function() require('snacks').lazygit() end, { desc = 'Lazygit' })
 vim.keymap.set("n", '<leader>fe', function() require('snacks').explorer({ hidden = true }) end, { desc = 'Explorer (cwd)' })
 --stylua: ignore end
