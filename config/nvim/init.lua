@@ -2,9 +2,10 @@ require('whjc.options')
 
 vim.pack.add({
   -- colorschemes
-  'https://github.com/navarasu/onedark.nvim',
-  -- 'https://github.com/rebelot/kanagawa.nvim',
+  -- 'https://github.com/navarasu/onedark.nvim',
   -- 'https://github.com/folke/tokyonight.nvim',
+  'https://github.com/serhez/teide.nvim',
+  -- 'https://github.com/rebelot/kanagawa.nvim',
   'https://github.com/mason-org/mason.nvim',
 
   -- editor

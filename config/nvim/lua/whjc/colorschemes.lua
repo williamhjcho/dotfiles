@@ -1,4 +1,8 @@
-require('onedark').setup({ style = 'cool' })
+require('teide').setup({
+  -- darker, dark, dimmed, light
+  style = 'dimmed',
+})
+-- require('onedark').setup({ style = 'cool' })
 -- require('tokyonight').setup({
 --   -- storm, moon, night, day
 --   style = 'moon',
@@ -19,4 +23,4 @@ require('onedark').setup({ style = 'cool' })
 --   theme = 'wave',
 -- })
 
-vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('teide')
