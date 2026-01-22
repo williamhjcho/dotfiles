@@ -139,6 +139,11 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-w = 'move-node-to-workspace W'
 
+shift-ctrl-h = 'move-workspace-to-monitor left'
+shift-ctrl-l = 'move-workspace-to-monitor right'
+shift-ctrl-j = 'move-workspace-to-monitor down'
+shift-ctrl-k = 'move-workspace-to-monitor up'
+
 alt-shift-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -155,11 +160,11 @@ alt-shift-semicolon = 'mode service'
 3 = ['main', 'secondary']
 4 = ['main', 'secondary']
 5 = ['main', 'secondary']
-6 = ['secondary', 'main']
-7 = ['secondary', 'main']
-8 = ['secondary', 'main']
-9 = ['secondary', 'main']
-0 = ['secondary', 'main']
+6 = ['secondary']
+7 = ['secondary']
+8 = ['secondary']
+9 = ['secondary']
+0 = ['secondary']
 T = 'main'
 W = ['secondary']
 
