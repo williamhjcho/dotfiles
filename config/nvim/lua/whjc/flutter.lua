@@ -14,6 +14,9 @@ require('flutter-tools').setup({
       device = true,
     },
   },
+  debugger = {
+    enabled = true,
+  },
 })
 
 -- stylua: ignore start
