@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "55ca969ceed5209d62cbf4c20cef023ff188b6c5",
+      "rev": "84d86aa49021aa8b48c0a6ff89cd92c39ddf7d5c",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -23,7 +23,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
+      "rev": "e969e302bced7ffb9a0a0323629f31feb0ca35a6",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "conjure": {
@@ -31,7 +31,7 @@
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "dd3e345d59051464573d821b042f0a0c82410b5d",
+      "rev": "5c01badd42049a63ac9e5d6c8ea85aaf66cb940f",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -59,7 +59,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "ca9adcfc4e796b292cc9072f4952318ef5a7f6c0",
+      "rev": "ccfc8c35cac348070a9528410c794459c4cc2eeb",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -95,11 +95,11 @@
       "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
-      "rev": "a3d17105a79fc12055c2a0d732665d9c2b1c2dc3",
+      "rev": "486474c2ace8d78d28995074dbdbe29011bc63d0",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "44acfe887d4056f704ccc4f17513ed41c9e2b2e6",
+      "rev": "5a855bcfec7973767a1a472335684bbd71d2fa2b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -111,7 +111,7 @@
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "2bd9b9b4f12eed175fba35ca2db8e8584546a4ec",
+      "rev": "dc42c209f3820bdfaae0956f15de29689aa6b451",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
