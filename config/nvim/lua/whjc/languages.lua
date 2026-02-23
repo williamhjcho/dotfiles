@@ -116,6 +116,19 @@ return {
       clojure = { lsp_format = 'fallback' },
     },
   },
+  -- ruby
+  {
+    mason = { 'rubyfmt' },
+    treesitter = { 'ruby' },
+    formatters = {
+      ruby = { 'rubyfmt' },
+    },
+    filetypes = {
+      filename = {
+        ['Fastfile'] = 'ruby',
+      },
+    },
+  },
   -- terraform
   {
     mason = { 'tflint' },

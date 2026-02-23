@@ -10,6 +10,10 @@ local ts = require('nvim-treesitter')
 ts.setup({})
 ts.install(languages)
 
+vim.iter(require('whjc.languages')):each(function(lang)
+  if lang.filetypes then vim.filetype.add(lang.filetypes) end
+end)
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
   group = vim.api.nvim_create_augroup('whjc_treesitter_start', { clear = true }),
@@ -17,9 +21,7 @@ vim.api.nvim_create_autocmd('FileType', {
     local ft = vim.bo.filetype
     local lang = vim.treesitter.language.get_lang(ft)
 
-    if not lang or not vim.treesitter.language.add(lang) then
-      return
-    end
+    if not lang or not vim.treesitter.language.add(lang) then return end
 
     pcall(vim.treesitter.start)
 
