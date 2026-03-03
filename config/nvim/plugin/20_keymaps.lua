@@ -56,12 +56,12 @@ end, { desc = 'Vim Pack Delete (all)' })
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-
 -- Buffers
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>bd', function() require('snacks').bufdelete() end, { desc = 'Delete Buffer' })
 vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
+vim.keymap.set('n', '<leader>bs', function() vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true)) end, { desc = 'Scratch Buffer' })
 vim.keymap.set('n', '<leader>bo', function() require('snacks').bufdelete.other() end, { desc = 'Delete Other Buffers' })
 
 -- Tabs
@@ -93,31 +93,25 @@ vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap
 vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
 
 -- Lsp
--- stylua: ignore start
 vim.keymap.set('n', '<leader>Lr', '<cmd>lsp restart<cr>', { desc = 'Lsp Restart' })
 vim.keymap.set('n', '<leader>LR', '<cmd>lsp restart<cr>', { desc = 'Lsp Restart All' })
 vim.keymap.set('n', '<leader>Ld', '<cmd>lsp disable<cr>', { desc = 'Lsp Disable' })
-vim.keymap.set("n", '<leader>Li', '<cmd>checkhealth vim.lsp<cr>', { desc = 'Lsp Info' })
-vim.keymap.set("n", '<leader>gg', function() require('snacks').lazygit() end, { desc = 'Lazygit' })
-vim.keymap.set("n", '<leader>fe', function() require('snacks').explorer({ hidden = true }) end, { desc = 'Explorer (cwd)' })
---stylua: ignore end
+vim.keymap.set('n', '<leader>Li', '<cmd>checkhealth vim.lsp<cr>', { desc = 'Lsp Info' })
+vim.keymap.set('n', '<leader>gg', function() require('snacks').lazygit() end, { desc = 'Lazygit' })
+vim.keymap.set('n', '<leader>fe', function() require('snacks').explorer({ hidden = true }) end, { desc = 'Explorer (cwd)' })
 
 -- files/find
--- stylua: ignore start
 vim.keymap.set('n', '<leader><leader>', function() require('snacks').picker.buffers({}) end, { desc = 'Find Buffer' })
 vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
 vim.keymap.set('n', '<leader>ff', function() require('snacks').picker.files({ hidden = true }) end, { desc = 'Find file (cwd)' })
 vim.keymap.set('n', '<leader>fr', function() require('snacks').picker.recent({ filter = { cwd = true } }) end, { desc = 'Find Recent Files' })
 vim.keymap.set('n', '<leader>f:', function() require('snacks').picker.command_history() end, { desc = 'Find Command History' })
--- stylua: ignore end
 
 -- search
--- stylua: ignore start
-vim.keymap.set('n', '<leader>sk', function() require('snacks').picker.keymaps() end , { desc = 'Search Keymaps' })
+vim.keymap.set('n', '<leader>sk', function() require('snacks').picker.keymaps() end, { desc = 'Search Keymaps' })
 vim.keymap.set('n', '<leader>sg', function() require('snacks').picker.grep() end, { desc = 'Grep' })
 vim.keymap.set('n', '<leader>sd', function() require('snacks').picker.diagnostics() end, { desc = 'Search Diagnostics' })
 vim.keymap.set('n', '<leader>sr', function() require('snacks').picker.resume() end, { desc = 'Search Resume' })
--- stylua: ignore end
 vim.keymap.set({ 'n', 'v' }, '<leader>sR', function()
   local grug = require('grug-far')
   local ext = vim.bo.buftype == '' and vim.fn.expand('%:e')
