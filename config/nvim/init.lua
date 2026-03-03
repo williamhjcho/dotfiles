@@ -1,95 +1,32 @@
-require('whjc.options')
+-- Define config table to be able to pass data between scripts
+-- It is a global variable which can be use both as `_G.Config` and `Config`
+_G.Config = {}
+vim.pack.add({ 'https://github.com/echasnovski/mini.nvim' })
 
-vim.pack.add({
-  -- colorschemes
-  -- 'https://github.com/navarasu/onedark.nvim',
-  -- 'https://github.com/folke/tokyonight.nvim',
-  'https://github.com/serhez/teide.nvim',
-  -- 'https://github.com/rebelot/kanagawa.nvim',
-  'https://github.com/mason-org/mason.nvim',
+local misc = require('mini.misc')
+-- execute immediately. Must be executed at startup
+Config.now = function(f) misc.safely('now', f) end
+-- execute a bit later. When not needed at startup
+Config.later = function(f) misc.safely('later', f) end
+-- only if needed in startup, otherwise later
+Config.now_if_args = vim.fn.argc(-1) > 0 and Config.now or Config.later
+-- execute once on a first matched event. e.g. insert mode, etc
+Config.on_event = function(ev, f) misc.safely('event:' .. ev, f) end
+-- execute once on first matched filetype
+Config.on_filetype = function(ft, f) misc.safely('filetype:' .. ft, f) end
 
-  -- editor
-  'https://github.com/christoomey/vim-tmux-navigator',
-  'https://github.com/jake-stewart/multicursor.nvim',
-  'https://github.com/nvim-treesitter/nvim-treesitter',
-  'https://github.com/folke/snacks.nvim',
-  'https://github.com/folke/which-key.nvim',
-  'https://github.com/b0o/SchemaStore.nvim',
-  'https://github.com/NMAC427/guess-indent.nvim',
-  'https://github.com/lewis6991/gitsigns.nvim',
-  'https://github.com/chrisgrieser/nvim-origami',
-  'https://github.com/folke/persistence.nvim',
-  'https://github.com/echasnovski/mini.nvim',
-  'https://github.com/MagicDuck/grug-far.nvim',
-  'https://github.com/folke/todo-comments.nvim',
+local gr = vim.api.nvim_create_augroup('custom-config', {})
+Config.new_autocmd = function(event, pattern, callback, desc)
+  local opts = { group = gr, pattern = pattern, callback = callback, desc = desc }
+  vim.api.nvim_create_autocmd(event, opts)
+end
 
-  -- lsp
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/stevearc/conform.nvim',
-  'https://github.com/mfussenegger/nvim-lint',
-  'https://github.com/folke/ts-comments.nvim',
-  'https://github.com/windwp/nvim-ts-autotag',
-}, {
-  load = true,
-  confirm = false,
-})
-
-require('whjc.colorschemes')
-require('whjc.keymaps')
-require('whjc.autocmds')
-require('whjc.lsp')
-
--- plugin setups
-require('whjc.mason')
-require('whjc.treesitter')
-require('whjc.multicursor')
-require('whjc.mini')
-require('guess-indent').setup({})
-require('nvim-ts-autotag').setup({})
-require('snacks').setup({
-  indent = { enabled = true },
-  lazygit = {},
-  explorer = {},
-  picker = {},
-})
-require('which-key').setup({
-  preset = 'helix',
-  defaults = {},
-  spec = {
-    { '<leader><tab>', group = 'tabs' },
-    { '<leader>b', group = 'buffer' },
-    { '<leader>c', group = 'code' },
-    { '<leader>d', group = 'debug' },
-    { '<leader>f', group = 'file|find' },
-    { '<leader>q', group = 'quit|session' },
-    { '<leader>s', group = 'search' },
-    { '<leader>x', group = 'diagnostics|quickfix' },
-    { 'g', group = 'goto' },
-    { 'gs', group = 'surround' },
-    { 'z', group = 'fold' },
-  },
-})
-require('gitsigns').setup({})
-require('origami').setup({
-  autoFold = { enabled = false },
-})
-require('ts-comments').setup({})
-require('persistence').setup({})
-require('grug-far').setup({
-  headerMaxWidth = 80,
-})
-require('todo-comments').setup({
-  -- event = 'VimEnter',
-  -- dependencies = { 'nvim-lua/plenary.nvim' },
-  signs = false,
-})
-
--- lsp setups
-require('whjc.blink')
-require('whjc.conform')
-require('whjc.nvim-lint')
-require('whjc.clojure')
-require('whjc.flutter')
-require('whjc.ai')
-require('whjc.test')
-require('whjc.debug')
+Config.on_background = function(plugin_name, kinds, callback, desc)
+  local f = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if not (name == plugin_name and vim.tbl_contains(kinds, kind)) then return end
+    if not ev.data.active then vim.cmd.packadd(plugin_name) end
+    callback()
+  end
+  Config.new_autocmd('PackChanged', '*', f, desc)
+end
