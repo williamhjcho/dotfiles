@@ -56,8 +56,8 @@ return {
   },
   -- javascript/typescript & web general
   {
-    mason = { 'tsgo', 'vtsls', 'svelte-language-server' },
-    lsp = { 'tsgo', 'vtsls', 'tailwindcss', 'biome' },
+    mason = { 'tsgo', 'svelte-language-server' },
+    lsp = { 'tsgo', 'tailwindcss', 'biome' },
     treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'typescript', 'astro', 'svelte' },
     formatters = {
       css = { 'biome' },
