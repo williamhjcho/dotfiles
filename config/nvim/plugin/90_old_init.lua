@@ -32,7 +32,6 @@ vim.pack.add({
 })
 
 require('whjc.colorschemes')
-require('whjc.keymaps')
 require('whjc.autocmds')
 require('whjc.lsp')
 

@@ -13,9 +13,7 @@ vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', 
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
 
 -- vim pack
-vim.keymap.set({ 'n', 'x' }, '<leader>pu', function()
-  vim.pack.update()
-end, { desc = 'Vim Pack Update' })
+vim.keymap.set({ 'n', 'x' }, '<leader>pu', function() vim.pack.update() end, { desc = 'Vim Pack Update' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pl', function()
   -- stylua: ignore
   local packages = vim
@@ -42,12 +40,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>pd', function()
   end
 end, { desc = 'Vim Pack Delete (inactive)' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pD', function()
-  local plugins = vim
-    .iter(vim.pack.get())
-    :map(function(p)
-      return p.spec.name
-    end)
-    :totable()
+  local plugins = vim.iter(vim.pack.get()):map(function(p) return p.spec.name end):totable()
   print('Deleting all plugins: ' .. table.concat(plugins, ', '))
   vim.pack.del(plugins)
 end, { desc = 'Vim Pack Delete (all)' })
@@ -65,13 +58,11 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 
 -- Buffers
--- stylua: ignore start
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>bd', function() require('snacks').bufdelete() end, { desc = 'Delete Buffer' })
 vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 vim.keymap.set('n', '<leader>bo', function() require('snacks').bufdelete.other() end, { desc = 'Delete Other Buffers' })
--- stylua: ignore end
 
 -- Tabs
 -- vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -144,14 +135,10 @@ local diagnostic_goto = function(next, severity)
 
   return function()
     local diagnostic = get_diagnostic({ severity = severity })
-    if not diagnostic then
-      return
-    end
+    if not diagnostic then return end
 
     vim.diagnostic.jump({ diagnostic = diagnostic })
-    vim.schedule(function()
-      vim.diagnostic.open_float()
-    end)
+    vim.schedule(function() vim.diagnostic.open_float() end)
   end
 end
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
@@ -203,6 +190,4 @@ vim.keymap.set({ 'n', 'x' }, '<leader>n', function() require('multicursor-nvim')
 vim.keymap.set({ 'n', 'x' }, '<leader>N', function() require('multicursor-nvim').matchAddCursor(-1) end)
 -- stylua: ignore end
 
-vim.keymap.set({ 'n', 'x' }, '<leader>?', function()
-  require('which-key').show({ global = false })
-end, { desc = 'Buffer Keymaps (which-key}' })
+vim.keymap.set({ 'n', 'x' }, '<leader>?', function() require('which-key').show({ global = false }) end, { desc = 'Buffer Keymaps (which-key}' })
