@@ -161,3 +161,6 @@ source "$DOTFILES_HOME/bin/generators.sh"
 # bob
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
+
+# bun completions
+[ -s "/Users/whjc/.bun/_bun" ] && source "/Users/whjc/.bun/_bun"
