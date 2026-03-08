@@ -136,7 +136,7 @@ if [ -d "$HOME/.180cli" ]; then
     source "$i80_HOME/autocomplete/bash_180cli"
 fi
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
