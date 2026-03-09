@@ -48,6 +48,31 @@ now_if_args(function()
 end)
 
 now_if_args(function()
+  add({ 'https://github.com/mason-org/mason.nvim' })
+
+  require('mason').setup()
+
+  -- stylua: ignore
+  local packages = vim
+    .iter(require('whjc.languages'))
+    :map(function(i) return i.mason end)
+    :filter(function(i) return i end)
+    :flatten()
+    :totable()
+  local registry = require('mason-registry')
+
+  local function install_packages()
+    for _, name in ipairs(packages) do
+      if registry.has_package(name) then
+        local p = registry.get_package(name)
+        if not p:is_installed() then p:install() end
+      end
+    end
+  end
+  registry.refresh(install_packages)
+end)
+
+now_if_args(function()
   add({ 'https://github.com/neovim/nvim-lspconfig' })
 
   require('whjc.lsp')

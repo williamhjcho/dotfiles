@@ -1,6 +1,4 @@
 vim.pack.add({
-  'https://github.com/mason-org/mason.nvim',
-
   -- editor
   'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/jake-stewart/multicursor.nvim',
@@ -28,7 +26,6 @@ require('whjc.autocmds')
 -- require('whjc.lsp')
 
 -- plugin setups
-require('whjc.mason')
 require('whjc.multicursor')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
