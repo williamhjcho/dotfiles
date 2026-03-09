@@ -57,6 +57,14 @@ now(function()
   })
 end)
 
+now_if_args(function()
+  require('mini.misc').setup()
+
+  MiniMisc.setup_auto_root()
+  MiniMisc.setup_restore_cursor()
+  MiniMisc.setup_termbg_sync()
+end)
+
 -- Better Around/Inside textobjects
 --  - va)  - [V]isually select [A]round [)]paren
 --  - yinq - [Y]ank [I]nside [N]ext [Q]uote

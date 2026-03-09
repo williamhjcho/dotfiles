@@ -184,22 +184,23 @@ else
   vim.keymap.del('t', '<C-k>')
 end
 
+-- others
+vim.keymap.set('n', '<leader>or', '<Cmd>lua MiniMisc.resize_window()<CR>', { desc = 'Resize to default width' })
+vim.keymap.set('n', '<leader>oz', '<Cmd>lua MiniMisc.zoom()<CR>', { desc = 'Resize to default width' })
+
 -- persistence
--- stylua: ignore start
 vim.keymap.set('n', '<leader>qs', function() require('persistence').load() end, { desc = 'Restore Session' })
 vim.keymap.set('n', '<leader>qS', function() require('persistence').select() end, { desc = 'Select Session' })
 vim.keymap.set('n', '<leader>ql', function() require('persistence').load({ last = true }) end, { desc = 'Restore Last Session' })
 vim.keymap.set('n', '<leader>qd', function() require('persistence').stop() end, { desc = "Don't Save Current Session" })
--- stylua: ignore end
 
-
--- stylua: ignore start
+-- multi cursor
 vim.keymap.set({ 'n', 'x' }, '<up>', function() require('multicursor-nvim').lineAddCursor(-1) end)
 vim.keymap.set({ 'n', 'x' }, '<down>', function() require('multicursor-nvim').lineAddCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader><up>', function() require('multicursor-nvim').lineSkipCursor(-1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() require('multicursor-nvim').lineSkipCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader>n', function() require('multicursor-nvim').matchAddCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader>N', function() require('multicursor-nvim').matchAddCursor(-1) end)
--- stylua: ignore end
 
+-- which key
 vim.keymap.set({ 'n', 'x' }, '<leader>?', function() require('which-key').show({ global = false }) end, { desc = 'Buffer Keymaps (which-key}' })
