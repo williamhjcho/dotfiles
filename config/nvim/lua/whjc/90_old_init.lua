@@ -1,7 +1,5 @@
 vim.pack.add({
   -- editor
-  -- 'https://github.com/christoomey/vim-tmux-navigator',
-  'https://github.com/jake-stewart/multicursor.nvim',
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/b0o/SchemaStore.nvim',
@@ -12,7 +10,6 @@ vim.pack.add({
   'https://github.com/MagicDuck/grug-far.nvim',
 
   -- lsp
-  -- 'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/stevearc/conform.nvim',
   'https://github.com/mfussenegger/nvim-lint',
   'https://github.com/folke/ts-comments.nvim',
@@ -23,10 +20,8 @@ vim.pack.add({
 })
 
 require('whjc.autocmds')
--- require('whjc.lsp')
 
 -- plugin setups
-require('whjc.multicursor')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
 require('snacks').setup({
