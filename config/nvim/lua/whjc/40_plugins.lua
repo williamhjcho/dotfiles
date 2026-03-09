@@ -77,3 +77,5 @@ now_if_args(function()
 
   require('whjc.lsp')
 end)
+
+later(function() add({ 'https://github.com/christoomey/vim-tmux-navigator' }) end)

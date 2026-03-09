@@ -1,6 +1,6 @@
 vim.pack.add({
   -- editor
-  'https://github.com/christoomey/vim-tmux-navigator',
+  -- 'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/jake-stewart/multicursor.nvim',
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
