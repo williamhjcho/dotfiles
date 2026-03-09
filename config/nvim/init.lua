@@ -21,7 +21,9 @@ Config.new_autocmd = function(event, pattern, callback, desc)
   vim.api.nvim_create_autocmd(event, opts)
 end
 
-Config.on_background = function(plugin_name, kinds, callback, desc)
+-- Define custom `vim.pack.add()` hook helper. See `:h vim.pack-events`.
+-- Example usage: see 'plugin/40_plugins.lua'.
+Config.on_packchanged = function(plugin_name, kinds, callback, desc)
   local f = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
     if not (name == plugin_name and vim.tbl_contains(kinds, kind)) then return end
