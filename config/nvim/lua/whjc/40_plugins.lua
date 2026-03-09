@@ -137,4 +137,6 @@ later(function()
   })
 end)
 
+later(function() add({ 'https://github.com/rafamadriz/friendly-snippets' }) end)
+
 later(function() require('whjc.test') end)

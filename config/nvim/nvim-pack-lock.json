@@ -9,10 +9,6 @@
       "rev": "e75f2362624698864957a694d80ca0c116bd24d3",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
-    "baleia.nvim": {
-      "rev": "32617940adb2eea56e85a64883a19961ceac9641",
-      "src": "https://github.com/m00qek/baleia.nvim"
-    },
     "blink-cmp-copilot": {
       "rev": "439cff78780c033aa23cf061d7315314b347e3c1",
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
@@ -26,10 +22,6 @@
       "rev": "40dcec5555f960b0a04340d76eabdf4efe78599d",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "conjure": {
-      "rev": "42048ce74a7d86dd85091d7d8cebb78d25761da3",
-      "src": "https://github.com/Olical/conjure"
-    },
     "copilot.lua": {
       "rev": "3061c49e0e2619915af90fb5a067cac90a20e896",
       "src": "https://github.com/zbirenbaum/copilot.lua"
@@ -41,6 +33,10 @@
     "flutter-tools.nvim": {
       "rev": "677cc07c16e8b89999108d2ebeefcfc5f539b73c",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
       "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
@@ -122,10 +118,6 @@
       "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
-    "onedark.nvim": {
-      "rev": "213c23ae45a04797572242568d5d51937181792d",
-      "src": "git@github.com:navarasu/onedark.nvim"
-    },
     "persistence.nvim": {
       "rev": "b20b2a7887bd39c1a356980b45e03250f3dce49c",
       "src": "https://github.com/folke/persistence.nvim"
@@ -145,14 +137,6 @@
     "teide.nvim": {
       "rev": "95041d1d78e786bd88be64bca3e1771f7b6236df",
       "src": "https://github.com/serhez/teide.nvim"
-    },
-    "todo-comments.nvim": {
-      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
-      "src": "git@github.com:folke/todo-comments.nvim"
-    },
-    "tokyonight.nvim": {
-      "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
-      "src": "git@github.com:folke/tokyonight.nvim"
     },
     "ts-comments.nvim": {
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
