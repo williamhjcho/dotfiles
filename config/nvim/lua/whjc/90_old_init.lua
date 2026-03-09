@@ -10,7 +10,6 @@ vim.pack.add({
   'https://github.com/MagicDuck/grug-far.nvim',
 
   -- lsp
-  'https://github.com/stevearc/conform.nvim',
   'https://github.com/mfussenegger/nvim-lint',
   'https://github.com/folke/ts-comments.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
@@ -59,7 +58,6 @@ require('grug-far').setup({
 
 -- lsp setups
 require('whjc.blink')
-require('whjc.conform')
 require('whjc.nvim-lint')
 require('whjc.javascript')
 -- require('whjc.clojure')
