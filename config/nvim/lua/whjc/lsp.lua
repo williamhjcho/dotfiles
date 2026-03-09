@@ -45,9 +45,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client == nil then
-      return
-    end
+    if client == nil then return end
 
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
@@ -69,12 +67,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('<leader>cf', function() require('conform').format() end, 'Format Buffer')
     -- stylua: ignore end
 
-    map('<leader>cF', function()
-      vim.lsp.buf.code_action({
-        context = { only = { 'source.fixAll' }, diagnostics = {} },
-        apply = true,
-      })
-    end, 'Code Fix All', { 'n', 'x' })
+    map(
+      '<leader>cF',
+      function()
+        vim.lsp.buf.code_action({
+          context = { only = { 'source.fixAll' }, diagnostics = {} },
+          apply = true,
+        })
+      end,
+      'Code Fix All',
+      { 'n', 'x' }
+    )
     map('<leader>co', function()
       local ft = vim.bo.filetype
       local clients = vim.lsp.get_clients({ bufnr = 0 })
@@ -164,9 +167,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --
     -- This may be unwanted, since they displace some of your code
     if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-      map('<leader>th', function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-      end, '[T]oggle Inlay [H]ints')
+      map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf })) end, '[T]oggle Inlay [H]ints')
     end
 
     -- python LSP
@@ -176,5 +177,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
-
-require('whjc.javascript')

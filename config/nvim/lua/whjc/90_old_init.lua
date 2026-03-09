@@ -72,6 +72,7 @@ require('grug-far').setup({
 require('whjc.blink')
 require('whjc.conform')
 require('whjc.nvim-lint')
+require('whjc.javascript')
 -- require('whjc.clojure')
 require('whjc.flutter')
 require('whjc.ai')
