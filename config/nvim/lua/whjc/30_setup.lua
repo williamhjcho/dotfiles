@@ -84,6 +84,17 @@ later(function()
   })
 end)
 
+-- Picker for selecting files, grep, etc
+-- <C-n> / <Down> moves down; <C-p> / <Up> moves up.
+-- <Left> / <Right> moves prompt caret left / right.
+-- <S-Tab> toggles information window with all available mappings.
+-- <Tab> toggles preview.
+-- <C-x> / <C-a> toggles current / all item(s) as (un)marked.
+-- <C-Space> / <M-Space> makes all matches or marked items as new picker.
+-- <CR> / <M-CR> chooses current/marked item(s).
+-- <Esc> / <C-c> stops picker.
+later(function() require('mini.pick').setup() end)
+
 -- Add/delete/replace surroundings (brackets, quotes, etc.)
 -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 -- - sd'   - [S]urround [D]elete [']quotes

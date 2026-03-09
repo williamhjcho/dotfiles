@@ -113,11 +113,17 @@ vim.keymap.set('n', '<leader>gg', function() require('snacks').lazygit() end, { 
 vim.keymap.set('n', '<leader>fe', function() require('snacks').explorer({ hidden = true }) end, { desc = 'Explorer (cwd)' })
 
 -- files/find
-vim.keymap.set('n', '<leader><leader>', function() require('snacks').picker.buffers({}) end, { desc = 'Find Buffer' })
-vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
-vim.keymap.set('n', '<leader>ff', function() require('snacks').picker.files({ hidden = true }) end, { desc = 'Find file (cwd)' })
-vim.keymap.set('n', '<leader>fr', function() require('snacks').picker.recent({ filter = { cwd = true } }) end, { desc = 'Find Recent Files' })
-vim.keymap.set('n', '<leader>f:', function() require('snacks').picker.command_history() end, { desc = 'Find Command History' })
+vim.keymap.set('n', '<leader><leader>', '<Cmd>Pick buffers<CR>', { desc = 'Find Buffer' })
+vim.keymap.set('n', '<leader>f:', '<Cmd>Pick command_history<CR>', { desc = 'Find ":" History' })
+vim.keymap.set('n', '<leader>fd', '<Cmd>Pick diagnostic scope="all"<CR>', { desc = 'Diagnostic workspace' })
+vim.keymap.set('n', '<leader>fD', '<Cmd>Pick diagnostic scope="current"<CR>', { desc = 'Diagnostic buffer' })
+vim.keymap.set('n', '<leader>ff', '<Cmd>Pick files<CR>', { desc = 'Find file (cwd)' })
+vim.keymap.set('n', '<leader>fg', '<Cmd>Pick grep_live<CR>', { desc = 'Grep live' })
+vim.keymap.set('n', '<leader>fG', '<Cmd>Pick grep pattern=<cword><CR>', { desc = 'Grep current word' })
+vim.keymap.set('n', '<leader>fh', '<Cmd>Pick help<CR>', { desc = 'Find Help' })
+vim.keymap.set('n', '<leader>fl', '<Cmd>Pick buf_lines scope="all"<CR>', { desc = 'Find lines (all)' })
+vim.keymap.set('n', '<leader>fL', '<Cmd>Pick buf_lines scope="current"<CR>', { desc = 'Find lines (current)' })
+vim.keymap.set('n', '<leader>fr', '<Cmd>Pick resume<CR>', { desc = 'Find Resume' })
 
 -- search
 vim.keymap.set('n', '<leader>sk', function() require('snacks').picker.keymaps() end, { desc = 'Search Keymaps' })
