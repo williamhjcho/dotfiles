@@ -140,6 +140,40 @@ end)
 later(function() add({ 'https://github.com/rafamadriz/friendly-snippets' }) end)
 
 later(function()
+  add({ 'https://github.com/NMAC427/guess-indent.nvim' })
+  require('guess-indent').setup({})
+end)
+
+later(function()
+  add({ 'https://github.com/lewis6991/gitsigns.nvim' })
+  require('gitsigns').setup({})
+end)
+
+later(function()
+  add({ 'https://github.com/folke/ts-comments.nvim' })
+  require('ts-comments').setup({})
+end)
+
+later(function()
+  add({ 'https://github.com/windwp/nvim-ts-autotag' })
+  require('nvim-ts-autotag').setup({})
+end)
+
+later(function()
+  add({ 'https://github.com/MagicDuck/grug-far.nvim' })
+  require('grug-far').setup({
+    headerMaxWidth = 80,
+  })
+end)
+
+later(function()
+  add({ 'https://github.com/chrisgrieser/nvim-origami' })
+  require('origami').setup({
+    autoFold = { enabled = false },
+  })
+end)
+
+later(function()
   add({
     'https://github.com/nvim-neotest/neotest',
     'https://github.com/nvim-neotest/nvim-nio',

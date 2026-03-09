@@ -23,7 +23,6 @@ require('flutter-tools').setup({
   },
 })
 
--- stylua: ignore start
 vim.keymap.set('n', '<leader>Fr', '<cmd>FlutterRun<cr>', { desc = 'Flutter Run' })
 vim.keymap.set('n', '<leader>Fd', '<cmd>FlutterDevices<cr>', { desc = 'Flutter Devices' })
 vim.keymap.set('n', '<leader>Fq', '<cmd>FlutterQuit<cr>', { desc = 'Flutter Quit' })
@@ -33,4 +32,3 @@ vim.keymap.set('n', '<leader>Fll', '<cmd>FlutterLogToggle<cr>', { desc = 'Flutte
 vim.keymap.set('n', '<leader>Flx', '<cmd>FlutterLogClear<cr>', { desc = 'Flutter Log Clear' })
 vim.keymap.set('n', '<leader>Fo', '<cmd>FlutterOpenDevTools<cr>', { desc = 'Flutter DevTools Open' })
 vim.keymap.set('n', '<leader>Fy', '<cmd>FlutterCopyProfilesUrl<cr>', { desc = 'Flutter DevTools Copy URL' })
--- stylua: ignore end

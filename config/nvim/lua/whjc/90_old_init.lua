@@ -3,16 +3,10 @@ vim.pack.add({
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/b0o/SchemaStore.nvim',
-  'https://github.com/NMAC427/guess-indent.nvim',
-  'https://github.com/lewis6991/gitsigns.nvim',
-  'https://github.com/chrisgrieser/nvim-origami',
   'https://github.com/folke/persistence.nvim',
-  'https://github.com/MagicDuck/grug-far.nvim',
 
   -- lsp
   'https://github.com/mfussenegger/nvim-lint',
-  'https://github.com/folke/ts-comments.nvim',
-  'https://github.com/windwp/nvim-ts-autotag',
 }, {
   load = true,
   confirm = false,
@@ -21,8 +15,6 @@ vim.pack.add({
 require('whjc.autocmds')
 
 -- plugin setups
-require('guess-indent').setup({})
-require('nvim-ts-autotag').setup({})
 require('snacks').setup({
   indent = { enabled = true },
   lazygit = {},
@@ -46,15 +38,7 @@ require('which-key').setup({
     { 'z', group = 'fold' },
   },
 })
-require('gitsigns').setup({})
-require('origami').setup({
-  autoFold = { enabled = false },
-})
-require('ts-comments').setup({})
 require('persistence').setup({})
-require('grug-far').setup({
-  headerMaxWidth = 80,
-})
 
 -- lsp setups
 require('whjc.blink')
