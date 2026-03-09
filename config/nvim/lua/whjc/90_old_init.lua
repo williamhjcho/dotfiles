@@ -4,7 +4,6 @@ vim.pack.add({
   -- editor
   'https://github.com/christoomey/vim-tmux-navigator',
   'https://github.com/jake-stewart/multicursor.nvim',
-  'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/b0o/SchemaStore.nvim',
@@ -30,7 +29,6 @@ require('whjc.autocmds')
 
 -- plugin setups
 require('whjc.mason')
-require('whjc.treesitter')
 require('whjc.multicursor')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
