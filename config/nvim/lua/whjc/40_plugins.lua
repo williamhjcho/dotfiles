@@ -136,3 +136,5 @@ later(function()
     formatters_by_ft = formatters,
   })
 end)
+
+later(function() require('whjc.test') end)
