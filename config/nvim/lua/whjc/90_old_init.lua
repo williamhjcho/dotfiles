@@ -32,7 +32,6 @@ require('whjc.autocmds')
 require('whjc.mason')
 require('whjc.treesitter')
 require('whjc.multicursor')
-require('whjc.mini')
 require('guess-indent').setup({})
 require('nvim-ts-autotag').setup({})
 require('snacks').setup({
