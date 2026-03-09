@@ -93,6 +93,18 @@ vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap
 vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
 
 -- Lsp
+vim.keymap.set('n', '<leader>la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Actions' })
+vim.keymap.set('n', '<leader>ld', '<Cmd>lua vim.diagnostic.open_float()<CR>', { desc = 'Diagnostic popup' })
+vim.keymap.set('n', '<leader>lf', '<Cmd>lua require("conform").format()<CR>', { desc = 'Format' })
+vim.keymap.set('n', '<leader>li', '<Cmd>lua vim.lsp.buf.implementation()<CR>', { desc = 'Implementation' })
+vim.keymap.set('n', '<leader>lh', '<Cmd>lua vim.lsp.buf.hover()<CR>', { desc = 'Hover' })
+vim.keymap.set('n', '<leader>lr', '<Cmd>lua vim.lsp.buf.rename()<CR>', { desc = 'Rename' })
+vim.keymap.set('n', '<leader>lR', '<Cmd>lua vim.lsp.buf.references()<CR>', { desc = 'References' })
+vim.keymap.set('n', '<leader>ls', '<Cmd>lua vim.lsp.buf.definition()<CR>', { desc = 'Source definition' })
+vim.keymap.set('n', '<leader>lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', { desc = 'Type definition' })
+
+vim.keymap.set('x', '<leader>lf', '<Cmd>lua require("conform").format()<CR>', { desc = 'Format selection' })
+
 vim.keymap.set('n', '<leader>Lr', '<cmd>lsp restart<cr>', { desc = 'Lsp Restart' })
 vim.keymap.set('n', '<leader>LR', '<cmd>lsp restart<cr>', { desc = 'Lsp Restart All' })
 vim.keymap.set('n', '<leader>Ld', '<cmd>lsp disable<cr>', { desc = 'Lsp Disable' })

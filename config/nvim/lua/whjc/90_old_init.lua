@@ -15,7 +15,7 @@ vim.pack.add({
   'https://github.com/MagicDuck/grug-far.nvim',
 
   -- lsp
-  'https://github.com/neovim/nvim-lspconfig',
+  -- 'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/stevearc/conform.nvim',
   'https://github.com/mfussenegger/nvim-lint',
   'https://github.com/folke/ts-comments.nvim',
@@ -26,7 +26,7 @@ vim.pack.add({
 })
 
 require('whjc.autocmds')
-require('whjc.lsp')
+-- require('whjc.lsp')
 
 -- plugin setups
 require('whjc.mason')
@@ -72,7 +72,7 @@ require('grug-far').setup({
 require('whjc.blink')
 require('whjc.conform')
 require('whjc.nvim-lint')
-require('whjc.clojure')
+-- require('whjc.clojure')
 require('whjc.flutter')
 require('whjc.ai')
 require('whjc.test')

@@ -30,3 +30,9 @@ Config.on_background = function(plugin_name, kinds, callback, desc)
   end
   Config.new_autocmd('PackChanged', '*', f, desc)
 end
+
+require('whjc.10_options')
+require('whjc.20_keymaps')
+require('whjc.30_setup')
+require('whjc.40_plugins')
+require('whjc.90_old_init')
