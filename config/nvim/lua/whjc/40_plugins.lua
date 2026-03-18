@@ -78,7 +78,24 @@ now_if_args(function()
   require('whjc.lsp')
 end)
 
-later(function() add({ 'https://github.com/christoomey/vim-tmux-navigator' }) end)
+later(function()
+  add({ 'https://github.com/christoomey/vim-tmux-navigator' })
+
+  -- Move to window using <ctrl> hjkl keys `:help wincmd`
+  -- only install if vim-tmux-navigator is not available, since it already provides this keymaps
+  if vim.fn.exists(':TmuxNavigateLeft') == 0 then
+    vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Go to left window' })
+    vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Go to right window' })
+    vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Go to lower window' })
+    vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Go to upper window' })
+  else
+    -- disable tmux keymaps for lazygit integration
+    vim.keymap.del('t', '<C-h>')
+    vim.keymap.del('t', '<C-l>')
+    vim.keymap.del('t', '<C-j>')
+    vim.keymap.del('t', '<C-k>')
+  end
+end)
 
 later(function()
   add({ 'https://github.com/jake-stewart/multicursor.nvim' })
