@@ -53,7 +53,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     local Snacks = require('snacks')
-    -- stylua: ignore start
     map('K', vim.lsp.buf.hover, 'Open Hover')
     map('gd', Snacks.picker.lsp_definitions, 'Goto Definitions')
     map('gD', Snacks.picker.lsp_declarations, 'Goto Declarations')
@@ -61,11 +60,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gI', Snacks.picker.lsp_implementations, 'Goto Implementations')
     map('grn', vim.lsp.buf.rename, 'Rename')
     map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
-    map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', {'n', 'x'})
+    map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', { 'n', 'x' })
     map('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
     -- conform
     map('<leader>cf', function() require('conform').format() end, 'Format Buffer')
-    -- stylua: ignore end
+    map(
+      '<leader>oi',
+      function()
+        vim.lsp.buf.code_action({
+          context = { only = { 'source.organizeImports' }, diagnostics = {} },
+          apply = true,
+        })
+      end,
+      'Organize Imports'
+    )
 
     map(
       '<leader>cF',
@@ -78,31 +86,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
       'Code Fix All',
       { 'n', 'x' }
     )
-    map('<leader>co', function()
+    map('<leader>coi', function()
       local ft = vim.bo.filetype
       local clients = vim.lsp.get_clients({ bufnr = 0 })
 
-      -- stylua: ignore
       local client_has_name = function(name)
         return vim.tbl_contains(vim.tbl_map(function(c) return c.name end, clients), name)
       end
 
+      vim.lsp.buf.code_action({
+        context = { only = { 'source.organizeImports' }, diagnostics = {} },
+        apply = true,
+      })
+
       -- overriding vtsls organize imports with biome
       if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'svelte' }, ft) then
-        if vim.tbl_contains({ 'svelte' }) then
-          vim.lsp.buf.code_action({
-            context = { only = { 'source.organizeImports' }, diagnostics = {} },
-            apply = true,
-          })
-        end
-
         vim.lsp.buf.code_action({
           context = { only = { 'source.fixAll.biome' }, diagnostics = {} },
-          apply = true,
-        })
-      else
-        vim.lsp.buf.code_action({
-          context = { only = { 'source.organizeImports' }, diagnostics = {} },
           apply = true,
         })
       end
