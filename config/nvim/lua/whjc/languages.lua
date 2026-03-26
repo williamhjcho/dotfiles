@@ -60,12 +60,12 @@ return {
     lsp = { 'tsgo', 'tailwindcss', 'biome' },
     treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'typescript', 'astro', 'svelte' },
     formatters = {
-      css = { 'biome' },
-      javascript = { 'biome' },
-      javascriptreact = { 'biome' },
-      typescript = { 'biome' },
-      typescriptreact = { 'biome' },
-      svelte = { 'biome', lsp_format = 'first' },
+      css = { 'biome-check' },
+      javascript = { 'biome-check' },
+      javascriptreact = { 'biome-check' },
+      typescript = { 'biome-check' },
+      typescriptreact = { 'biome-check' },
+      svelte = { 'biome-check', lsp_format = 'first' },
     },
     linters = {
       typescript = { 'biomejs' },

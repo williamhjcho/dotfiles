@@ -86,27 +86,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
       'Code Fix All',
       { 'n', 'x' }
     )
-    map('<leader>coi', function()
-      local ft = vim.bo.filetype
-      local clients = vim.lsp.get_clients({ bufnr = 0 })
-
-      local client_has_name = function(name)
-        return vim.tbl_contains(vim.tbl_map(function(c) return c.name end, clients), name)
-      end
-
-      vim.lsp.buf.code_action({
-        context = { only = { 'source.organizeImports' }, diagnostics = {} },
-        apply = true,
-      })
-
-      -- overriding vtsls organize imports with biome
-      if client_has_name('biome') and vim.tbl_contains({ 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'svelte' }, ft) then
+    map(
+      '<leader>coi',
+      function()
         vim.lsp.buf.code_action({
-          context = { only = { 'source.fixAll.biome' }, diagnostics = {} },
+          context = { only = { 'source.organizeImports' }, diagnostics = {} },
           apply = true,
         })
-      end
-    end, 'Organize Imports')
+      end,
+      'Organize Imports'
+    )
 
     -- Jump to the implementation of the word under your cursor.
     --  Useful when your language has ways of declaring types without an actual implementation.
