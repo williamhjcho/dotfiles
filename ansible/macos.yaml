@@ -37,14 +37,10 @@
           - nvim
           - luarocks
           # general
-          - lazygit
           - direnv
-          - bob # nvim installation manager
           - tree-sitter-cli # needed by treesitter (nvim)
           - mise # dev env management
           # javascript/typescript/web
-          - deno
-          - biome # js/ts/general web file formatter & linter
           - tailwindcss-language-server # tailwindcss LSP
           # lua
           - lua-language-server # lua LSP
