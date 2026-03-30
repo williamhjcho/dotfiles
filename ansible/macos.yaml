@@ -19,46 +19,32 @@
           - zsh
           - zsh-syntax-highlighting
           - zsh-autosuggestions
-          - jq
-          - yq
-          - fd
           - gpg
           - tmux
-          - ripgrep
-          - fzf
-          - gh
           - stow
           - openssl
           - tree
           - ykman
           - stats
           - tldr
-          # nvim
-          - nvim
-          - luarocks
+          - dockutil
           # general
-          - direnv
+          - luarocks # nvim
           - tree-sitter-cli # needed by treesitter (nvim)
           - mise # dev env management
-          # javascript/typescript/web
           - tailwindcss-language-server # tailwindcss LSP
-          # lua
-          - lua-language-server # lua LSP
-          - stylua # lua formatter
+
           # python
           - pyenv
           - pyenv-virtualenv
-          - ruff # python formatter & linter
-          # yaml/toml
+
           - yaml-language-server # YAML LSP
-          - taplo # TOML LSP
           - jenv # java
           - rbenv # ruby
-          - dockutil
           # golang
           - delve # go debugger
           - goimports # go formatter
-          - go-task # taskfile (makefile alternative)
+
         # homebrew_taps:
         # - leoafarias/fvm
         homebrew_cask_apps:

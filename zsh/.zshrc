@@ -55,6 +55,14 @@ fi
 # npm
 export PATH="$NPM_BIN:$PATH"
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # Android
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -72,6 +80,9 @@ export PATH="$PATH":"$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.cargo" ] && . "$HOME/.cargo/env"
 
+# Rover
+[ -d "$HOME/.rover" ] && source "$HOME/.rover/env"
+
 # Google Cloud CLI
 GCLOUD_HOME="$HOME/google-cloud-sdk";
 # The next line enables shell command completion for gcloud.
@@ -80,9 +91,6 @@ if [ -f "$GCLOUD_HOME/completion.zsh.inc" ]; then . "$GCLOUD_HOME/completion.zsh
 if [ -f "$GCLOUD_HOME/path.zsh.inc" ]; then . "$GCLOUD_HOME/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
 if [ -f "$GCLOUD_HOME/completion.zsh.inc" ]; then . "$GCLOUD_HOME/completion.zsh.inc"; fi
-
-# Rover
-[ -d "$HOME/.rover" ] && source "$HOME/.rover/env"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -106,12 +114,6 @@ eval "$(jenv init -)"
 # Ruby
 command -v rbenv >/dev/null && eval "$(rbenv init - zsh)" || echo "'rbenv' not installed"
 
-# direnv
-command -v direnv >/dev/null && eval "$(direnv hook zsh)" || echo "'direnv' not installed"
-
-# taskfile
-command -v task >/dev/null && eval "$(task --completion zsh)" || echo "'task' not installed"
-
 # mise
 command -v mise >/dev/null && eval "$(mise activate zsh)" || echo "'mise' not installed"
 
@@ -120,12 +122,6 @@ if type brew &>/dev/null; then
     source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
-
-# secrets
-[ -f ~/.env.personal ] && source ~/.env.personal
-
-# Added by Windsurf
-export PATH="/Users/whjc/.codeium/windsurf/bin:$PATH"
 
 # work 180s
 if [ -d "$HOME/.180cli" ]; then
@@ -140,27 +136,15 @@ fi
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh ]] && . /Users/william.cho/.config/.dart-cli-completion/zsh-config.zsh || true
+[[ -f "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$XDG_CONFIG_HOME/.dart-cli-completion/zsh-config.zsh" || true
 ## [/Completion]
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # custom bin
 source "$DOTFILES_HOME/bin/generators.sh"
-
-# bob
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-
 
 # bun completions
 [ -s "/Users/whjc/.bun/_bun" ] && source "/Users/whjc/.bun/_bun"

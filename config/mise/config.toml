@@ -1,5 +1,15 @@
+# Useful commands
+# upgrade tools to latest `mise upgrade --bump`
 [tools]
 biome = "2.4.9"
+fzf = "0.70.0"
 lazygit = "0.60.0"
 neovim = "0.12.0"
 ruff = "0.15.8"
+jq = "1.8.1"
+yq = "4.52.5"
+fd = "10.4.2"
+direnv = "2.37.1"
+stylua = "2.4.0"
+lua-language-server = "3.17.1"
+tmux = "3.6a"
