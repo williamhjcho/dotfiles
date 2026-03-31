@@ -26,7 +26,6 @@
           - tree
           - ykman
           - stats
-          - tldr
           - dockutil
           # general
           - luarocks # nvim
@@ -78,10 +77,6 @@
           - "Pages"
           - "Safari"
           - "TV"
-        # dockitems_persist:
-        #   - name: Alacritty
-        #     path: "/Applications/Alacritty.app/"
-        #     pos: 1
         #   - name: Spotify
         #     path: "/Applications/Spotify.app/"
         #     pos: 2
