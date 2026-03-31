@@ -39,3 +39,9 @@
     src: "{{ dotfiles_home }}/git/.gitconfig"
     dest: "{{ dotfiles_dir }}/.gitconfig"
     state: link
+
+- name: claude
+  file:
+    src: "{{ dotfiles_home }}/claude/skills"
+    dest: "{{ dotfiles_dir }}/.claude/skills"
+    state: link
