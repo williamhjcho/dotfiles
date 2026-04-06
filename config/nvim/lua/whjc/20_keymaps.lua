@@ -179,7 +179,9 @@ vim.keymap.set({ 'n', 'x' }, '<down>', function() require('multicursor-nvim').li
 vim.keymap.set({ 'n', 'x' }, '<leader><up>', function() require('multicursor-nvim').lineSkipCursor(-1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader><down>', function() require('multicursor-nvim').lineSkipCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader>n', function() require('multicursor-nvim').matchAddCursor(1) end)
+vim.keymap.set({ 'n', 'x' }, '<leader>s', function() require('multicursor-nvim').matchSkipCursor(1) end)
 vim.keymap.set({ 'n', 'x' }, '<leader>N', function() require('multicursor-nvim').matchAddCursor(-1) end)
+vim.keymap.set({ 'n', 'x' }, '<leader>S', function() require('multicursor-nvim').matchSkipCursor(-1) end)
 
 -- which key
 vim.keymap.set({ 'n', 'x' }, '<leader>?', function() require('which-key').show({ global = false }) end, { desc = 'Buffer Keymaps (which-key}' })
