@@ -29,6 +29,12 @@ ansible-galaxy install -r requirements.yaml
 
 # or run the playbook with specific tags
 ./install.sh --homebrew --dotfiles
+
+# check if mise is installed and correctly finds the config file
+mise config
+
+# install mise (global) tools
+mise install
 ```
 
 ## 4. Manual settings
