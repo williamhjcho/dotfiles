@@ -190,6 +190,8 @@ later(function()
   })
 end)
 
+later(function() add({ 'https://github.com/b0o/SchemaStore.nvim' }) end)
+
 later(function()
   add({
     'https://github.com/nvim-neotest/neotest',

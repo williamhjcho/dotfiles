@@ -2,7 +2,6 @@ vim.pack.add({
   -- editor
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
-  'https://github.com/b0o/SchemaStore.nvim',
   'https://github.com/folke/persistence.nvim',
 
   -- lsp
