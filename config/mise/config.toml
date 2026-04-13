@@ -1,11 +1,11 @@
 # Useful commands
 # upgrade tools to latest `mise upgrade --bump`
 [tools]
-biome = "2.4.10"
+biome = "2.4.11"
 fzf = "0.71.0"
 lazygit = "0.61.0"
 neovim = "0.12.1"
-ruff = "0.15.9"
+ruff = "0.15.10"
 jq = "1.8.1"
 yq = "4.52.5"
 fd = "10.4.2"
