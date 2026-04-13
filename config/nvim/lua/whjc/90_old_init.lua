@@ -3,9 +3,6 @@ vim.pack.add({
   'https://github.com/folke/snacks.nvim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/folke/persistence.nvim',
-
-  -- lsp
-  'https://github.com/mfussenegger/nvim-lint',
 }, {
   load = true,
   confirm = false,
@@ -41,7 +38,6 @@ require('persistence').setup({})
 
 -- lsp setups
 require('whjc.blink')
-require('whjc.nvim-lint')
 require('whjc.javascript')
 -- require('whjc.clojure')
 require('whjc.flutter')
