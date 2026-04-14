@@ -40,8 +40,8 @@
     dest: "{{ dotfiles_dir }}/.gitconfig"
     state: link
 
-- name: claude
+- name: claude settings
   file:
-    src: "{{ dotfiles_home }}/claude/skills"
-    dest: "{{ dotfiles_dir }}/.claude/skills"
+    src: "{{ dotfiles_home }}/claude/settings.json"
+    dest: "{{ dotfiles_dir }}/.claude/settings.json"
     state: link
