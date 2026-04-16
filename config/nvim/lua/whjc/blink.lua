@@ -16,12 +16,8 @@ blink.setup({
     preset = 'default',
     ['<Tab>'] = {
       'snippet_forward',
-      function()
-        return require('sidekick').nes_jump_or_apply()
-      end,
-      function()
-        return vim.lsp.inline_completion.get()
-      end,
+      function() return require('sidekick').nes_jump_or_apply() end,
+      function() return vim.lsp.inline_completion.get() end,
       'fallback',
     },
   },
@@ -52,6 +48,13 @@ blink.setup({
   snippets = { preset = 'luasnip' },
   fuzzy = { implementation = 'lua' },
   signature = { enabled = true },
+})
+
+local ls = require('luasnip')
+ls.add_snippets('all', {
+  ls.s('uuid', {
+    ls.f(function() return vim.fn.system('uuidgen'):gsub('%s+', ''):lower() end, {}),
+  }),
 })
 
 -- local p = {
