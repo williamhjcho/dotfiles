@@ -5,11 +5,11 @@
     dotfiles_home: "~/dotfiles"
 
   roles:
-    - role: dotfiles
-      tags: [dotfiles]
     - role: zsh
       tags: [zsh]
     - role: elliotweiser.osx-command-line-tools
+    - role: dotfiles
+      tags: [dotfiles]
     - role: geerlingguy.mac.homebrew
       tags: [homebrew]
       vars:
@@ -44,8 +44,6 @@
           - delve # go debugger
           - goimports # go formatter
 
-        # homebrew_taps:
-        # - leoafarias/fvm
         homebrew_cask_apps:
           # in case it needs to be forced
           # - { name: appname, install_options: "force" }
@@ -62,21 +60,27 @@
       tags: [dock]
       vars:
         dockitems_remove:
+          - "App Store"
           - "Calendar"
           - "Contacts"
           - "FaceTime"
           - "Freeform"
           - "Keynote"
+          - "Launchpad"
           - "Mail"
           - "Maps"
           - "Messages"
           - "Music"
+          - "Notes"
           - "Numbers"
-          - "Podcasts"
-          - "Photos"
           - "Pages"
+          - "Photos"
+          - "Podcasts"
+          - "Reminders"
           - "Safari"
+          - "Settings"
           - "TV"
+          - "iPhone Mirroring"
         #   - name: Spotify
         #     path: "/Applications/Spotify.app/"
         #     pos: 2
