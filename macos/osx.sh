@@ -22,25 +22,44 @@
 #
 # adapted from Jeff Geerling's dotfiles
 
-if [[ $EUID -ne 0 ]]; then
-  echo "This script must be run as root"
-  exit 1
+if [[ $EUID -eq 0 ]]; then
+  TARGET_USER="${SUDO_USER:-$(stat -f%Su /dev/console)}"
+else
+  TARGET_USER="${USER}"
 fi
+
+TARGET_HOME="$(dscl . -read "/Users/${TARGET_USER}" NFSHomeDirectory | awk '{print $2}')"
+
+run_as_target_user() {
+  if [[ $EUID -eq 0 && "${TARGET_USER}" != "root" ]]; then
+    sudo -H -u "${TARGET_USER}" "$@"
+  else
+    "$@"
+  fi
+}
+
+user_defaults() {
+  run_as_target_user defaults "$@"
+}
+
+user_chflags() {
+  run_as_target_user chflags "$@"
+}
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 echo "Setting General UI/UX"
 
-defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
-defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
+user_defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+user_defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
 
 # status bar visibility: true = always
-defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
-defaults write NSGlobalDomain _HIHideMenuBar -int 0
+user_defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
+user_defaults write NSGlobalDomain _HIHideMenuBar -int 0
 
 # disable siri
-defaults write com.apple.assistant.support "Assistant Enabled" -int 0
+user_defaults write com.apple.assistant.support "Assistant Enabled" -int 0
 
 # Save to disk (not to iCloud) by default
 # defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -49,19 +68,19 @@ defaults write com.apple.assistant.support "Assistant Enabled" -int 0
 # defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Restart automatically if the computer freezes
-# if [[ "$RUN_AS_ROOT" = true ]]; then
+# if [[ $EUID -eq 0 ]]; then
 # 	systemsetup -setrestartfreeze on
 # fi
 
 # Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+user_defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+user_defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
-defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
-defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
+user_defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+user_defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+user_defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -70,34 +89,34 @@ echo "Setting Trackpad & acessories"
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
 # (The KeyRepeat option requires logging out and back in to take effect.)
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-defaults write NSGlobalDomain KeyRepeat -int 1
+user_defaults write NSGlobalDomain InitialKeyRepeat -int 15
+user_defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+user_defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Trackpad two finger tap right click
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+user_defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+user_defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 
 # Trackpad tap to click
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+user_defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+user_defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 # Trackpad haptic feedback
-defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1
-defaults write NSGlobalDomain ContextMenuGesture -int 1
+user_defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1
+user_defaults write NSGlobalDomain ContextMenuGesture -int 1
 
 # Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+user_defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Adds three-finger drag gesture
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -bool false
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -bool false
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool false
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -bool false
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -bool false
+user_defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+user_defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -bool false
+user_defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -bool false
+user_defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool false
+user_defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -bool false
+user_defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -bool false
 
 ###############################################################################
 # Screen                                                                      #
@@ -105,13 +124,13 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 echo "Setting Screen"
 
 # Save screenshots to Downloads folder.
-defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+user_defaults write com.apple.screencapture location -string "${TARGET_HOME}/Downloads"
 
 # shows mouse in captures
-defaults write com.apple.screencapture showsClicks -bool true
+user_defaults write com.apple.screencapture showsClicks -bool true
 
 # Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+user_defaults write com.apple.screencapture disable-shadow -bool true
 
 ###############################################################################
 # Finder                                                                      #
@@ -130,10 +149,10 @@ echo "Setting Finder"
 # defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+user_defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+user_defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 # defaults write com.apple.finder ShowStatusBar -bool true
@@ -145,10 +164,10 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # When performing a search, search the current folder by default
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+user_defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+user_defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Enable spring loading for directories
 # defaults write NSGlobalDomain com.apple.springing.enabled -bool true
@@ -157,7 +176,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # defaults write NSGlobalDomain com.apple.springing.delay -float 0.1
 
 # Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+user_defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 # /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -171,10 +190,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Use column view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+user_defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Show the ~/Library folder
-chflags nohidden ~/Library
+user_chflags nohidden "${TARGET_HOME}/Library"
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -182,27 +201,27 @@ chflags nohidden ~/Library
 echo "Setting Dock, Dashboard, and hot corners"
 
 # dock settings
-defaults write com.apple.dock tilesize -int 30
-defaults write com.apple.dock largesize -int 33
-defaults write com.apple.dock magnification -int 1
-defaults write com.apple.dock mineffect -string "scale"
-defaults write com.apple.dock orientation -string "bottom"
+user_defaults write com.apple.dock tilesize -int 30
+user_defaults write com.apple.dock largesize -int 33
+user_defaults write com.apple.dock magnification -int 1
+user_defaults write com.apple.dock mineffect -string "scale"
+user_defaults write com.apple.dock orientation -string "bottom"
 
 # this is a fix for aerospace app
-defaults write com.apple.dock expose-group-apps -bool true
+user_defaults write com.apple.dock expose-group-apps -bool true
 
 # disable most recent space rearranging automatically
-defaults write com.apple.dock "mru-spaces" -bool false
+user_defaults write com.apple.dock "mru-spaces" -bool false
 
 # disable launchpad gesture
-defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+user_defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 # Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
+user_defaults write com.apple.dock showhidden -bool true
 
 # Make Dock autohide
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock show-recents -bool false
+user_defaults write com.apple.dock autohide -bool true
+user_defaults write com.apple.dock show-recents -bool false
 
 # Hot corners
 # Possible values:
@@ -218,8 +237,8 @@ defaults write com.apple.dock show-recents -bool false
 # 12: Notification Center
 # 13: Lock screen
 # Bottom left screen corner
-defaults write com.apple.dock wvous-bl-corner -int 13
-defaults write com.apple.dock wvous-bl-modifier -int 0
+user_defaults write com.apple.dock wvous-bl-corner -int 13
+user_defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -245,11 +264,11 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 ###############################################################################
 echo "Setting Spotlight"
 
-if [[ "$RUN_AS_ROOT" = true ]]; then
+if [[ $EUID -eq 0 ]]; then
   # Disable Spotlight indexing for any volume that gets mounted and has not yet
   # been indexed before.
   # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-  sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+  defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
   # Restart spotlight
   killall mds >/dev/null 2>&1
@@ -261,10 +280,10 @@ fi
 echo "Setting Activity Monitor"
 
 # Show the main window when launching Activity Monitor
-defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+user_defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # Show all processes in Activity Monitor
-defaults write com.apple.ActivityMonitor ShowCategory -int 0
+user_defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
 ###############################################################################
 # Messages                                                                    #
@@ -282,7 +301,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 echo "Setting App Store"
 
 # Disable in-app rating requests from apps downloaded from the App Store.
-defaults write com.apple.appstore InAppReviewEnabled -int 0
+user_defaults write com.apple.appstore InAppReviewEnabled -int 0
 
 ###############################################################################
 # Kill/restart affected applications                                          #
