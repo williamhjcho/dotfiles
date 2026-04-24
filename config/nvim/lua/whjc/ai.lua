@@ -16,7 +16,7 @@ require('sidekick').setup({
   cli = {
     mux = {
       backend = 'tmux',
-      enabled = false,
+      enabled = true,
     },
   },
   keys = {
@@ -24,8 +24,6 @@ require('sidekick').setup({
   },
 })
 
-
--- stylua: ignore start
 vim.keymap.set('n', '<tab>', function()
   -- if there is a next edit, jump to it, otherwise apply it if any
   if require('sidekick').nes_jump_or_apply() then
@@ -41,9 +39,14 @@ end, {
   desc = 'Goto/Apply Next Edit Suggestion',
   expr = true,
 })
-vim.keymap.set({ 'n', 'v' }, '<leader>aa', function() require('sidekick.cli').toggle({ name = 'claude' }) end, { desc = 'Sidekick Toggle CLI' })
+vim.keymap.set({ 'n', 'v' }, '<leader>aa', function() require('sidekick.cli').toggle() end, { desc = 'Sidekick Toggle CLI' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ad', function() require('sidekick.cli').close() end, { desc = 'Sidekick Detach CLI Session' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ap', function() require('sidekick.cli').prompt() end, { desc = 'Sidekick Select Prompt' })
 
 vim.keymap.set('v', '<leader>as', function() require('sidekick.cli').send({ selection = true }) end, { desc = 'Sidekick Send Visual Selection' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ap', function() require('sidekick.cli').prompt() end, { desc = 'Sidekick Select Prompt', })
-vim.keymap.set({ 'n', 'x', 'i', 't' }, '<c-.>', function() require('sidekick.cli').focus() end, { desc = 'Sidekick Switch Focus' })
--- stylua: ignore end
+
+vim.keymap.set({ 'x', 'n' }, '<leader>at', function() require('sidekick.cli').send({ msg = '{this}' }) end, { desc = 'Sidekick Send This' })
+vim.keymap.set({ 'n' }, '<leader>af', function() require('sidekick.cli').send({ msg = '{file}' }) end, { desc = 'Sidekick Send File' })
+vim.keymap.set({ 'x' }, '<leader>av', function() require('sidekick.cli').send({ msg = '{selection}' }) end, { desc = 'Sidekick Send Selection' })
+
+vim.keymap.set({ 'n', 'x', 'i', 't' }, '<c-.>', function() require('sidekick.cli').focus() end, { desc = 'Sidekick Focus' })
