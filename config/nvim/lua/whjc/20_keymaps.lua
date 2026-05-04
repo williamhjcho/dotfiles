@@ -74,7 +74,14 @@ vim.keymap.set('n', '<leader><tab>h', '<cmd>tabprevious<cr>', { desc = 'Previous
 vim.keymap.set('n', '<leader><tab>d', '<cmd>tabclose<cr>', { desc = 'Close Tab' })
 
 -- Windows
-vim.keymap.set('n', '<leader>wd', '<C-W>c', { desc = 'Delete Window', remap = true })
+vim.keymap.set('n', '<leader>wd', '<c-w>c', { desc = 'Delete Window', remap = true })
+vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap = true })
+vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
+vim.keymap.set('n', '<leader>w>', '10<c-w>>', { desc = 'Increase Window Width' })
+vim.keymap.set('n', '<leader>w<', '10<c-w><', { desc = 'Decrease Window Width' })
+vim.keymap.set('n', '<leader>w+', '10<c-w>+', { desc = 'Increase Window Height' })
+vim.keymap.set('n', '<leader>w-', '10<c-w>-', { desc = 'Decrease Window Height' })
+vim.keymap.set('n', '<leader>w=', '<c-w>=', { desc = 'Equalize Window Sizes' })
 
 -- Save file
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
@@ -87,10 +94,6 @@ vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('i', ',', ',<c-g>u')
 vim.keymap.set('i', '.', '.<c-g>u')
 vim.keymap.set('i', ';', ';<c-g>u')
-
--- Split windows
-vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap = true })
-vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
 
 -- Lsp
 vim.keymap.set('n', '<leader>la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Actions' })
