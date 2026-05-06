@@ -122,7 +122,7 @@ vim.keymap.set('n', '<leader>fd', '<Cmd>Pick diagnostic scope="all"<CR>', { desc
 vim.keymap.set('n', '<leader>fD', '<Cmd>Pick diagnostic scope="current"<CR>', { desc = 'Diagnostic buffer' })
 vim.keymap.set('n', '<leader>ff', '<Cmd>Pick files<CR>', { desc = 'Find file (cwd)' })
 vim.keymap.set('n', '<leader>fg', '<Cmd>Pick grep_live<CR>', { desc = 'Grep live' })
-vim.keymap.set('n', '<leader>fG', '<Cmd>Pick grep pattern=<cword><CR>', { desc = 'Grep current word' })
+vim.keymap.set('n', '<leader>fG', '<Cmd>Pick grep pattern="<cword>"<CR>', { desc = 'Grep current word' })
 vim.keymap.set('n', '<leader>fh', '<Cmd>Pick help<CR>', { desc = 'Find Help' })
 vim.keymap.set('n', '<leader>fl', '<Cmd>Pick buf_lines scope="all"<CR>', { desc = 'Find lines (all)' })
 vim.keymap.set('n', '<leader>fL', '<Cmd>Pick buf_lines scope="current"<CR>', { desc = 'Find lines (current)' })
