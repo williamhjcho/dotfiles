@@ -31,13 +31,11 @@
           - luarocks # nvim
           - tree-sitter-cli # needed by treesitter (nvim)
           - mise # dev env management
-          - tailwindcss-language-server # tailwindcss LSP
 
           # python
           - pyenv
           - pyenv-virtualenv
 
-          - yaml-language-server # YAML LSP
           - jenv # java
           - rbenv # ruby
           # golang
