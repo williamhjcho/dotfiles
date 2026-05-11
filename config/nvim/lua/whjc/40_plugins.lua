@@ -121,14 +121,11 @@ end)
 later(function()
   add({ 'https://github.com/stevearc/conform.nvim' })
 
-  -- stylua: ignore
   local formatters = vim
     .iter(require('whjc.languages'))
     :map(function(i) return i.formatters end)
     :filter(function(i) return i end)
-    :fold({}, function(acc, formatters)
-      return vim.tbl_extend('force', acc, formatters)
-    end)
+    :fold({}, function(acc, formatters) return vim.tbl_extend('force', acc, formatters) end)
 
   require('conform').setup({
     notify_on_error = false,
