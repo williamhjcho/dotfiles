@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "c8982fcea21d0d8e928a367e0c1536e6ac7cf98e",
+      "rev": "7127911cc824a1d2f600492edd9667b476cf3eda",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "blink-cmp-copilot": {
@@ -23,7 +23,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "copilot.lua": {
-      "rev": "61784cb7a1a109d72b9cb107ee70d11bc7d095ff",
+      "rev": "18a58c62b20b7c724da808ef6d8fb002673b903f",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -55,7 +55,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "48555f1615f08c6318150aacb52bf7d61a5af798",
+      "rev": "a5fda91040763cf9ad70bdce1c656b0f4ba1d16e",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
