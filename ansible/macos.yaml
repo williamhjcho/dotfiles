@@ -38,10 +38,6 @@
 
           - jenv # java
           - rbenv # ruby
-          # golang
-          - delve # go debugger
-          - goimports # go formatter
-
         homebrew_cask_apps:
           # in case it needs to be forced
           # - { name: appname, install_options: "force" }
