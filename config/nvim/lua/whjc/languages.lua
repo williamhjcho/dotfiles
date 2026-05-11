@@ -37,7 +37,7 @@ return {
   },
   -- JSON/YAML/TOML
   {
-    mason = { 'json-lsp', 'yaml-language-server' },
+    mason = { 'json-lsp' },
     lsp = { 'jsonls', 'yamlls', 'taplo' },
     treesitter = {
       'toml',
