@@ -20,31 +20,25 @@ now_if_args(function()
 
   local ts = require('nvim-treesitter')
   ts.setup({})
-  ts.install(languages)
 
+  local isnt_installed = function(lang) return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0 end
+  local to_install = vim.tbl_filter(isnt_installed, languages)
+  if #to_install > 0 then ts.install(to_install) end
+
+  local filetypes = {}
+  for _, lang in ipairs(languages) do
+    for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
+      table.insert(filetypes, ft)
+    end
+  end
+
+  -- extra explicit filtypes registration
   vim.iter(require('whjc.languages')):each(function(lang)
     if lang.filetypes then vim.filetype.add(lang.filetypes) end
   end)
 
-  -- vim.api.nvim_create_autocmd('FileType', {
-  --   pattern = '*',
-  --   group = vim.api.nvim_create_augroup('whjc_treesitter_start', { clear = true }),
-  --   callback = function(args)
-  --     local ft = vim.bo.filetype
-  --     local lang = vim.treesitter.language.get_lang(ft)
-  --
-  --     if not lang or not vim.treesitter.language.add(lang) then return end
-  --
-  --     pcall(vim.treesitter.start)
-  --
-  --     -- if vim.treesitter.query.get(lang, 'folds') then
-  --     --   vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-  --     -- end
-  --     -- if vim.treesitter.query.get(lang, 'indents') then
-  --     --   vim.wo.indentexpr = 'nvim_treesitter#indent()'
-  --     -- end
-  --   end,
-  -- })
+  local ts_start = function(ev) vim.treesitter.start(ev.buf) end
+  Config.new_autocmd('FileType', filetypes, ts_start, 'Start tree-sitter')
 end)
 
 now_if_args(function()
