@@ -80,8 +80,11 @@ return {
     lsp = { 'gopls' },
     treesitter = { 'go', 'gomod', 'gowork', 'gosum' },
     formatters = {
-      go = { 'goimports', 'gofumpt' },
+      go = { 'gopls', 'goimports', 'gofumpt' },
       templ = { 'templ' },
+    },
+    linters = {
+      -- go = { 'golangcilint' },
     },
   },
   -- python
