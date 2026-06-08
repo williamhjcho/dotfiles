@@ -79,8 +79,8 @@ vim.keymap.set('n', '<leader>w-', '<c-w>s', { desc = 'Split Window Below', remap
 vim.keymap.set('n', '<leader>w|', '<c-w>v', { desc = 'Split Window Right', remap = true })
 vim.keymap.set('n', '<leader>w>', '10<c-w>>', { desc = 'Increase Window Width' })
 vim.keymap.set('n', '<leader>w<', '10<c-w><', { desc = 'Decrease Window Width' })
-vim.keymap.set('n', '<leader>w+', '10<c-w>+', { desc = 'Increase Window Height' })
-vim.keymap.set('n', '<leader>w-', '10<c-w>-', { desc = 'Decrease Window Height' })
+-- vim.keymap.set('n', '<leader>w+', '10<c-w>+', { desc = 'Increase Window Height' })
+-- vim.keymap.set('n', '<leader>w-', '10<c-w>-', { desc = 'Decrease Window Height' })
 vim.keymap.set('n', '<leader>w=', '<c-w>=', { desc = 'Equalize Window Sizes' })
 
 -- Save file
