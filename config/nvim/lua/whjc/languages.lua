@@ -77,7 +77,8 @@ return {
   },
   -- go
   {
-    lsp = { 'gopls' },
+    mason = { 'golangci-lint-langserver' },
+    lsp = { 'gopls', 'golangci_lint_ls' },
     treesitter = { 'go', 'gomod', 'gowork', 'gosum' },
     formatters = {
       go = { 'gopls', 'goimports', 'gofumpt' },
