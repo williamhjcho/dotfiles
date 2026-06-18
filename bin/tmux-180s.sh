@@ -18,6 +18,9 @@ if ! has_session "$WORK"; then
     WORK_DIR="$HOME/dev/180s"
     tmux new-window -d -s "$WORK" -n "180s" -c "$WORK_DIR"
 
+    tmux new-window -d -t "$WORK:" -n "npx" -c "$WORK_DIR/arraia"
+    tmux split-window -t "$WORK:npx" -h -d -c "$WORK_DIR/arraia"
+
     tmux new-window -d -t "$WORK:" -n "cisne" -c "$WORK_DIR/cisne"
     tmux split-window -t "$WORK:cisne" -h -d -c "$WORK_DIR/cisne"
     tmux split-window -t "$WORK:cisne.1" -v -d -c "$WORK_DIR/cisne"
