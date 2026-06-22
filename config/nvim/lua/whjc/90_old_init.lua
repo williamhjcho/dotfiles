@@ -8,8 +8,6 @@ vim.pack.add({
   confirm = false,
 })
 
-require('whjc.autocmds')
-
 -- plugin setups
 require('snacks').setup({
   indent = { enabled = true },
