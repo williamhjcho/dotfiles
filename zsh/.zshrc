@@ -52,6 +52,8 @@ then
     compinit
 fi
 
+export PATH="$$HOME/.local/bin:$PATH"
+
 # npm
 export PATH="$NPM_BIN:$PATH"
 
