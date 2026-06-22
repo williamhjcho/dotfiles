@@ -15,17 +15,16 @@ vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', ex
 -- vim pack
 vim.keymap.set({ 'n', 'x' }, '<leader>pu', function() vim.pack.update() end, { desc = 'Vim Pack Update' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pl', function()
-  -- stylua: ignore
-  local packages = vim
+  local lines = vim
     .iter(vim.pack.get())
-    :map(function(p) return {
-        active = p.active,
-        name = p.spec.name,
-        src = p.spec.src,
-        rev = p.rev,
-    } end)
+    :map(function(p)
+      local version = p.rev or 'unknown'
+      return string.format('%s (%s)', p.spec.name, version)
+    end)
     :totable()
-  print(vim.inspect(packages))
+
+  table.sort(lines)
+  vim.notify(table.concat(lines, '\n'), vim.log.levels.INFO, { title = 'Vim Pack List' })
 end, { desc = 'Vim Pack List' })
 vim.keymap.set({ 'n', 'x' }, '<leader>pd', function()
   -- stylua: ignore
