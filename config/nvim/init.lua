@@ -38,5 +38,8 @@ require('whjc.20_keymaps')
 require('whjc.30_setup')
 require('whjc.40_plugins')
 require('whjc.autocmds')
+
 require('whjc.ai')
+require('whjc.flutter')
+require('whjc.clojure')
 require('whjc.90_old_init')

@@ -37,6 +37,4 @@ require('persistence').setup({})
 -- lsp setups
 require('whjc.blink')
 require('whjc.javascript')
-require('whjc.clojure')
-require('whjc.flutter')
 require('whjc.debug')
