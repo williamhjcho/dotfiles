@@ -265,6 +265,9 @@ later(function()
   add({ 'https://github.com/chrisgrieser/nvim-origami' })
   require('origami').setup({
     autoFold = { enabled = false },
+    foldKeymaps = {
+      closeOnlyOnFirstColumn = true,
+    },
   })
 end)
 
