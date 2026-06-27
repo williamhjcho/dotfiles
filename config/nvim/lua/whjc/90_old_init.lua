@@ -33,8 +33,3 @@ require('which-key').setup({
   },
 })
 require('persistence').setup({})
-
--- lsp setups
-require('whjc.blink')
-require('whjc.javascript')
-require('whjc.debug')
