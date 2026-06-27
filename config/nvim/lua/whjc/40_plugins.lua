@@ -226,6 +226,42 @@ later(function()
 end)
 
 later(function()
+  add({ 'https://github.com/folke/persistence.nvim' })
+  require('persistence').setup({})
+end)
+
+later(function()
+  add({ 'https://github.com/folke/which-key.nvim' })
+  require('which-key').setup({
+    preset = 'helix',
+    defaults = {},
+    spec = {
+      { '<leader><tab>', group = 'tabs' },
+      { '<leader>b', group = 'buffer' },
+      { '<leader>c', group = 'code' },
+      { '<leader>d', group = 'debug' },
+      { '<leader>f', group = 'file|find' },
+      { '<leader>q', group = 'quit|session' },
+      { '<leader>s', group = 'search' },
+      { '<leader>x', group = 'diagnostics|quickfix' },
+      { 'g', group = 'goto' },
+      { 'gs', group = 'surround' },
+      { 'z', group = 'fold' },
+    },
+  })
+end)
+
+later(function()
+  add({ 'https://github.com/folke/snacks.nvim' })
+  require('snacks').setup({
+    indent = { enabled = true },
+    lazygit = {},
+    explorer = {},
+    picker = {},
+  })
+end)
+
+later(function()
   add({ 'https://github.com/chrisgrieser/nvim-origami' })
   require('origami').setup({
     autoFold = { enabled = false },
