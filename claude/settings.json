@@ -5,7 +5,10 @@
       "Bash(ls *)",
       "Bash(grep *)",
       "Bash(gh pr:*)",
-      "Bash(gh run:*)"
-    ]
-  }
+      "Bash(gh run:*)",
+      "Bash(pnpm test*)",
+    ],
+    "defaultMode": "auto"
+  },
+  "skipAutoPermissionPrompt": true
 }
