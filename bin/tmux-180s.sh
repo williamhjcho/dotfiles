@@ -32,6 +32,8 @@ if ! has_session "$WORK"; then
 
     tmux new-window -d -t "$WORK:" -n "others" -c "$WORK_DIR"
 
+    tmux new-window -d -t "$WORK:" -n "experiments" -c "$WORK_DIR"
+
     # needs the trailing ':' on the session's name
     # tmux new-window -t "$WORK:" -n "<project-name>" -c "$WORK_DIR/<dir>"
     # tmux split-window -t "$WORK:<project-name>" -h -d -c "$WORK_DIR/<dir>"
