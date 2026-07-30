@@ -28,6 +28,20 @@ later(function()
     },
   })
 
+  -- sidekick detects running CLI sessions with vim regexes like `\<cursor-agent\>`.
+  -- `\<` resolves against the current buffer's 'iskeyword', and the clojure ftplugin adds
+  -- `/` to it, so the boundary never matches in `/Users/me/.local/bin/cursor-agent` and
+  -- every running session disappears from the picker. Match in a default-'iskeyword' buffer.
+  local Tool = require('sidekick.cli.tool')
+  local is_proc = Tool.is_proc
+  local scratch
+  Tool.is_proc = function(self, proc)
+    if not (scratch and vim.api.nvim_buf_is_valid(scratch)) then
+      scratch = vim.api.nvim_create_buf(false, true)
+    end
+    return vim.api.nvim_buf_call(scratch, function() return is_proc(self, proc) end)
+  end
+
   vim.keymap.set('n', '<tab>', function()
     -- if there is a next edit, jump to it, otherwise apply it if any
     if require('sidekick').nes_jump_or_apply() then
