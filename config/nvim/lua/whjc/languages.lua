@@ -56,24 +56,19 @@ return {
   },
   -- javascript/typescript & web general
   {
-    mason = { 'tsgo', 'svelte-language-server' },
+    mason = { 'tsgo' },
     lsp = { 'tsgo', 'tailwindcss', 'biome' },
-    treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'typescript', 'astro', 'svelte' },
+    treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'typescript' },
     formatters = {
       css = { 'biome-check' },
       javascript = { 'biome-check' },
       javascriptreact = { 'biome-check' },
       typescript = { 'biome-check' },
       typescriptreact = { 'biome-check' },
-      svelte = { 'biome-check', lsp_format = 'first' },
     },
     linters = {
       typescript = { 'biomejs' },
     },
-  },
-  {
-    mason = { 'svelte-language-server' },
-    lsp = { 'svelte' },
   },
   -- go
   {
