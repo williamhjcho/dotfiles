@@ -33,7 +33,7 @@ Config.on_packchanged = function(plugin_name, kinds, callback, desc)
   Config.new_autocmd('PackChanged', '*', f, desc)
 end
 
-require('whjc.10_options')
+require('whjc.options')
 require('whjc.20_keymaps')
 require('whjc.30_setup')
 require('whjc.40_plugins')
