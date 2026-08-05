@@ -36,9 +36,7 @@ later(function()
   local is_proc = Tool.is_proc
   local scratch
   Tool.is_proc = function(self, proc)
-    if not (scratch and vim.api.nvim_buf_is_valid(scratch)) then
-      scratch = vim.api.nvim_create_buf(false, true)
-    end
+    if not (scratch and vim.api.nvim_buf_is_valid(scratch)) then scratch = vim.api.nvim_create_buf(false, true) end
     return vim.api.nvim_buf_call(scratch, function() return is_proc(self, proc) end)
   end
 
