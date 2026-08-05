@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- See `:help vim.o` or `:help option-list`
 vim.opt.autoread = true -- update file when changed outside of vim
@@ -70,47 +70,16 @@ vim.filetype.add({
   },
 })
 
-local ERROR = vim.diagnostic.severity.ERROR
-local WARN = vim.diagnostic.severity.WARN
-local INFO = vim.diagnostic.severity.INFO
-local HINT = vim.diagnostic.severity.HINT
-
 vim.diagnostic.config({
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
-  underline = {
-    severity = {
-      min = HINT,
-      max = ERROR,
-    },
-  },
+  -- underline = {
+  --   severity = {
+  --     min = vim.diagnostic.severity.HINT,
+  --     max = vim.diagnostic.severity.ERROR,
+  --   },
+  -- },
   -- don't update diagnostics when typing
   update_in_insert = false,
-  signs = {
-    -- show diagnostic signs on top of everything for warnings and errors
-    priority = 999,
-    severity = {
-      min = WARN,
-      max = ERROR,
-    },
-    text = vim.g.have_nerd_font and {
-      [ERROR] = '󰅚 ',
-      [WARN] = '󰀪 ',
-      [INFO] = '󰋽 ',
-      [HINT] = '󰌶 ',
-    } or {},
-  },
-  virtual_text = {
-    source = 'if_many',
-    spacing = 2,
-    format = function(diagnostic)
-      local diagnostic_message = {
-        [ERROR] = diagnostic.message,
-        [WARN] = diagnostic.message,
-        [INFO] = diagnostic.message,
-        [HINT] = diagnostic.message,
-      }
-      return diagnostic_message[diagnostic.severity]
-    end,
-  },
+  virtual_text = true,
 })
