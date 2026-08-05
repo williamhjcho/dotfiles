@@ -36,6 +36,7 @@ end
 require('whjc.options')
 require('whjc.keymaps')
 require('whjc.setup')
+require('whjc.colorscheme')
 require('whjc.plugins')
 require('whjc.autocmds')
 
