@@ -34,7 +34,7 @@ Config.on_packchanged = function(plugin_name, kinds, callback, desc)
 end
 
 require('whjc.options')
-require('whjc.20_keymaps')
+require('whjc.keymaps')
 require('whjc.30_setup')
 require('whjc.40_plugins')
 require('whjc.autocmds')
