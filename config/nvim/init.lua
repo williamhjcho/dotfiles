@@ -36,7 +36,7 @@ end
 require('whjc.options')
 require('whjc.keymaps')
 require('whjc.setup')
-require('whjc.40_plugins')
+require('whjc.plugins')
 require('whjc.autocmds')
 
 require('whjc.ai')
