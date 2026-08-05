@@ -26,16 +26,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     local Snacks = require('snacks')
-    map('K', vim.lsp.buf.hover, 'Open Hover')
-    map('gd', Snacks.picker.lsp_definitions, 'Goto Definitions')
-    map('gD', Snacks.picker.lsp_declarations, 'Goto Declarations')
-    map('gr', Snacks.picker.lsp_references, 'Goto References')
-    map('gI', Snacks.picker.lsp_implementations, 'Goto Implementations')
-    map('grn', vim.lsp.buf.rename, 'Rename')
-    map('gra', vim.lsp.buf.code_action, 'Goto Code Action', { 'n', 'x' })
-    map('<leader>ca', vim.lsp.buf.code_action, 'Code Actions', { 'n', 'x' })
-    map('<leader>cr', vim.lsp.buf.rename, 'Code Rename')
-    -- conform
+    map('K', function() vim.lsp.buf.hover() end, 'Open Hover')
+    map('gd', function() Snacks.picker.lsp_definitions() end, 'Goto Definitions')
+    map('gD', function() Snacks.picker.lsp_declarations() end, 'Goto Declarations')
+    map('gr', function() Snacks.picker.lsp_references() end, 'Goto References')
+    map('gI', function() Snacks.picker.lsp_implementations() end, 'Goto Implementations')
+    map('grn', function() vim.lsp.buf.rename() end, 'Rename')
+    map('gra', function() vim.lsp.buf.code_action() end, 'Goto Code Action', { 'n', 'x' })
+    map('<leader>ca', function() vim.lsp.buf.code_action() end, 'Code Actions', { 'n', 'x' })
+    map('<leader>cr', function() vim.lsp.buf.rename() end, 'Code Rename')
     map('<leader>cf', function() require('conform').format() end, 'Format Buffer')
     map(
       '<leader>oi',
@@ -58,16 +57,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       end,
       'Code Fix All',
       { 'n', 'x' }
-    )
-    map(
-      '<leader>coi',
-      function()
-        vim.lsp.buf.code_action({
-          context = { only = { 'source.organizeImports' }, diagnostics = {} },
-          apply = true,
-        })
-      end,
-      'Organize Imports'
     )
 
     -- Jump to the implementation of the word under your cursor.
