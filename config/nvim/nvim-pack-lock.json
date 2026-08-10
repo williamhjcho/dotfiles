@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "9f98b46e1dd61aeb666989c344d76517df63af55",
+      "rev": "427b0ff24377a6cdd18aa822a984a5adf156c3fa",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -31,7 +31,7 @@
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "261e70f26e6c02562495f900399234c4e26daa2f",
+      "rev": "7e6723aabea044519462958ffcea68d7985c5ed0",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -39,7 +39,7 @@
       "src": "https://github.com/stevearc/dressing.nvim"
     },
     "flutter-tools.nvim": {
-      "rev": "7d1acfd139215e02d2784733af69a61aaebe06e8",
+      "rev": "0867b346e9a60753080168188c8f1ee6be40b767",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "friendly-snippets": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "bcb4b2688b38f5c48ada025abe130d41840e11d5",
+      "rev": "629bf6792187e11b4829411c1648f86f28df3963",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -79,7 +79,7 @@
       "src": "https://github.com/sidlatau/neotest-dart"
     },
     "neotest-golang": {
-      "rev": "61726ad54b6b94c73d130b65c33575d13a61fc11",
+      "rev": "65b2be63c3de00e6f15c05388ebdc8d603dbd727",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-dap": {
@@ -103,7 +103,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "1c0d8f70dbc8827263eedc3cf7021ceba0f68689",
+      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -111,11 +111,11 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-origami": {
-      "rev": "02312301df125908031b27dc556adb4cd81893d6",
+      "rev": "a137d35eaabb7cd7be89228229c1aa5b057f5ed7",
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
+      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
