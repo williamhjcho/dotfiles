@@ -56,9 +56,9 @@ return {
   },
   -- javascript/typescript & web general
   {
-    mason = { 'tsgo' },
-    lsp = { 'tsgo', 'tailwindcss', 'biome' },
-    treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'typescript' },
+    mason = { 'tsgo', 'astro-language-server' },
+    lsp = { 'tsgo', 'tailwindcss', 'biome', 'astro' },
+    treesitter = { 'html', 'css', 'jsdoc', 'tsx', 'javascript', 'typescript' },
     formatters = {
       css = { 'biome-check' },
       javascript = { 'biome-check' },
