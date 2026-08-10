@@ -19,6 +19,9 @@ if ! has_session "whjc"; then
     tmux resize-pane -t "whjc:memories.1" -L 100
     tmux send-keys -t "whjc:memories.3" "nvim" C-m
 
+    tmux new-window -d -t "whjc" -n "chromalens" -c "$PROJECTS_DIR/chromalens"
+    tmux split-window -t "whjc:chromalens" -h -d -c "$PROJECTS_DIR/chromalens"
+
     tmux new-window -d -t "whjc" -n "others" -c "$HOME/dev"
 
     # tmux select-window -t "whjc:dotfiles"
