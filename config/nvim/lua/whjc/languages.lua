@@ -12,7 +12,7 @@ return {
   { treesitter = { 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'diff' } },
   -- general
   {
-    mason = { 'beautysh', 'shellcheck', 'pgformatter' },
+    mason = { 'beautysh', 'shellcheck' },
     treesitter = { 'bash', 'markdown', 'markdown_inline', 'query', 'regex' },
     formatters = {
       sh = { 'beautysh' },
@@ -51,7 +51,6 @@ return {
       toml = { 'taplo' },
       json = { 'biome' },
       jsonc = { 'biome' },
-      sql = { 'pg_format' },
     },
   },
   -- javascript/typescript & web general
