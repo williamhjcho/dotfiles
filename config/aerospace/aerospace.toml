@@ -125,6 +125,7 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-t = 'workspace T' # Terminal
 alt-w = 'workspace W' # Web Browser
+alt-g = 'workspace G' # Games
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -138,6 +139,7 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-w = 'move-node-to-workspace W'
+alt-shift-g = 'move-node-to-workspace G'
 
 shift-ctrl-h = 'move-workspace-to-monitor left'
 shift-ctrl-l = 'move-workspace-to-monitor right'
@@ -166,6 +168,7 @@ alt-shift-semicolon = 'mode service'
 9 = ['secondary']
 0 = ['secondary']
 T = 'main'
+G = 'main'
 W = ['secondary']
 
 # 'service' binding mode declaration.
@@ -210,6 +213,11 @@ run = ["move-node-to-workspace T"]
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ["move-node-to-workspace T"]
+
+# games (G)
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+run = ["move-node-to-workspace G"]
 
 # browsers (@)
 [[on-window-detected]]
