@@ -89,10 +89,29 @@ later(
 
 later(function()
   local statusline = require('mini.statusline')
-  statusline.setup({ use_icons = vim.g.have_nerd_font })
+
+  local function visual_selection()
+    local mode = vim.fn.mode()
+    if mode == 'V' or mode == 'S' then
+      local lines = math.abs(vim.fn.line('.') - vim.fn.line('v')) + 1
+      return string.format('%d line(s)', lines)
+    end
+
+    if mode == 'v' or mode == 's' or mode == '\22' or mode == '\23' then
+      local chars = vim.fn.wordcount().visual_chars
+      return string.format('%d char(s)', chars)
+    end
+  end
 
   ---@diagnostic disable-next-line: duplicate-set-field
-  statusline.section_location = function() return '%2l:%-2v %p%%' end
+  statusline.section_location = function(args)
+    local selection = visual_selection()
+    local location = MiniStatusline.is_truncated(args.trunc_width) and '%2l:%-2v' or '%2l:%-2v %p%%'
+    if selection == nil then return location end
+    return selection .. ' · ' .. location
+  end
+
+  statusline.setup({ use_icons = vim.g.have_nerd_font })
 end)
 
 later(function()
