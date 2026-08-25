@@ -89,6 +89,7 @@ later(
 
 later(function()
   local statusline = require('mini.statusline')
+  local default_section_mode = statusline.section_mode
 
   local function visual_selection()
     local mode = vim.fn.mode()
@@ -104,6 +105,20 @@ later(function()
   end
 
   ---@diagnostic disable-next-line: duplicate-set-field
+  statusline.section_mode = function(args)
+    local mode, mode_hl = default_section_mode(args)
+    local recording = vim.fn.reg_recording()
+    if recording ~= '' then
+      mode = string.format('%s @%s', mode, recording)
+    end
+    local executing = vim.fn.reg_executing()
+    if executing ~= '' then
+      mode = string.format('%s @%s', mode, executing)
+    end
+    return mode, mode_hl
+  end
+
+  ---@diagnostic disable-next-line: duplicate-set-field
   statusline.section_location = function(args)
     local selection = visual_selection()
     local location = MiniStatusline.is_truncated(args.trunc_width) and '%2l:%-2v' or '%2l:%-2v %p%%'
@@ -112,6 +127,13 @@ later(function()
   end
 
   statusline.setup({ use_icons = vim.g.have_nerd_font })
+
+  local macro_group = vim.api.nvim_create_augroup('whjc_statusline_macro', { clear = true })
+  vim.api.nvim_create_autocmd({ 'RecordingEnter', 'RecordingLeave' }, {
+    group = macro_group,
+    callback = function() vim.cmd('redrawstatus') end,
+    desc = 'Refresh statusline when macro recording starts or stops',
+  })
 end)
 
 later(function()
