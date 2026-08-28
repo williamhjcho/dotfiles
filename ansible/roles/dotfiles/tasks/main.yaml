@@ -45,3 +45,27 @@
     src: "{{ dotfiles_home }}/claude/settings.json"
     dest: "{{ dotfiles_dir }}/.claude/settings.json"
     state: link
+
+# Personal skills live in the repo; globally installed skills (npx skills add -g)
+# write into this same directory. Keep it a real dir so the two can coexist.
+- name: Create {{ dotfiles_dir }}/.agents/skills directory
+  file:
+    path: "{{ dotfiles_dir }}/.agents/skills"
+    state: directory
+
+- name: Find personal agent skills
+  find:
+    paths: "{{ dotfiles_home }}/agents/skills"
+    recurse: no
+    file_type: directory
+  register: find_agent_skills
+
+- name: Link personal agent skills into {{ dotfiles_dir }}/.agents/skills
+  when: find_agent_skills.files | length > 0
+  loop: "{{ find_agent_skills.files }}"
+  loop_control:
+    label: "{{ item.path | basename }}"
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ dotfiles_dir }}/.agents/skills/{{ item.path | basename }}"
+    state: link
