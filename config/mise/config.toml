@@ -4,7 +4,7 @@
 biome = "2.5.8"
 fzf = "0.74.2"
 lazygit = "0.64.1"
-neovim = "0.12.4"
+neovim = "nightly"
 ruff = "0.16.3"
 jq = "1.8.2"
 yq = "4.53.3"
