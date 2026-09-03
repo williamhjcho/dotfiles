@@ -1,14 +1,14 @@
 ---
-name: i80-clj
+name: clojure-180
 description: >-
-  Applies 180 Seguros (i80) Clojure service conventions. Use when editing .clj,
-  .cljc, or .edn files, working in an i80 Clojure service (tubarao, sagas,
+  Applies 180 Seguros Clojure service conventions. Use when editing .clj,
+  .cljc, or .edn files, working in an 180 Clojure service (tubarao, sagas,
   canguruga, and siblings), or when the user asks to extract logic, add
   Prismatic schemas, show alternatives, reuse an existing handler, fix
   nested lets, or review a Clojure branch.
 ---
 
-# i80 Clojure
+# Clojure 180s
 
 Conventions for 180 Seguros Clojure services. Apply these on the first pass so the work does not have to be redone.
 
