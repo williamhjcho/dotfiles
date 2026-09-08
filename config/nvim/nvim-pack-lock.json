@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "SchemaStore.nvim": {
-      "rev": "6a1a2daf151dd742d5ff2f64eb2cc049d7e5ab4a",
+      "rev": "077872be5d1c7ef47fb667df84ab49ea1dfcb1bc",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
     "baleia.nvim": {
@@ -31,7 +31,7 @@
       "src": "https://github.com/Olical/conjure"
     },
     "copilot.lua": {
-      "rev": "7e6723aabea044519462958ffcea68d7985c5ed0",
+      "rev": "bd8c2159660faccb40fb845b746cc9aad5881e76",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "dressing.nvim": {
@@ -43,7 +43,7 @@
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
     },
     "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "rev": "bb548e5ae4550a5e318b7e398a93b9af456b65e1",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "9d01f392b33fb2ba36fbc87fc0bf4453e63ffb0a",
+      "rev": "455856f765c78220fe547fb0862708942b52c42c",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
@@ -83,7 +83,7 @@
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "nvim-dap": {
-      "rev": "c9a0738e45f1bd41d792a126941348dce661cf9b",
+      "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-go": {
@@ -103,7 +103,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "85e732c62ac59ab7c12df71ddd020baa87948390",
+      "rev": "da1aff0332774a0f60d52bf972e815dfc226f276",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -115,11 +115,11 @@
       "src": "https://github.com/chrisgrieser/nvim-origami"
     },
     "nvim-treesitter": {
-      "rev": "427e9222363d07c32d6db6169e4049c28d58d141",
+      "rev": "5cb0114e6242625db56dd6440e945ed1ece10bc7",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "5c7b0263797dfd1bd6202f2b219f3b53a80b2187",
+      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-ts-autotag": {
@@ -135,7 +135,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "sidekick.nvim": {
-      "rev": "208e1c5b8170c01fd1d07df0139322a76479b235",
+      "rev": "3d80a47e6375f6d647c9695d3afea6fa1b3275df",
       "src": "https://github.com/folke/sidekick.nvim"
     },
     "snacks.nvim": {
