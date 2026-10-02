@@ -21,6 +21,9 @@ if ! has_session "$WORK"; then
     tmux new-window -d -t "$WORK:" -n "npx" -c "$WORK_DIR/arraia"
     tmux split-window -t "$WORK:npx" -h -d -c "$WORK_DIR/arraia"
 
+    tmux new-window -d -t "$WORK:" -n "suricate" -c "$WORK_DIR/suricate"
+    tmux split-window -t "$WORK:suricate" -h -d -c "$WORK_DIR/suricate"
+
     tmux new-window -d -t "$WORK:" -n "cisne" -c "$WORK_DIR/cisne"
     tmux split-window -t "$WORK:cisne" -h -d -c "$WORK_DIR/cisne"
     tmux split-window -t "$WORK:cisne.1" -v -d -c "$WORK_DIR/cisne"
@@ -29,6 +32,8 @@ if ! has_session "$WORK"; then
 
     tmux new-window -d -t "$WORK:" -n "channels" -c "$WORK_DIR/lobo"
     tmux split-window -t "$WORK:channels" -h -d -c "$WORK_DIR/camaleao"
+
+    tmux new-window -d -t "$WORK:" -n "sinistros" -c "$WORK_DIR/tubarao"
 
     tmux new-window -d -t "$WORK:" -n "others" -c "$WORK_DIR"
 
