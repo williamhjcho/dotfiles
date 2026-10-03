@@ -4,7 +4,6 @@ local later = Config.later
 local lsps = vim
   .iter(require('whjc.languages'))
   :map(function(i) return i.lsp end)
-  :filter(function(i) return i end)
   :flatten()
   :totable()
 
