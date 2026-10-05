@@ -9,6 +9,11 @@ vim.keymap.set('n', '<Esc>', function()
   vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
 end, { desc = 'Clear search highlights and multicursors' })
 
+vim.keymap.set('n', '<C-[', function()
+  local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
+  vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+end, { desc = 'Clear multicursors' })
+
 -- better up/down
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
