@@ -1,7 +1,7 @@
 return {
   -- lua/vim/nvim
   {
-    mason = { 'stylua' },
+    mason = {},
     lsp = { 'lua_ls' },
     treesitter = { 'lua', 'luap', 'luadoc', 'vim', 'vimdoc' },
     formatters = {
@@ -30,14 +30,14 @@ return {
   },
   -- Docker
   {
-    mason = { 'hadolint' },
+    mason = {},
     linters = {
       dockerfile = { 'hadolint' },
     },
   },
   -- JSON/YAML/TOML
   {
-    mason = { 'json-lsp', 'taplo' },
+    mason = { 'json-lsp' },
     lsp = { 'jsonls', 'yamlls', 'taplo' },
     treesitter = {
       'toml',
@@ -129,7 +129,7 @@ return {
   },
   -- terraform
   {
-    mason = { 'tflint' },
+    mason = {},
     treesitter = { 'terraform', 'hcl' },
     formatters = {
       terraform_fmt = { 'terraform' },
