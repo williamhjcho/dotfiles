@@ -7,7 +7,8 @@ vim.keymap.set('n', '<Esc>', function()
   -- clear multicursors (if any)
   local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
   vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
-end, { desc = 'Clear search highlights and multicursors' })
+  return '<Esc>'
+end, { expr = true, desc = 'Clear search highlights and multicursors' })
 
 vim.keymap.set('n', '<C-[', function()
   local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
