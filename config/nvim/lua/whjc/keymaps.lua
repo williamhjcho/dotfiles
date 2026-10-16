@@ -164,6 +164,41 @@ vim.keymap.set('n', '[w', diagnostic_goto(false, vim.diagnostic.severity.WARN), 
 vim.keymap.set('n', '<leader>or', '<Cmd>lua MiniMisc.resize_window()<CR>', { desc = 'Resize to default width' })
 vim.keymap.set('n', '<leader>oz', '<Cmd>lua MiniMisc.zoom()<CR>', { desc = 'Resize to default width' })
 
+-- multicursors
+local add_cursor_and_move = function(opts)
+  local lopts = opts or {}
+  vim.api.nvim_feedkeys('2q=', 'n', false) -- keep existing cursors still while adding the next match
+  vim.api.nvim_feedkeys('1Q', 'n', false)
+  vim.api.nvim_feedkeys(lopts.movement, 'n', false)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('1q=<Cmd>nohlsearch<CR>', true, false, true), 'n', false)
+  if vim.v.count1 > 1 then vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes((vim.v.count1 - 1) .. lopts.mapping, true, false, true), 'm', false) end
+end
+--- Place a cursor and search/advance to the next entry
+--- @param opts {mapping: string, forward_search?: boolean, visual_mode?: boolean, force?: boolean}
+local search = function(opts)
+  local lopts = opts or {}
+  local ns = vim.api.nvim_create_namespace('nvim.multicursor')
+  local marks = vim.api.nvim_buf_get_extmarks(0, ns, 0, -1)
+  local search_next = lopts.forward_search and 'n' or 'N'
+  if #marks ~= 0 and not lopts.force then
+    add_cursor_and_move({ mapping = lopts.mapping, movement = search_next })
+    return
+  end
+  if lopts.visual_mode then
+    local selection = vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.'))
+    vim.fn.setreg('/', '\\V' .. table.concat(selection, '\\n'))
+    vim.api.nvim_feedkeys('v`<', 'n', false) -- move to the beginning of the word
+  else
+    vim.api.nvim_feedkeys('wb', 'n', false) -- move to the beginning of the word
+    vim.fn.setreg('/', '\\V\\<' .. vim.fn.expand('<cword>') .. '\\>') -- set search pattern to the current word
+  end
+  vim.schedule(function() add_cursor_and_move({ mapping = lopts.mapping, movement = search_next }) end)
+end
+vim.keymap.set('n', '<leader>n', function() search({ mapping = '<leader>n', forward_search = true, visual_mode = false }) end, { desc = 'Add next matching cursor' })
+vim.keymap.set('x', '<leader>n', function() search({ mapping = '<leader>n', forward_search = true, visual_mode = true }) end, { desc = 'Add next matching cursor' })
+vim.keymap.set('n', '<leader>N', function() search({ mapping = '<leader>N', forward_search = false, visual_mode = false }) end, { desc = 'Add previous matching cursor' })
+vim.keymap.set('x', '<leader>N', function() search({ mapping = '<leader>N', forward_search = false, visual_mode = true }) end, { desc = 'Add previous matching cursor' })
+
 -- persistence
 vim.keymap.set('n', '<leader>qs', function() require('persistence').load() end, { desc = 'Restore Session' })
 vim.keymap.set('n', '<leader>qS', function() require('persistence').select() end, { desc = 'Select Session' })
