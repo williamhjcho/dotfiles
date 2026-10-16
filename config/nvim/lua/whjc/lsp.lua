@@ -10,11 +10,6 @@ local lsps = vim
 vim.lsp.enable(lsps)
 vim.lsp.inline_completion.enable()
 
--- Disable the default keybinds
-for _, bind in ipairs({ 'grn', 'gra', 'gri', 'grr' }) do
-  pcall(vim.keymap.del, 'n', bind)
-end
-
 later(function()
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('whjc-lsp-attach', { clear = true }),
