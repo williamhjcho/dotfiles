@@ -9,6 +9,10 @@
       "rev": "d93ef1e8365950420ea3e706e82caf65dc9ff968",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
+    "atlas.nvim": {
+      "rev": "c6134539537caf6503df032560c78a2db785d46b",
+      "src": "https://github.com/emrearmagan/atlas.nvim"
+    },
     "baleia.nvim": {
       "rev": "710537ff5cd669c5a76c5f5b6a9169fd9b913d18",
       "src": "https://github.com/m00qek/baleia.nvim"

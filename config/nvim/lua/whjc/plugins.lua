@@ -253,6 +253,35 @@ later(function()
 end)
 
 later(function()
+  add({ 'https://github.com/emrearmagan/atlas.nvim' })
+  require('atlas').setup({
+    providers = {
+      github = {},
+    },
+
+    pulls = {
+
+      github = {
+        views = {
+          {
+            name = 'My PRs',
+            key = '1',
+            layout = 'plain',
+            search = 'author:@me sort:updated-desc',
+          },
+          {
+            name = 'Current Repo PRs',
+            key = '2',
+            layout = 'grouped',
+            current_repo = true,
+          },
+        },
+      },
+    },
+  })
+end)
+
+later(function()
   add({
     'https://github.com/mfussenegger/nvim-dap',
     'https://github.com/rcarriga/nvim-dap-ui',
