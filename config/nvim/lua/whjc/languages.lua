@@ -49,8 +49,8 @@ return {
     },
     formatters = {
       toml = { 'taplo' },
-      json = { 'biome' },
-      jsonc = { 'biome' },
+      json = { 'oxfmt' },
+      jsonc = { 'oxfmt' },
     },
   },
   -- javascript/typescript & web general
